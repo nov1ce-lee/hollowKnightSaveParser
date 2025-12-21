@@ -34,7 +34,12 @@ function renderResult(save) {
         section.items.forEach((item, idx) => {
             let done, name;
             if (!section.max) { // 布尔型
-                done = !!save[item.key];
+                if (item.name == '国王之魂') {
+                    done = save['gotQueenFragment'] && save['gotKingFragment'];
+                } else {
+                    const value = getNestedValue(save, item.key);
+                    done = !!value;
+                }
                 name = item.name;
             } else { // 等级型
                 value = save[section.key] || 0;
@@ -54,4 +59,8 @@ function renderResult(save) {
         });
     });
 
+}
+
+function getNestedValue(obj, path) {
+    return path.split('.').reduce((o, key) => (o ? o[key] : undefined), obj);
 }
