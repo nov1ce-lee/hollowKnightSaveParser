@@ -19,4 +19,17 @@ const completionMap = [
             { key: "hornetOutskirtsDefeated", name: "岗哨大黄蜂" }
         ]
     },
+    {
+        category: "装备",
+        unit: 2,
+        items: [
+            { key: "hasDash", name: "蛾翼披风" },
+            { key: "hasWalljump", name: "螳螂爪" },
+            { key: "hasDoubleJump", name: "帝王之翼" },
+            { key: "hasSuperDash", name: "水晶之心" },
+            { key: "hasShadowDash", name: "暗影披风" },
+            { key: "hasAcidArmour", name: "伊思玛的眼泪" },
+            { key: "hasKingsBrand", name: "王之印记" }
+        ]
+    },
 ];
