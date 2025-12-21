@@ -3,23 +3,23 @@ function calculateCompletion(save) {
     let missing = [];
 
     completionMap.forEach(section => {
-        if (section.items) {
-            // 每个 item 对应布尔或等级
-            section.items.forEach((item, idx) => {
-                const value = save[section.key];  // 例如 nailSmithUpgrades
-                const done = value > idx;         // 前 N 个完成
+        if (section.max) {
+            // 等级型技能处理
+            section.items.forEach((itemName, idx) => {
+                const value = save[section.key] || 0;
+                const done = value > idx;
                 if (done) {
                     total += section.unit;
                 } else {
                     missing.push({
                         category: section.category,
-                        name: item,
+                        name: itemName,
                         percent: section.unit
                     });
                 }
             });
         } else {
-            // 布尔类型
+            // 布尔项处理
             section.items.forEach(item => {
                 const done = save[item.key];
                 if (done) total += section.unit;

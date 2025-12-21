@@ -41,6 +41,28 @@ const completionMap = [
             { key: "hasKingsBrand", name: "王之印记" }
         ]
     },
+    // 法术
+    {
+        category: "法术",
+        unit: 1,       // 每级占 1%
+        key: "fireballLevel",
+        max: 2,
+        items: ["复仇之魂", "暗影之魂"]  // 对应等级 1, 2
+    },
+    {
+        category: "法术",
+        unit: 1,
+        key: "screamLevel",
+        max: 2,
+        items: ["嚎叫幽灵", "深渊尖啸"]
+    },
+    {
+        category: "法术",
+        unit: 1,
+        key: "quakeLevel",
+        max: 2,
+        items: ["荒芜俯冲", "黑暗降临"]
+    },
     {
         category: "骨钉升级",
         unit: 1,  // 每升级占 1%
