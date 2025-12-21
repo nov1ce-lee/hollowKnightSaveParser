@@ -18,10 +18,11 @@ function renderResult(save) {
         const sectionItems = document.createElement("div");
         sectionItems.className = "section-items";
 
-        section.items.forEach(item => {
-            const done = save[item.key];
+        section.items.forEach((item, idx) => {
+            const value = save[section.key];
+            const done = value > idx;
             const line = document.createElement("div");
-            line.textContent = item.name;
+            line.textContent = item;
             line.className = `item ${done ? "done" : "missing"}`;
             sectionItems.appendChild(line);
         });
