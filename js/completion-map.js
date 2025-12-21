@@ -20,6 +20,19 @@ const completionMap = [
         ]
     },
     {
+        category: "战士之梦",
+        unit: 1,
+        items: [
+            { key: "killedGhostAladar", name: "击败戈布" },
+            { key: "killedGhostXero", name: "击败泽若" },
+            { key: "killedGhostHu", name: "击败胡长老" },
+            { key: "killedGhostMarmu", name: "击败马尔穆" },
+            { key: "killedGhostNoEyes", name: "击败无眼" },
+            { key: "killedGhostMarkoth", name: "击败马科斯" },
+            { key: "killedGhostGalien", name: "击败加利安" }
+        ]
+    },
+    {
         category: "守梦者",
         unit: 1,
         items: [
@@ -62,6 +75,20 @@ const completionMap = [
         key: "quakeLevel",
         max: 2,
         items: ["荒芜俯冲", "黑暗降临"]
+    },
+    {
+        category: "面具",
+        unit: 1,
+        max: 4,
+        key: "maxHealthBase",
+        items: ["+1", "+2", "+3", "+4"]
+    },
+    {
+        category: "容器",
+        unit: 1,
+        max: 3,
+        key: "MPReserveMax",
+        items: ["+1", "+2", "+3"]
     },
     {
         category: "骨钉升级",
@@ -146,6 +173,7 @@ const completionMap = [
 
     {
         category: "格林剧团和蜂巢",
+        mutualExclusive: ["killedNightmareGrimm", "destroyedNightmareLantern"],
         unit: 1,
         items: [
             { key: "killedGrimm", name: "击败格林团长" },
@@ -160,10 +188,10 @@ const completionMap = [
         unit: 1,
         items: [
             { key: "hasGodfinder", name: "神明调谐器" },
-            { key: "bossDoorStateTier1", name: "大师万神殿" },
-            { key: "bossDoorStateTier2", name: "艺术家万神殿" },
-            { key: "bossDoorStateTier3", name: "贤者万神殿" },
-            { key: "bossDoorStateTier4", name: "骑士万神殿" }
+            { key: "bossDoorStateTier1.completed", name: "大师万神殿" },
+            { key: "bossDoorStateTier2.completed", name: "艺术家万神殿" },
+            { key: "bossDoorStateTier3.completed", name: "贤者万神殿" },
+            { key: "bossDoorStateTier4.completed", name: "骑士万神殿" }
         ]
     },
 ];

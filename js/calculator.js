@@ -6,7 +6,12 @@ function calculateCompletion(save) {
         if (section.max) {
             // 等级型技能处理
             section.items.forEach((itemName, idx) => {
-                const value = save[section.key] || 0;
+                value = save[section.key] || 0;
+                if (section.category == '面具') {
+                    value -= 5
+                } else if (section.category == '容器') {
+                    value /= 33
+                }
                 const done = value > idx;
                 if (done) {
                     total += section.unit;
@@ -21,7 +26,12 @@ function calculateCompletion(save) {
         } else {
             // 布尔项处理
             section.items.forEach(item => {
-                const done = save[item.key];
+                if (item.name == '国王之魂') {
+                    done = save['gotQueenFragment'] && save['gotKingFragment'];
+                } else {
+                    const value = getNestedValue(save, item.key);
+                    done = !!value;  // true/false
+                }
                 if (done) total += section.unit;
                 else missing.push({
                     category: section.category,
@@ -33,4 +43,8 @@ function calculateCompletion(save) {
     });
 
     return { total, missing };
+}
+
+function getNestedValue(obj, path) {
+    return path.split('.').reduce((o, key) => (o ? o[key] : undefined), obj);
 }
