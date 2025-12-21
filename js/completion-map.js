@@ -170,19 +170,23 @@ const completionMap = [
             { key: "colosseumGoldCompleted", name: "愚人的试炼" }
         ]
     },
-
     {
-        category: "格林剧团和蜂巢",
+        category: "格林剧团",
         mutualExclusive: ["killedNightmareGrimm", "destroyedNightmareLantern"],
         unit: 1,
         items: [
             { key: "killedGrimm", name: "击败格林团长" },
             { key: "killedNightmareGrimm", name: "击败梦魇之王格林" },
             { key: "destroyedNightmareLantern", name: "摧毁梦魇之灯" },
+        ]
+    },
+    {
+        category: "蜂巢",
+        unit: 1,
+        items: [
             { key: "killedHiveKnight", name: "击败蜂巢骑士" }
         ]
     },
-
     {
         category: "神居",
         unit: 1,
