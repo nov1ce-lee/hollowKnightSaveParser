@@ -4,7 +4,12 @@ document.getElementById("parseBtn").onclick = async () => {
     const file = document.getElementById("fileInput").files[0];
     if (!file) return;
 
-    currentSave = await parseDatFile(file);
+    const fullData = await parseDatFile(file);
+    if (!fullData.playerData) {
+        alert("存档数据格式异常，找不到 playerData");
+        return;
+    }
+    currentSave = fullData.playerData;   // 只取 playerData
     renderResult(currentSave);
 };
 
