@@ -23,13 +23,13 @@ const completionMap = [
         category: "战士之梦",
         unit: 1,
         items: [
-            { key: "killedGhostAladar", name: "击败戈布" },
-            { key: "killedGhostXero", name: "击败泽若" },
-            { key: "killedGhostHu", name: "击败胡长老" },
-            { key: "killedGhostMarmu", name: "击败马尔穆" },
-            { key: "killedGhostNoEyes", name: "击败无眼" },
-            { key: "killedGhostMarkoth", name: "击败马科斯" },
-            { key: "killedGhostGalien", name: "击败加利安" }
+            { key: "killedGhostAladar", name: "戈布" },
+            { key: "killedGhostXero", name: "泽若" },
+            { key: "killedGhostHu", name: "胡长老" },
+            { key: "killedGhostMarmu", name: "马尔穆" },
+            { key: "killedGhostNoEyes", name: "无眼" },
+            { key: "killedGhostMarkoth", name: "马科斯" },
+            { key: "killedGhostGalien", name: "加利安" }
         ]
     },
     {

@@ -2,13 +2,43 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>Hollow Knight 112%完成度 分析器</title>
+    <title>空洞骑士存档分析器</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link id="themeStylesheet" rel="stylesheet" href="css/theme-hollow.css">
+    <link id="themeStylesheet" rel="stylesheet" href="hollow-knight/css/theme.css">
+    <style>
+        .game-switcher {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .game-switcher button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .hk-btn {
+            background: #2c3e50;
+            color: white;
+        }
+        .ss-btn {
+            background: #2c3e50;
+            color: white;
+        }
+        .active {
+            border: 3px solid #f39c12 !important;
+        }
+    </style>
 </head>
 <body>
 
-<h1>Hollow Knight 112% 分析器</h1>
+<div class="game-switcher">
+    <button id="hkBtn" class="hk-btn active">Hollow Knight</button>
+    <button id="ssBtn" class="ss-btn">Silksong</button>
+</div>
+
+<h1 id="pageTitle">Hollow Knight 112% 分析器</h1>
 
 <div id="controls">
     <input type="file" id="fileInput" accept=".dat">
@@ -19,11 +49,54 @@
 <div id="result"></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-<script src="js/parser.js"></script>
-<script src="js/completion-map.js"></script>
-<script src="js/calculator.js"></script>
-<script src="js/renderer.js"></script>
-<script src="js/main.js"></script>
+
+<!-- 游戏脚本模块 -->
+<script>
+    // 游戏切换逻辑
+    let currentGame = 'hollow';
+    
+    function loadGame(game) {
+        currentGame = game;
+        
+        // 更新UI
+        document.getElementById('pageTitle').textContent = 
+            game === 'hollow' ? 'Hollow Knight 112% 分析器' : 'Silksong 100% 分析器';
+        
+        // 切换主题
+        const themeLink = document.getElementById('themeStylesheet');
+        themeLink.href = game === 'hollow' ? 'hollow-knight/css/theme.css' : 'silk-song/css/theme.css';
+        
+        // 更新按钮状态
+        document.getElementById('hkBtn').className = game === 'hollow' ? 'hk-btn active' : 'hk-btn';
+        document.getElementById('ssBtn').className = game === 'silksong' ? 'ss-btn active' : 'ss-btn';
+        
+        // 动态加载对应游戏的脚本
+        loadScripts(game);
+    }
+    
+    function loadScripts(game) {
+        // 移除现有脚本（简化版本）
+        // 实际中你可能需要更复杂的模块加载逻辑
+        console.log('加载' + (game === 'hollow' ? '原版' : '丝之歌') + '游戏脚本');
+        
+        // 这里可以动态加载对应的JS文件
+    }
+    
+    // 初始化事件
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('hkBtn').addEventListener('click', () => loadGame('hollow'));
+        document.getElementById('ssBtn').addEventListener('click', () => loadGame('silksong'));
+    });
+</script>
+
+<!-- 原版游戏脚本 -->
+<script src="hollow-knight/js/parser.js"></script>
+<script src="hollow-knight/js/completion-map.js"></script>
+<script src="hollow-knight/js/calculator.js"></script>
+<script src="hollow-knight/js/renderer.js"></script>
+<script src="hollow-knight/js/main.js"></script>
+
+<!-- 丝之歌脚本可以按需动态加载 -->
 
 </body>
 </html>
