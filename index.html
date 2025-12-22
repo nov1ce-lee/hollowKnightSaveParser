@@ -4,99 +4,7 @@
     <meta charset="UTF-8">
     <title>Hollow Knight 112%完成度 分析器</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <style>
-        body {
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f2f2f7;
-            color: #333;
-            margin: 20px;
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        #controls {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        #fileInput {
-            margin-right: 10px;
-        }
-
-        #missingList {
-            margin-bottom: 20px;
-            padding: 10px;
-            background: #fff5f5;
-            border: 1px solid #ffcccc;
-            border-radius: 6px;
-        }
-
-        #result {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        details {
-            background-color: #ffffff;
-            border-radius: 6px;
-            padding: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        summary {
-            font-weight: bold;
-            cursor: pointer;
-            font-size: 1.1em;
-        }
-
-        .section-items {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .item {
-            padding: 6px 10px;
-            border-radius: 6px;
-            min-width: 120px;
-            text-align: center;
-            font-size: 0.95em;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-
-        .done {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-
-        .missing {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
-
-        #exportBtn {
-            display: block;
-            margin: 20px auto;
-            padding: 8px 16px;
-            border-radius: 6px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-size: 1em;
-        }
-
-        #exportBtn:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <link id="themeStylesheet" rel="stylesheet" href="css/theme-hollow.css">
 </head>
 <body>
 
@@ -109,7 +17,6 @@
 
 <div id="missingList"></div>
 <div id="result"></div>
-<button id="exportBtn">导出缺失清单</button>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 <script src="js/parser.js"></script>

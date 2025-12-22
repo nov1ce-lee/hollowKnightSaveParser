@@ -12,8 +12,3 @@ document.getElementById("parseBtn").onclick = async () => {
     currentSave = fullData.playerData;   // 只取 playerData
     renderResult(currentSave);
 };
-
-document.getElementById("exportBtn").onclick = () => {
-    if (!currentSave) return;
-    exportMissing(currentSave);
-};
