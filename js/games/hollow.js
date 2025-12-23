@@ -52,13 +52,13 @@ window.GAMES.hollow = {
             category: "能力",
             unit: 2,
             items: [
-                { key: "hasDash", name: "冲刺：蛾翼披风" },
-                { key: "hasWalljump", name: "攀墙跳：螳螂爪" },
-                { key: "hasDoubleJump", name: "二段跳：帝王之翼" },
-                { key: "hasSuperDash", name: "超冲：水晶之心" },
-                { key: "hasShadowDash", name: "黑冲：暗影披风" },
-                { key: "hasAcidArmour", name: "酸泳：伊思玛的眼泪" },
-                { key: "hasKingsBrand", name: "进深渊：王之印记" }
+                { key: "hasDash", name: "冲刺|蛾翼披风" },
+                { key: "hasWalljump", name: "攀墙跳|螳螂爪" },
+                { key: "hasDoubleJump", name: "二段跳|帝王之翼" },
+                { key: "hasSuperDash", name: "超冲|水晶之心" },
+                { key: "hasShadowDash", name: "黑冲|暗影披风" },
+                { key: "hasAcidArmour", name: "酸泳|伊思玛的眼泪" },
+                { key: "hasKingsBrand", name: "进深渊|王之印记" }
             ]
         },
         // 法术
@@ -67,21 +67,21 @@ window.GAMES.hollow = {
             unit: 1,       // 每级占 1%
             key: "fireballLevel",
             max: 2,
-            items: ["白波：复仇之魂", "黑波：暗影之魂"]  // 对应等级 1, 2
+            items: ["复仇之魂|白波", "暗影之魂|黑波"]  // 对应等级 1, 2
         },
         {
             category: "法术",
             unit: 1,
             key: "screamLevel",
             max: 2,
-            items: ["白吼：嚎叫幽灵", "黑吼：深渊尖啸"]
+            items: ["嚎叫幽灵|白吼", "深渊尖啸|黑吼"]
         },
         {
             category: "法术",
             unit: 1,
             key: "quakeLevel",
             max: 2,
-            items: ["白砸：荒芜俯冲", "黑砸：黑暗降临"]
+            items: ["荒芜俯冲|白砸", "黑暗降临|黑砸"]
         },
         {
             category: "面具",
