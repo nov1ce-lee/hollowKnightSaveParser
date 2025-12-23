@@ -49,6 +49,14 @@ window.GAMES.silksong = {
         {
             category: "纹章",
             unit: 1,
+            items: [
+                { name: "野兽", checkCreasts: (creastsMap) => creastsMap["White Flower"]?.IsUnlocked },
+                { name: "收割者", checkCreasts: (creastsMap) => creastsMap["White Flower"]?.IsUnlocked },
+                { name: "漫游者", checkCreasts: (creastsMap) => creastsMap["White Flower"]?.IsUnlocked },
+                { name: "建筑师", checkCreasts: (creastsMap) => creastsMap["White Flower"]?.IsUnlocked },
+                { name: "巫妪", checkCreasts: (creastsMap) => creastsMap["White Flower"]?.IsUnlocked },
+                { name: "萨满", checkCreasts: (creastsMap) => creastsMap["Spell"]?.IsUnlocked },
+            ]
         },
         {
             category: "能力",
@@ -92,7 +100,7 @@ window.GAMES.silksong = {
             category: "特殊内容",
             unit: 1,
             items: [
-                { name: "白绽花", check: (collectablesMap) => collectablesMap["White Flower"]?.Amount > 0 }
+                { name: "白绽花", checkCollectables: (collectablesMap) => collectablesMap["White Flower"]?.Amount > 0 }
             ]
         }
     ]

@@ -27,10 +27,12 @@ function calculateCompletion(save, gameConfig) {
         }
 
         // ===== 非等级型（布尔 / Collectables / 特殊）=====
-        // Collectables Map 只构建一次
-        const collectablesMap = save.Collectables
-            ? buildCollectablesMap(save.Collectables.savedData)
-            : null;
+
+        const collectablesMap = save.Collectables ? 
+            buildMap(save.Collectables.savedData) : null;
+
+        const creastsMap = save.ToolEquips ? 
+            buildMap(save.ToolEquips.savedData) : null;
 
         if ((!Array.isArray(section.items) ||section.items.length === 0)) {
             console.info('Skip unfinished section:', section.category);
@@ -41,8 +43,10 @@ function calculateCompletion(save, gameConfig) {
             let done;
 
             // 1️⃣ item 自定义检查（优先级最高）
-            if (item.check) {
-                done = item.check(collectablesMap, save);
+            if (item.checkCollectables) {
+                done = item.checkCollectables(collectablesMap, save);
+            } else if (item.checkCreasts) {
+                done = item.checkCreasts(creastsMap, save);
             }
 
             // 2️⃣ 游戏级特殊规则（如 国王之魂）
@@ -75,6 +79,14 @@ function calculateCompletion(save, gameConfig) {
 }
 
 function buildCollectablesMap(savedData) {
+    const map = {};
+    savedData.forEach(item => {
+        map[item.Name] = item.Data;
+    });
+    return map;
+}
+
+function buildMap(savedData) {
     const map = {};
     savedData.forEach(item => {
         map[item.Name] = item.Data;
