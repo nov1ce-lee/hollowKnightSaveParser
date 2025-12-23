@@ -5,6 +5,63 @@ window.GAMES.silksong = {
 
     completionMap: [
         {
+            // Tools
+            category: "红色工具",
+            unit: 1,
+            items: []
+        },
+        {
+            category: "蓝色工具",
+            unit: 1,
+            items: []
+        },
+        {
+            category: "黄色工具",
+            unit: 1,
+            items: []
+        },
+        {
+            category: "工具袋升级",
+            unit: 1,
+            max: 4,
+            key: "ToolPouchUpgrades",
+            items: ["+1", "+2", "+3", "+4"]
+        },
+        {
+            category: "制作匣升级",
+            unit: 1,
+            max: 4,
+            key: "ToolKitUpgrades",
+            items: ["+1", "+2", "+3", "+4"]
+        },
+        {
+            category: "丝技",
+            unit: 1,
+            items: []
+        },
+        {
+            category: "丝之心",
+            unit: 1,
+            key: "silkRegenMax",
+            max: 3,
+            items: ["+1", "+2", "+3"]
+        },
+        {
+            category: "纹章",
+            unit: 1,
+        },
+        {
+            category: "能力",
+            unit: 1,
+            items: [
+                { key: "hasNeedolin", name: "织忆弦针" },
+                { key: "hasDash", name: "疾风步" },
+                { key: "hasWalljump", name: "蛛攀术" },
+                { key: "hasHarpoonDash", name: "飞针冲刺" },
+                { key: "hasSuperJump", name: "灵丝升腾" },
+            ]
+        },
+        {
             category: "面具",
             unit: 1,
             max: 5,
@@ -15,7 +72,7 @@ window.GAMES.silksong = {
             },
         },
         {
-            category: "丝轴",
+            category: "灵丝轴",
             unit: 1,
             max: 9,
             key: "silkMax",
@@ -25,15 +82,19 @@ window.GAMES.silksong = {
             },
         },
         {
-            category: "特殊能力",
+            category: "织针磨砺",
+            unit: 1,
+            max: 4,
+            key: "nailUpgrades",
+            items: ["+1", "+2", "+3", "+4"],
+        },
+        {
+            category: "特殊内容",
             unit: 1,
             items: [
-                { key: "hasNeedolin", name: "织忆弦针" },
-                { key: "hasDash", name: "冲刺" },
-                { key: "hasWalljump", name: "攀墙" },
-                { key: "hasHarpoonDash", name: "飞针冲刺" },
-                { key: "hasSuperJump", name: "二段跳" },
+                { name: "白绽花", check: (collectablesMap) => collectablesMap["White Flower"]?.Amount > 0 }
             ]
         }
     ]
 };
+
