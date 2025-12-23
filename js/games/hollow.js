@@ -88,14 +88,20 @@ window.GAMES.hollow = {
             unit: 1,
             max: 4,
             key: "maxHealthBase",
-            items: ["+1", "+2", "+3", "+4"]
+            items: ["+1", "+2", "+3", "+4"],
+            transform(value) {
+                return value - 5;
+            },
         },
         {
             category: "容器",
             unit: 1,
             max: 3,
             key: "MPReserveMax",
-            items: ["+1", "+2", "+3"]
+            items: ["+1", "+2", "+3"],
+            transform(value) {
+                return value / 33;
+            },
         },
         {
             category: "骨钉升级",

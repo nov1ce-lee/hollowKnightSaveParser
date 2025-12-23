@@ -5,11 +5,11 @@ window.GAMES.silksong = {
 
     completionMap: [
         {
-            category: "纹章",
+            category: "面具",
             unit: 1,
-            items: [
-                { key: "killedBossA", name: "Boss A" }
-            ]
-        }
+            max: 5,
+            key: "maxHealthBase",
+            items: ["+1", "+2", "+3", "+4", "+5"]
+        },
     ]
 };
