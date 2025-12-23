@@ -45,10 +45,11 @@ function renderResult(save, gameConfig) {
         // 🧹 清空旧内容（防止重复渲染）
         sectionItems.innerHTML = "";
 
-        // ===== 构建 Collectables Map（只构建一次）=====
-        const collectablesMap = save.Collectables
-            ? buildCollectablesMap(save.Collectables.savedData)
-            : null;
+        const collectablesMap = save.Collectables ? 
+            buildMap(save.Collectables.savedData) : null;
+
+        const creastsMap = save.ToolEquips ? 
+            buildMap(save.ToolEquips.savedData) : null;
 
         // ===== 等级型 =====
         if (section.max) {
@@ -78,8 +79,10 @@ function renderResult(save, gameConfig) {
             let done;
 
             // 1️⃣ item.check（最高优先级）
-            if (typeof item.check === "function") {
-                done = item.check(collectablesMap, save);
+            if (item.checkCollectables) {
+                done = item.checkCollectables(collectablesMap, save);
+            } else if (item.checkCreasts) {
+                done = item.checkCreasts(creastsMap, save);
             }
 
             // 2️⃣ gameConfig.specialCheck

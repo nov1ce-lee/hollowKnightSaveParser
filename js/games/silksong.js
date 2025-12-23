@@ -37,7 +37,14 @@ window.GAMES.silksong = {
         {
             category: "丝技",
             unit: 1,
-            items: []
+            items: [
+                { name: "丝之矛", checkTools: (toolsMap) => toolsMap["Silk Spear"]?.IsUnlocked },
+                { name: "灵丝风暴", checkTools: (toolsMap) => toolsMap["Thread Sphere"]?.IsUnlocked },
+                { name: "十字绣", checkTools: (toolsMap) => toolsMap["Silk Bow"]?.IsUnlocked },
+                { name: "丝刃镖", checkTools: (toolsMap) => toolsMap["Silk Bow"]?.IsUnlocked },
+                { name: "符文之怒", checkTools: (toolsMap) => toolsMap["Silk Bow"]?.IsUnlocked },
+                { name: "苍白之爪", checkTools: (toolsMap) => toolsMap["Silk Boss Needle"]?.IsUnlocked },
+            ]
         },
         {
             category: "丝之心",
@@ -50,11 +57,11 @@ window.GAMES.silksong = {
             category: "纹章",
             unit: 1,
             items: [
-                { name: "野兽", checkCreasts: (creastsMap) => creastsMap["White Flower"]?.IsUnlocked },
-                { name: "收割者", checkCreasts: (creastsMap) => creastsMap["White Flower"]?.IsUnlocked },
-                { name: "漫游者", checkCreasts: (creastsMap) => creastsMap["White Flower"]?.IsUnlocked },
-                { name: "建筑师", checkCreasts: (creastsMap) => creastsMap["White Flower"]?.IsUnlocked },
-                { name: "巫妪", checkCreasts: (creastsMap) => creastsMap["White Flower"]?.IsUnlocked },
+                { name: "野兽", checkCreasts: (creastsMap) => creastsMap["Warrior"]?.IsUnlocked },
+                { name: "收割者", checkCreasts: (creastsMap) => creastsMap["Reaper"]?.IsUnlocked },
+                { name: "漫游者", checkCreasts: (creastsMap) => creastsMap["Wanderer"]?.IsUnlocked },
+                { name: "建筑师", checkCreasts: (creastsMap) => creastsMap["Toolmaster"]?.IsUnlocked },
+                { name: "巫妪", checkCreasts: (creastsMap) => creastsMap["Witch"]?.IsUnlocked },
                 { name: "萨满", checkCreasts: (creastsMap) => creastsMap["Spell"]?.IsUnlocked },
             ]
         },
