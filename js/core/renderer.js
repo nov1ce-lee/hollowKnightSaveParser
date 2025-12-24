@@ -51,6 +51,9 @@ function renderResult(save, gameConfig) {
         const creastsMap = save.ToolEquips ? 
             buildMap(save.ToolEquips.savedData) : null;
 
+        const toolsMap = save.Tools ? 
+            buildMap(save.Tools.savedData) : null;
+
         // ===== 等级型 =====
         if (section.max) {
             let value = save[section.key] || 0;
@@ -83,6 +86,8 @@ function renderResult(save, gameConfig) {
                 done = item.checkCollectables(collectablesMap, save);
             } else if (item.checkCreasts) {
                 done = item.checkCreasts(creastsMap, save);
+            } else if (item.checkTools) {
+                done = item.checkTools(toolsMap, save);
             }
 
             // 2️⃣ gameConfig.specialCheck

@@ -34,6 +34,9 @@ function calculateCompletion(save, gameConfig) {
         const creastsMap = save.ToolEquips ? 
             buildMap(save.ToolEquips.savedData) : null;
 
+        const toolsMap = save.Tools ? 
+            buildMap(save.Tools.savedData) : null;
+
         if ((!Array.isArray(section.items) ||section.items.length === 0)) {
             console.info('Skip unfinished section:', section.category);
             return;
@@ -47,6 +50,8 @@ function calculateCompletion(save, gameConfig) {
                 done = item.checkCollectables(collectablesMap, save);
             } else if (item.checkCreasts) {
                 done = item.checkCreasts(creastsMap, save);
+            } else if (item.checkTools) {
+                done = item.checkTools(toolsMap, save);
             }
 
             // 2️⃣ 游戏级特殊规则（如 国王之魂）
