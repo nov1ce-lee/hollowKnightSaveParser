@@ -58,10 +58,42 @@
 
                 // 渲染 items
                 section.items.forEach(item => {
-                    const div = document.createElement("div");
-                    div.className = `item ${item.done ? "done" : "missing"}`;
-                    div.textContent = item.name;
-                    sectionItems.appendChild(div);
+                    // 1️⃣ 创建容器 (如果是链接则用 a 标签)
+                    const el = document.createElement(item.wiki ? "a" : "div");
+                    el.className = `item ${item.done ? "done" : "missing"}`;
+                    
+                    if (item.wiki) {
+                        el.href = item.wiki;
+                        el.target = "_blank";
+                        el.rel = "noopener noreferrer";
+                        el.title = "点击查看 Wiki";
+                    }
+
+                    // 2️⃣ 添加图标 (如果有)
+                    if (item.icon) {
+                        const iconWrapper = document.createElement("div");
+                        iconWrapper.className = "icon-wrapper";
+
+                        const img = document.createElement("img");
+                        img.src = item.icon;
+                        img.className = "item-icon";
+                        img.referrerPolicy = "no-referrer"; // 尝试绕过防盗链
+                        // 图片加载失败时隐藏，避免裂图
+                        img.onerror = () => { 
+                            console.warn('Image failed to load:', item.icon);
+                            iconWrapper.style.display = 'none'; // 整个wrapper隐藏
+                        }; 
+                        
+                        iconWrapper.appendChild(img);
+                        el.appendChild(iconWrapper);
+                    }
+
+                    // 3️⃣ 添加文字
+                    const span = document.createElement("span");
+                    span.textContent = item.name;
+                    el.appendChild(span);
+
+                    sectionItems.appendChild(el);
                 });
             });
         }

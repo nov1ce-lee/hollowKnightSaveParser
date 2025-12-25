@@ -25,20 +25,30 @@
                     let value = save[section.key] || 0;
                     if (section.transform) value = section.transform(value);
 
-                    section.items.forEach((name, idx) => {
+                    section.items.forEach((itemEntry, idx) => {
+                        const itemName = typeof itemEntry === 'string' ? itemEntry : itemEntry.name;
+                        const itemWiki = typeof itemEntry === 'string' ? null : itemEntry.wiki;
+                        const itemIcon = typeof itemEntry === 'string' ? null : itemEntry.icon;
+                        
                         const done = value > idx;
                         
-                        sectionResult.items.push({
-                            name: name,
-                            done: done
-                        });
+                        const resultItem = {
+                            name: itemName,
+                            done: done,
+                            wiki: itemWiki,
+                            icon: itemIcon
+                        };
+
+                        sectionResult.items.push(resultItem);
 
                         if (done) {
                             total += unit;
                         } else {
                             missing.push({
                                 category: section.category,
-                                name,
+                                name: itemName,
+                                wiki: itemWiki,
+                                icon: itemIcon,
                                 percent: unit
                             });
                         }
@@ -89,6 +99,7 @@
                     }
 
                     sectionResult.items.push({
+                        ...item, // Pass through all original properties (icon, wiki, etc.)
                         name: item.name,
                         done: !!done
                     });
@@ -97,6 +108,7 @@
                         total += unit;
                     } else {
                         missing.push({
+                            ...item, // Pass through here as well
                             category: section.category,
                             name: item.name,
                             percent: unit
