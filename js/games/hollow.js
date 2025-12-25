@@ -592,7 +592,7 @@ window.GAMES.hollow = {
                 { 
                     key: "destroyedNightmareLantern", 
                     name: "摧毁梦魇之灯", 
-                    icon: "https://pic-1326566629.cos.ap-shanghai.myqcloud.com/blog/20251225192433426.png",
+                    icon: "https://pic-1326566629.cos.ap-shanghai.myqcloud.com/wiki%5CThe_Lamp_of_Nightmares",
                     wiki: "https://hkss.huijiwiki.com/wiki/%E6%A0%BC%E6%9E%97%E5%89%A7%E5%9B%A2" 
                 },
             ]
