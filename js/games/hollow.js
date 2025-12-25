@@ -282,10 +282,10 @@ window.GAMES.hollow = {
             max: 4,
             key: "maxHealthBase",
             items: [
-                { name: "+1", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片" },
-                { name: "+2", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片" },
-                { name: "+3", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片" },
-                { name: "+4", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片" }
+                { name: "+1", icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/20/Ancient_Mask.png", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片" },
+                { name: "+2", icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/20/Ancient_Mask.png", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片" },
+                { name: "+3", icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/20/Ancient_Mask.png", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片" },
+                { name: "+4", icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/20/Ancient_Mask.png", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片" }
             ],
             transform(value) {
                 return value - 5;
@@ -297,9 +297,9 @@ window.GAMES.hollow = {
             max: 3,
             key: "MPReserveMax",
             items: [
-                { name: "+1", wiki: "https://hkss.huijiwiki.com/wiki/容器碎片" },
-                { name: "+2", wiki: "https://hkss.huijiwiki.com/wiki/容器碎片" },
-                { name: "+3", wiki: "https://hkss.huijiwiki.com/wiki/容器碎片" }
+                { name: "+1", icon: "https://huiji-public.huijistatic.com/hkss/uploads/4/4c/Soul_Vessel.png", wiki: "https://hkss.huijiwiki.com/wiki/容器碎片" },
+                { name: "+2", icon: "https://huiji-public.huijistatic.com/hkss/uploads/4/4c/Soul_Vessel.png", wiki: "https://hkss.huijiwiki.com/wiki/容器碎片" },
+                { name: "+3", icon: "https://huiji-public.huijistatic.com/hkss/uploads/4/4c/Soul_Vessel.png", wiki: "https://hkss.huijiwiki.com/wiki/容器碎片" }
             ],
             transform(value) {
                 return value / 33;
@@ -311,10 +311,26 @@ window.GAMES.hollow = {
             max: 4,
             key: "nailSmithUpgrades",
             items: [
-                { name: "+1", wiki: "https://hkss.huijiwiki.com/wiki/骨钉" },
-                { name: "+2", wiki: "https://hkss.huijiwiki.com/wiki/骨钉" },
-                { name: "+3", wiki: "https://hkss.huijiwiki.com/wiki/骨钉" },
-                { name: "+4", wiki: "https://hkss.huijiwiki.com/wiki/骨钉" }
+                { 
+                    name: "+1", 
+                    icon: "https://huiji-thumb.huijistatic.com/hkss/uploads/thumb/0/0e/Nail_2_Sharpened_Nail.png/75px-Nail_2_Sharpened_Nail.png", 
+                    wiki: "https://hkss.huijiwiki.com/wiki/骨钉" 
+                },
+                { 
+                    name: "+2", 
+                    icon: "https://huiji-thumb.huijistatic.com/hkss/uploads/thumb/2/29/Nail_3_Channelled_Nail.png/75px-Nail_3_Channelled_Nail.png", 
+                    wiki: "https://hkss.huijiwiki.com/wiki/骨钉" 
+                },
+                { 
+                    name: "+3", 
+                    icon: "https://huiji-thumb.huijistatic.com/hkss/uploads/thumb/e/e4/Nail_4_Coiled_Nail.png/75px-Nail_4_Coiled_Nail.png", 
+                    wiki: "https://hkss.huijiwiki.com/wiki/骨钉" 
+                },
+                { 
+                    name: "+4", 
+                    icon: "https://huiji-thumb.huijistatic.com/hkss/uploads/thumb/4/4a/Nail_5_Pure_Nail.png/75px-Nail_5_Pure_Nail.png", 
+                    wiki: "https://hkss.huijiwiki.com/wiki/骨钉" 
+                }   
             ]
         },
         {
@@ -345,46 +361,170 @@ window.GAMES.hollow = {
             category: "护符",
             unit: 1,
             items: [
-                { key: "gotCharm_1", name: "蜂群集结", wiki: "https://hkss.huijiwiki.com/wiki/蜂群集结" },
-                { key: "gotCharm_2", name: "任性的指南针", wiki: "https://hkss.huijiwiki.com/wiki/任性的指南针" },
-                { key: "gotCharm_3", name: "幼虫之歌", wiki: "https://hkss.huijiwiki.com/wiki/幼虫之歌" },
-                { key: "gotCharm_4", name: "坚硬外壳", wiki: "https://hkss.huijiwiki.com/wiki/坚硬外壳" },
-                { key: "gotCharm_5", name: "巴德尔之壳", wiki: "https://hkss.huijiwiki.com/wiki/巴德尔之壳" },
-                { key: "gotCharm_6", name: "亡者之怒", wiki: "https://hkss.huijiwiki.com/wiki/亡者之怒" },
-                { key: "gotCharm_7", name: "快速聚集", wiki: "https://hkss.huijiwiki.com/wiki/快速聚集" },
-                { key: "gotCharm_8", name: "生命血之心", wiki: "https://hkss.huijiwiki.com/wiki/生命血之心" },
-                { key: "gotCharm_9", name: "生命血核心", wiki: "https://hkss.huijiwiki.com/wiki/生命血核心" },
-                { key: "gotCharm_10", name: "防御者纹章", wiki: "https://hkss.huijiwiki.com/wiki/防御者纹章" },
-                { key: "gotCharm_11", name: "吸虫之巢", wiki: "https://hkss.huijiwiki.com/wiki/吸虫之巢" },
-                { key: "gotCharm_12", name: "苦痛荆棘", wiki: "https://hkss.huijiwiki.com/wiki/苦痛荆棘" },
-                { key: "gotCharm_13", name: "骄傲印记", wiki: "https://hkss.huijiwiki.com/wiki/骄傲印记" },
-                { key: "gotCharm_14", name: "稳定之体", wiki: "https://hkss.huijiwiki.com/wiki/稳定之体" },
-                { key: "gotCharm_15", name: "沉重之击", wiki: "https://hkss.huijiwiki.com/wiki/沉重之击" },
-                { key: "gotCharm_16", name: "锋利之影", wiki: "https://hkss.huijiwiki.com/wiki/锋利之影" },
-                { key: "gotCharm_17", name: "蘑菇孢子", wiki: "https://hkss.huijiwiki.com/wiki/蘑菇孢子" },
-                { key: "gotCharm_18", name: "修长之钉", wiki: "https://hkss.huijiwiki.com/wiki/修长之钉" },
-                { key: "gotCharm_19", name: "萨满之石", wiki: "https://hkss.huijiwiki.com/wiki/萨满之石" },
-                { key: "gotCharm_20", name: "灵魂捕手", wiki: "https://hkss.huijiwiki.com/wiki/灵魂捕手" },
-                { key: "gotCharm_21", name: "噬魂者", wiki: "https://hkss.huijiwiki.com/wiki/噬魂者" },
-                { key: "gotCharm_22", name: "发光子宫", wiki: "https://hkss.huijiwiki.com/wiki/发光子宫" },
-                { key: "gotCharm_23", name: "易碎心脏", wiki: "https://hkss.huijiwiki.com/wiki/易碎心脏" },
-                { key: "gotCharm_24", name: "易碎贪婪", wiki: "https://hkss.huijiwiki.com/wiki/易碎贪婪" },
-                { key: "gotCharm_25", name: "易碎力量", wiki: "https://hkss.huijiwiki.com/wiki/易碎力量" },
-                { key: "gotCharm_26", name: "骨钉大师的荣耀", wiki: "https://hkss.huijiwiki.com/wiki/骨钉大师的荣耀" },
-                { key: "gotCharm_27", name: "乔尼的祝福", wiki: "https://hkss.huijiwiki.com/wiki/乔尼的祝福" },
-                { key: "gotCharm_28", name: "乌恩之形", wiki: "https://hkss.huijiwiki.com/wiki/乌恩之形" },
-                { key: "gotCharm_29", name: "蜂巢之血", wiki: "https://hkss.huijiwiki.com/wiki/蜂巢之血" },
-                { key: "gotCharm_30", name: "舞梦者", wiki: "https://hkss.huijiwiki.com/wiki/舞梦者" },
-                { key: "gotCharm_31", name: "冲刺大师", wiki: "https://hkss.huijiwiki.com/wiki/冲刺大师" },
-                { key: "gotCharm_32", name: "快速劈砍", wiki: "https://hkss.huijiwiki.com/wiki/快速劈砍" },
-                { key: "gotCharm_33", name: "法术扭曲者", wiki: "https://hkss.huijiwiki.com/wiki/法术扭曲者" },
-                { key: "gotCharm_34", name: "深度聚集", wiki: "https://hkss.huijiwiki.com/wiki/深度聚集" },
-                { key: "gotCharm_35", name: "蜕变挽歌", wiki: "https://hkss.huijiwiki.com/wiki/蜕变挽歌" },
-                { key: "gotCharm_36", name: "国王之魂", wiki: "https://hkss.huijiwiki.com/wiki/国王之魂" },
-                { key: "gotCharm_37", name: "飞毛腿", wiki: "https://hkss.huijiwiki.com/wiki/飞毛腿" },
-                { key: "gotCharm_38", name: "梦之盾", wiki: "https://hkss.huijiwiki.com/wiki/梦之盾" },
-                { key: "gotCharm_39", name: "编织者之歌", wiki: "https://hkss.huijiwiki.com/wiki/编织者之歌" },
-                { key: "gotCharm_40", name: "格林之子", wiki: "https://hkss.huijiwiki.com/wiki/格林之子" }
+                { 
+                    key: "gotCharm_1", name: "蜂群集结", 
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/8/8a/Gathering_Swarm.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/蜂群集结" 
+                },
+                { 
+                    key: "gotCharm_2", name: "任性的指南针", 
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/7/7d/Wayward_Compass.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/任性的指南针" 
+                },
+                { 
+                    key: "gotCharm_3", name: "幼虫之歌", 
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/7/78/Grubsong.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/幼虫之歌" 
+                },
+                { 
+                    key: "gotCharm_4", name: "坚硬外壳", 
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/f/f2/Stalwart_Shell.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/坚硬外壳" 
+                },
+                { 
+                    key: "gotCharm_5", name: "巴德尔之壳", 
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/2/21/Baldur_Shell.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/巴德尔之壳" },
+                { 
+                    key: "gotCharm_6", name: "亡者之怒", 
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/4/4f/Fury_of_the_Fallen.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/亡者之怒" },
+                { 
+                    key: "gotCharm_7", name: "快速聚集", 
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/6/6a/Quick_Focus.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/快速聚集" },
+                { 
+                    key: "gotCharm_8", name: "生命血之心", 
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/7/7c/Lifeblood_Heart.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/生命血之心" },
+                { 
+                    key: "gotCharm_9", name: "生命血核心", 
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/8/81/Lifeblood_Core.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/生命血核心" },
+                { 
+                    key: "gotCharm_10", name: "防御者纹章", 
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/5/56/Defender%27s_Crest.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/防御者纹章" },
+                { 
+                    key: "gotCharm_11", name: "吸虫之巢", 
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/7/79/Flukenest.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/吸虫之巢" },
+                { 
+                    key: "gotCharm_12", name: "苦痛荆棘", 
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/8/8f/Thorns_of_Agony.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/苦痛荆棘" },
+                { 
+                    key: "gotCharm_13", name: "骄傲印记", 
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/6/69/Mark_of_Pride.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/骄傲印记" },
+                { 
+                    key: "gotCharm_14", name: "稳定之体", 
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/f/f5/Steady_Body.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/稳定之体" },
+                { 
+                    key: "gotCharm_15", name: "沉重之击", 
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/f/f6/Heavy_Blow.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/沉重之击" },
+                { 
+                    key: "gotCharm_16", name: "锋利之影", 
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/1/13/Sharp_Shadow.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/锋利之影" },
+                { 
+                    key: "gotCharm_17", name: "蘑菇孢子", 
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/7/78/Spore_Shroom.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/蘑菇孢子" },
+                { 
+                    key: "gotCharm_18", name: "修长之钉", 
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/d/d1/Longnail.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/修长之钉" },
+                { 
+                    key: "gotCharm_19", name: "萨满之石", 
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/5/5e/Shaman_Stone.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/萨满之石" },
+                { 
+                    key: "gotCharm_20", name: "灵魂捕手", 
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/c/ca/Soul_Catcher.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/灵魂捕手" },
+                { 
+                    key: "gotCharm_21", name: "噬魂者", 
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/6/6c/Soul_Eater.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/噬魂者" },
+                { 
+                    key: "gotCharm_22", name: "发光子宫", 
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/c/c6/Glowing_Womb.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/发光子宫" },
+                { 
+                    key: "gotCharm_23", name: "易碎心脏", 
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/1/13/Fragile_Heart.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/易碎心脏" },
+                { 
+                    key: "gotCharm_24", name: "易碎贪婪", 
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/b/b6/Fragile_Greed.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/易碎贪婪" },
+                { 
+                    key: "gotCharm_25", name: "易碎力量", 
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/7/7b/Fragile_Strength.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/易碎力量" },
+                { 
+                    key: "gotCharm_26", name: "骨钉大师的荣耀", 
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/0/0f/Nailmaster%27s_Glory.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/骨钉大师的荣耀" },
+                { 
+                    key: "gotCharm_27", name: "乔尼的祝福", 
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/6/67/Joni%27s_Blessing.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/乔尼的祝福" },
+                { 
+                    key: "gotCharm_28", name: "乌恩之形", 
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/b/b4/Shape_of_Unn.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/乌恩之形" },
+                { 
+                    key: "gotCharm_29", name: "蜂巢之血", 
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/e/eb/Hiveblood.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/蜂巢之血" },
+                { 
+                    key: "gotCharm_30", name: "舞梦者", 
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/9/94/Dream_Wielder.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/舞梦者" },
+                { 
+                    key: "gotCharm_31", name: "冲刺大师", 
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/7/70/Dashmaster.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/冲刺大师" },
+                { 
+                    key: "gotCharm_32", name: "快速劈砍", 
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/5/5f/Quick_Slash.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/快速劈砍" },
+                { 
+                    key: "gotCharm_33", name: "法术扭曲者", 
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/3/33/Spell_Twister.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/法术扭曲者" },
+                { 
+                    key: "gotCharm_34", name: "深度聚集", 
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/e/ea/Deep_Focus.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/深度聚集" },
+                { 
+                    key: "gotCharm_35", name: "蜕变挽歌", 
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/b/bd/Grubberfly%27s_Elegy.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/蜕变挽歌" },
+                { 
+                    key: "gotCharm_36", name: "国王之魂", 
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/3/34/Kingsoul.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/国王之魂" },
+                { 
+                    key: "gotCharm_37", name: "飞毛腿", 
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/e/e9/Sprintmaster.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/飞毛腿" },
+                { 
+                    key: "gotCharm_38", name: "梦之盾", 
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/4/47/Dreamshield.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/梦之盾" },
+                { 
+                    key: "gotCharm_39", name: "编织者之歌", 
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/2/26/Weaversong.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/编织者之歌" },
+                { 
+                    key: "gotCharm_40", name: "格林之子", 
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/6/6a/Grimmchild01.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/格林之子" }
             ]
         },
         {
