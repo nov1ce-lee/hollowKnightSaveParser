@@ -1,3 +1,5 @@
+window.GAMES = window.GAMES || {};
+
 window.GAMES.silksong = {
     id: 'silksong',
     title: 'Silksong 100% 分析器',
@@ -171,4 +173,3 @@ window.GAMES.silksong = {
         }
     ]
 };
-
