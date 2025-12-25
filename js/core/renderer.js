@@ -18,8 +18,12 @@
 
             // 3️⃣ 渲染缺失列表
             missingListDiv.innerHTML = `
-                <h2>缺失项目 (${missing.length} 个，进度 ${total}/${gameConfig.maxPercent}%)</h2>
-                <ul>${missing.map(m => `<li>[${m.category}] ${m.name}</li>`).join("")}</ul>
+                <h2 class="completion-stat">进度 ${total}/${gameConfig.maxPercent}%</h2>
+                
+                <div class="missing-content">
+                    <div class="missing-sub">缺失项目 ${missing.length} 个</div>
+                    <ul>${missing.map(m => `<li>[${m.category}] ${m.name}</li>`).join("")}</ul>
+                </div>
             `;
 
             // 4️⃣ 渲染详细 section

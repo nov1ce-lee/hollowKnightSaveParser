@@ -1,18 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Spectral:wght@400;600&display=swap');
+
 :root {
-    --bg-main: #0d1117;
-    --bg-panel: rgba(25, 30, 40, 0.85);
-    --bg-panel-light: rgba(35, 40, 55, 0.9);
+    --bg-main: #0b101e;
+    --bg-panel: rgba(20, 24, 35, 0.95);
+    
+    --text-main: #d0d5dd;
+    --text-header: #f0d096; /* HK Gold */
+    --text-muted: #8890a0;
 
-    --text-main: #e6edf3;
-    --text-muted: #9ba3b4;
+    --border-main: #3a4050;
+    --border-accent: #5c657a;
 
-    --accent-blue: #7dd3fc;
-    --accent-green: #8ce99a;
-    --accent-red: #ff8787;
-    --accent-purple: #c084fc;
+    --status-done-bg: rgba(45, 100, 160, 0.2);
+    --status-done-border: #4a90e2;
+    --status-done-text: #bce0ff;
 
-    --border-soft: rgba(255,255,255,0.08);
-    --shadow-soft: 0 8px 30px rgba(0,0,0,0.45);
+    --status-missing-bg: rgba(20, 20, 25, 0.4);
+    --status-missing-border: #444;
+    --status-missing-text: #777;
 }
 
 * {
@@ -20,78 +25,216 @@
 }
 
 body {
-    font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
-    background: radial-gradient(circle at top, #1a2235 0%, #0d1117 55%);
+    font-family: 'Spectral', serif;
+    background-color: var(--bg-main);
+    background-image: radial-gradient(circle at 50% 0%, #1a2235 0%, #0b101e 80%);
     color: var(--text-main);
     margin: 0;
-    padding: 30px 20px 50px;
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+h1, h2, h3, button, summary {
+    font-family: 'Cinzel', serif;
 }
 
 h1 {
+    color: var(--text-header);
+    text-shadow: 0 0 15px rgba(240, 208, 150, 0.3);
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--border-main);
+    padding-bottom: 20px;
     text-align: center;
-    font-weight: 300;
-    letter-spacing: 2px;
-    color: var(--accent-blue);
-    text-shadow: 0 0 12px rgba(125,211,252,.35);
 }
 
+/* Controls */
 #controls {
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
-button {
-    padding: 8px 18px;
-    border-radius: 20px;
-    background: linear-gradient(135deg, #2563eb, #1e40af);
-    color: #fff;
-    border: none;
+.game-switcher {
+    margin: 20px 0 30px;
+    text-align: center;
+}
+
+.game-switcher button, #controls button {
+    background: linear-gradient(to bottom, #2a3040, #1a202c);
+    border: 1px solid var(--border-accent);
+    color: #c8d6e5;
+    padding: 10px 25px;
+    margin: 0 5px;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(37,99,235,.35);
 }
 
-#missingList,
+.game-switcher button.active, #controls button:hover {
+    background: linear-gradient(to bottom, #3a4050, #2a3040);
+    border-color: var(--text-header);
+    color: var(--text-header);
+    box-shadow: 0 0 10px rgba(240, 208, 150, 0.2);
+    outline: none;
+}
+
+/* File Input */
+input[type="file"] {
+    background: rgba(0,0,0,0.3);
+    padding: 10px;
+    border: 1px solid var(--border-main);
+    border-radius: 4px;
+    color: var(--text-muted);
+    font-family: 'Spectral', serif;
+    margin-right: 10px;
+}
+
+/* Panels (Details/Missing) */
 details {
     background: var(--bg-panel);
-    border-radius: 14px;
-    padding: 14px 16px;
-    border: 1px solid var(--border-soft);
-    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--border-main);
+    border-radius: 4px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    overflow: hidden;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#missingList {
+    /* Container only - no visual style */
+    max-width: 1200px;
+    margin: 0 auto 20px;
+}
+
+.missing-content {
+    /* This is the new panel for missing items */
+    background: var(--bg-panel);
+    border: 1px solid var(--border-main);
+    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    
+    padding: 20px;
+    border-left: 3px solid #e74c3c; /* Red strip for missing items */
+    margin-top: 10px;
 }
 
 summary {
-    font-size: 1.15em;
-    color: var(--accent-blue);
+    background: linear-gradient(to right, rgba(255,255,255,0.03), transparent);
+    padding: 15px 20px;
+    font-size: 1.3rem;
+    color: var(--text-header);
     cursor: pointer;
+    list-style: none; /* Hide default triangle */
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
+summary::after {
+    content: "+";
+    position: absolute;
+    right: 20px;
+    color: var(--text-muted);
+    font-weight: bold;
+}
+
+details[open] summary::after {
+    content: "-";
+}
+
+details[open] summary {
+    border-bottom: 1px solid var(--border-main);
+}
+
+/* Grid Layout for Items */
 .section-items {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 14px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+    padding: 20px;
 }
 
+/* Item styling */
 .item {
-    padding: 6px 12px;
-    border-radius: 20px;
-    min-width: 120px;
+    padding: 12px 10px;
     text-align: center;
-    font-size: .9em;
-    border: 1px solid var(--border-soft);
+    border: 1px solid transparent;
+    border-radius: 3px;
+    font-size: 0.95rem;
+    transition: transform 0.2s;
+    background: rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60px;
 }
 
-.done {
-    background: rgba(56,189,248,.15);
-    color: var(--accent-green);
+.item.done {
+    background: var(--status-done-bg);
+    border-color: var(--status-done-border);
+    color: var(--status-done-text);
+    box-shadow: inset 0 0 10px rgba(74, 144, 226, 0.1);
 }
 
-.missing {
-    background: rgba(255,135,135,.15);
-    color: var(--accent-red);
+.item.missing {
+    background: var(--status-missing-bg);
+    border-color: var(--status-missing-border);
+    color: var(--status-missing-text);
+    opacity: 0.7;
 }
 
-#exportBtn {
-    display: block;
-    margin: 30px auto 0;
+.item:hover {
+    transform: translateY(-2px);
+    z-index: 1;
+    border-color: var(--text-header);
+}
+
+/* Missing List Content */
+.completion-stat {
+    text-align: center;
+    margin: 0 0 15px 0;
+    color: var(--text-header);
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: 0 0 15px rgba(240, 208, 150, 0.2);
+}
+
+.missing-sub {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    opacity: 0.8;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#missingList ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#missingList li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    color: var(--text-muted);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #0b101e;
+}
+::-webkit-scrollbar-thumb {
+    background: #3a4050;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #5c657a;
 }
