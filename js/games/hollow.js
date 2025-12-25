@@ -79,20 +79,20 @@ window.GAMES.hollow = {
                 { 
                     key: "killedDungDefender", 
                     name: "粪虫防御者", 
-                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/7/76/Dung_Defender_Idle.png",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/26/Dung_Defender_2.png",
                     wiki: "https://hkss.huijiwiki.com/wiki/粪虫防御者" 
                 },
                 { 
                     key: "hornet1Defeated", 
                     name: "守护者大黄蜂", 
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/4/4f/B_Hornet_2.png",
-                    wiki: "https://hkss.huijiwiki.com/wiki/大黄蜂_(Boss)" 
+                    wiki: "https://hkss.huijiwiki.com/wiki/%E5%AE%88%E6%8A%A4%E8%80%85%E5%A4%A7%E9%BB%84%E8%9C%82" 
                 },
                 { 
                     key: "hornetOutskirtsDefeated", 
                     name: "岗哨大黄蜂", 
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/4/4f/B_Hornet_2.png",
-                    wiki: "https://hkss.huijiwiki.com/wiki/大黄蜂_(Boss)" 
+                    wiki: "https://hkss.huijiwiki.com/wiki/%E5%B2%97%E5%93%A8%E5%A4%A7%E9%BB%84%E8%9C%82" 
                 }
             ]
         },
@@ -100,46 +100,140 @@ window.GAMES.hollow = {
             category: "战士之梦",
             unit: 1,
             items: [
-                { key: "killedGhostAladar", name: "戈布", wiki: "https://hkss.huijiwiki.com/wiki/戈布" },
-                { key: "killedGhostXero", name: "泽若", wiki: "https://hkss.huijiwiki.com/wiki/泽若" },
-                { key: "killedGhostHu", name: "胡长老", wiki: "https://hkss.huijiwiki.com/wiki/胡长老" },
-                { key: "killedGhostMarmu", name: "马尔穆", wiki: "https://hkss.huijiwiki.com/wiki/马尔穆" },
-                { key: "killedGhostNoEyes", name: "无眼", wiki: "https://hkss.huijiwiki.com/wiki/无眼" },
-                { key: "killedGhostMarkoth", name: "马科斯", wiki: "https://hkss.huijiwiki.com/wiki/马科斯" },
-                { key: "killedGhostGalien", name: "加利安", wiki: "https://hkss.huijiwiki.com/wiki/加利安" }
+                { 
+                    key: "killedGhostAladar", 
+                    name: "戈布", 
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/b/be/Gorb_without_Essence.png", 
+                    wiki: "https://hkss.huijiwiki.com/wiki/戈布" 
+                },
+                { 
+                    key: "killedGhostXero", 
+                    name: "泽若", 
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/a/a8/Xero_without_Essence.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/泽若" 
+                },
+                { 
+                    key: "killedGhostHu", 
+                    name: "胡长老", 
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/8/8f/Elder_Hu_Idle.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/胡长老" 
+                },
+                { 
+                    key: "killedGhostMarmu", 
+                    name: "马尔穆", 
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/8/84/Marmu_without_Essence.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/马尔穆" 
+                },
+                { 
+                    key: "killedGhostNoEyes", 
+                    name: "无眼", 
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/3/37/No_Eyes_Idle.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/无眼" 
+                },
+                { 
+                    key: "killedGhostMarkoth", 
+                    name: "马科斯", 
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/1/10/Markoth_without_Essence.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/马科斯" 
+                },
+                { 
+                    key: "killedGhostGalien", 
+                    name: "加利安", 
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/8/89/Galien_without_Essence.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/加利安" 
+                }
             ]
         },
         {
             category: "守梦者",
             unit: 1,
             items: [
-                { key: "lurienDefeated", name: "守望者卢瑞恩", wiki: "https://hkss.huijiwiki.com/wiki/守望者卢瑞恩" },
-                { key: "monomonDefeated", name: "教师莫诺蒙", wiki: "https://hkss.huijiwiki.com/wiki/教师莫诺蒙" },
-                { key: "hegemolDefeated", name: "野兽赫拉", wiki: "https://hkss.huijiwiki.com/wiki/野兽赫拉" }
+                { 
+                    key: "lurienDefeated", 
+                    name: "守望者卢瑞恩", 
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/5/5f/Lurien_Limbs.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/守望者卢瑞恩" 
+                },
+                { 
+                    key: "monomonDefeated", 
+                    name: "教师莫诺蒙", 
+                    icon: "https://huiji-thumb.huijistatic.com/hkss/uploads/thumb/3/39/Monomon_Body.png/228px-Monomon_Body.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/教师莫诺蒙" 
+                },
+                { 
+                    key: "hegemolDefeated", 
+                    name: "野兽赫拉", 
+                    icon: "https://huiji-thumb.huijistatic.com/hkss/uploads/thumb/b/bc/B_Herrah.png/137px-B_Herrah.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/野兽赫拉" 
+                }
             ]
         },
         {
             category: "装备",
             unit: 2,
             items: [
-                { key: "hasDash", name: "蛾翼披风 | 冲刺", wiki: "https://hkss.huijiwiki.com/wiki/蛾翼披风" },
-                { key: "hasWalljump", name: "螳螂爪 | 攀墙跳", wiki: "https://hkss.huijiwiki.com/wiki/螳螂爪" },
-                { key: "hasDoubleJump", name: "帝王之翼 | 二段跳", wiki: "https://hkss.huijiwiki.com/wiki/帝王之翼" },
-                { key: "hasSuperDash", name: "水晶之心 | 超冲", wiki: "https://hkss.huijiwiki.com/wiki/水晶之心" },
-                { key: "hasShadowDash", name: "暗影披风 | 黑冲", wiki: "https://hkss.huijiwiki.com/wiki/暗影披风" },
-                { key: "hasAcidArmour", name: "伊思玛的眼泪 | 酸泳", wiki: "https://hkss.huijiwiki.com/wiki/伊思玛的眼泪" },
-                { key: "hasKingsBrand", name: "王之印记 | 进深渊", wiki: "https://hkss.huijiwiki.com/wiki/王之印记" }
+                { 
+                    key: "hasDash", 
+                    name: "蛾翼披风", 
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/a/a2/Icon_HK_Mothwing_Cloak.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/蛾翼披风" 
+                },
+                { 
+                    key: "hasShadowDash", 
+                    name: "暗影披风", 
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/7/75/Icon_HK_Shade_Cloak.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/暗影披风" 
+                },
+                { 
+                    key: "hasWalljump", 
+                    name: "螳螂爪", 
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/b/bf/Icon_HK_Mantis_Claw.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/螳螂爪" 
+                },
+                { 
+                    key: "hasSuperDash", 
+                    name: "水晶之心", 
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/e/e8/Icon_HK_Crystal_Heart.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/水晶之心" 
+                },
+                { 
+                    key: "hasAcidArmour", 
+                    name: "伊思玛的眼泪", 
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2e/Icon_HK_Ismas_Tear.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/伊思玛的眼泪" 
+                },
+                { 
+                    key: "hasDoubleJump", 
+                    name: "帝王之翼", 
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/9/9b/Icon_HK_Monarch_Wings.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/帝王之翼" 
+                },
+                { 
+                    key: "hasKingsBrand", 
+                    name: "王之印记", 
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/e/ec/Kings_Brand_Inventory.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/王之印记" 
+                }
             ]
         },
-        // 法术
         {
             category: "法术",
-            unit: 1,       // 每级占 1%
+            unit: 1,
             key: "fireballLevel",
             max: 2,
             items: [
-                { name: "复仇之魂 | 白波", wiki: "https://hkss.huijiwiki.com/wiki/复仇之魂" },
-                { name: "暗影之魂 | 黑波", wiki: "https://hkss.huijiwiki.com/wiki/暗影之魂" }
+                { 
+                    key: "fireballLevelWhite",
+                    name: "复仇之魂 | 白波", 
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2a/Icon_HK_Fireball_White.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/复仇之魂" 
+                },
+                { 
+                    key: "fireballLevelBlack",
+                    name: "暗影之魂 | 黑波", 
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2a/Icon_HK_Fireball_Black.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/暗影之魂" 
+                }
             ]
         },
         {
@@ -148,8 +242,18 @@ window.GAMES.hollow = {
             key: "screamLevel",
             max: 2,
             items: [
-                { name: "嚎叫幽灵 | 白吼", wiki: "https://hkss.huijiwiki.com/wiki/嚎叫幽灵" },
-                { name: "深渊尖啸 | 黑吼", wiki: "https://hkss.huijiwiki.com/wiki/深渊尖啸" }
+                { 
+                    key: "screamLevelWhite",
+                    name: "嚎叫幽灵 | 白吼", 
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2a/Icon_HK_Scream_White.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/嚎叫幽灵" 
+                },
+                { 
+                    key: "screamLevelBlack",
+                    name: "深渊尖啸 | 黑吼", 
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2a/Icon_HK_Scream_Black.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/深渊尖啸" 
+                }
             ]
         },
         {
@@ -158,8 +262,18 @@ window.GAMES.hollow = {
             key: "quakeLevel",
             max: 2,
             items: [
-                { name: "荒芜俯冲 | 白砸", wiki: "https://hkss.huijiwiki.com/wiki/荒芜俯冲" },
-                { name: "黑暗降临 | 黑砸", wiki: "https://hkss.huijiwiki.com/wiki/黑暗降临" }
+                { 
+                    key: "quakeLevelWhite",
+                    name: "荒芜俯冲 | 白砸", 
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2a/Icon_HK_Quake_White.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/荒芜俯冲" 
+                },
+                { 
+                    key: "quakeLevelBlack",
+                    name: "黑暗降临 | 黑砸", 
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2a/Icon_HK_Quake_Black.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/黑暗降临" 
+                }
             ]
         },
         {
@@ -207,9 +321,24 @@ window.GAMES.hollow = {
             category: "骨钉技艺",
             unit: 1,
             items: [
-                { key: "hasDashSlash", name: "强力劈砍", wiki: "https://hkss.huijiwiki.com/wiki/强力劈砍" },
-                { key: "hasCyclone", name: "旋风劈砍", wiki: "https://hkss.huijiwiki.com/wiki/旋风劈砍" },
-                { key: "hasUpwardSlash", name: "冲刺劈砍", wiki: "https://hkss.huijiwiki.com/wiki/冲刺劈砍" }
+                { 
+                    key: "hasDashSlash", 
+                    name: "强力劈砍", 
+                    icon: "https://huiji-thumb.huijistatic.com/hkss/uploads/thumb/a/a7/Icon_HK_Great_Slash_Art.png/438px-Icon_HK_Great_Slash_Art.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/强力劈砍" 
+                },
+                { 
+                    key: "hasCyclone", 
+                    name: "旋风劈砍", 
+                    icon: "https://huiji-thumb.huijistatic.com/hkss/uploads/thumb/f/f3/Icon_HK_Cyclone_Slash_Art.png/438px-Icon_HK_Cyclone_Slash_Art.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/旋风劈砍" 
+                },
+                { 
+                    key: "hasUpwardSlash", 
+                    name: "冲刺劈砍", 
+                    icon: "https://huiji-thumb.huijistatic.com/hkss/uploads/thumb/3/3a/Icon_HK_Dash_Slash_Art.png/438px-Icon_HK_Dash_Slash_Art.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/冲刺劈砍" 
+                }
             ]
         },
         {
@@ -262,18 +391,45 @@ window.GAMES.hollow = {
             category: "梦之钉",
             unit: 1,
             items: [
-                { key: "hasDreamNail", name: "获得梦之钉", wiki: "https://hkss.huijiwiki.com/wiki/梦之钉" },
-                { key: "dreamNailUpgraded", name: "觉醒梦之钉", wiki: "https://hkss.huijiwiki.com/wiki/梦之钉" },
-                { key: "mothDeparted", name: "聆听先知的遗言", wiki: "https://hkss.huijiwiki.com/wiki/先知" }
+                { 
+                    key: "hasDreamNail", 
+                    name: "获得梦之钉", 
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/a/a2/Icon_HK_Dream_Nail.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/梦之钉" 
+                },
+                { 
+                    key: "dreamNailUpgraded", 
+                    name: "觉醒梦之钉", 
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/b/b0/Icon_HK_Awoken_Dream_Nail.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/梦之钉" 
+                },
+                { 
+                    key: "mothDeparted", 
+                    name: "聆听先知的遗言", 
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/e/ee/Seer.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/先知" 
+                }
             ]
         },
         {
             category: "愚人竞技场",
             unit: 1,
             items: [
-                { key: "colosseumBronzeCompleted", name: "勇士的试炼", wiki: "https://hkss.huijiwiki.com/wiki/愚人斗兽场#.E5.8B.87.E5.A3.AB.E7.9A.84.E8.AF.95.E7.82.BC" },
-                { key: "colosseumSilverCompleted", name: "征服者的试炼", wiki: "https://hkss.huijiwiki.com/wiki/愚人斗兽场#.E5.BE.81.E6.9C.8D.E8.80.85.E7.9A.84.E8.AF.95.E7.82.BC" },
-                { key: "colosseumGoldCompleted", name: "愚人的试炼", wiki: "https://hkss.huijiwiki.com/wiki/愚人斗兽场#.E6.84.9A.E4.BA.BA.E7.9A.84.E8.AF.95.E7.82.BC" }
+                { 
+                    key: "colosseumBronzeCompleted", 
+                    name: "勇士的试炼", 
+                    icon: "https://huiji-thumb.huijistatic.com/hkss/uploads/thumb/b/b0/Trial_of_the_Warrior.png/150px-Trial_of_the_Warrior.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/%E5%8B%87%E5%A3%AB%E7%9A%84%E8%AF%95%E7%82%BC" },
+                { 
+                    key: "colosseumSilverCompleted", 
+                    name: "征服者的试炼", 
+                    icon: "https://huiji-thumb.huijistatic.com/hkss/uploads/thumb/0/05/Trial_of_the_Conqueror.png/150px-Trial_of_the_Conqueror.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/%E5%BE%81%E6%9C%8D%E8%80%85%E7%9A%84%E8%AF%95%E7%82%BC" },
+                { 
+                    key: "colosseumGoldCompleted", 
+                    name: "愚人的试炼", 
+                    icon: "https://huiji-thumb.huijistatic.com/hkss/uploads/thumb/c/ca/Trial_of_the_Fool.png/150px-Trial_of_the_Fool.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/%E6%84%9A%E4%BA%BA%E7%9A%84%E8%AF%95%E7%82%BC" }
             ]
         },
         {
@@ -281,27 +437,72 @@ window.GAMES.hollow = {
             mutualExclusive: ["killedNightmareGrimm", "destroyedNightmareLantern"],
             unit: 1,
             items: [
-                { key: "killedGrimm", name: "击败格林团长", wiki: "https://hkss.huijiwiki.com/wiki/格林" },
-                { key: "killedNightmareGrimm", name: "击败梦魇之王格林", wiki: "https://hkss.huijiwiki.com/wiki/梦魇之王" },
-                { key: "destroyedNightmareLantern", name: "摧毁梦魇之灯", wiki: "https://hkss.huijiwiki.com/wiki/放逐" },
+                { 
+                    key: "killedGrimm", 
+                    name: "格林", 
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/b/ba/Grimm_Idle.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/格林" 
+                },
+                { 
+                    key: "killedNightmareGrimm", 
+                    name: "梦魇之王格林", 
+                    icon: "https://huiji-thumb.huijistatic.com/hkss/uploads/thumb/9/95/Nightmare_King_without_Essence.png/276px-Nightmare_King_without_Essence.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/梦魇之王格林" 
+                },
+                { 
+                    key: "destroyedNightmareLantern", 
+                    name: "摧毁梦魇之灯", 
+                    icon: "https://pic-1326566629.cos.ap-shanghai.myqcloud.com/blog/20251225192433426.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/%E6%A0%BC%E6%9E%97%E5%89%A7%E5%9B%A2" 
+                },
             ]
         },
         {
             category: "蜂巢",
             unit: 1,
             items: [
-                { key: "killedHiveKnight", name: "击败蜂巢骑士", wiki: "https://hkss.huijiwiki.com/wiki/蜂巢骑士" }
+                { 
+                    key: "killedHiveKnight", 
+                    name: "蜂巢骑士", 
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/3/3b/B_Hive_Knight.png", 
+                    wiki: "https://hkss.huijiwiki.com/wiki/蜂巢骑士" 
+                }
             ]
         },
         {
             category: "神居",
             unit: 1,
             items: [
-                { key: "hasGodfinder", name: "神明调谐器", wiki: "https://hkss.huijiwiki.com/wiki/神明调谐器" },
-                { key: "bossDoorStateTier1.completed", name: "一门 | 大师万神殿", wiki: "https://hkss.huijiwiki.com/wiki/大师万神殿" },
-                { key: "bossDoorStateTier2.completed", name: "二门 | 艺术家万神殿", wiki: "https://hkss.huijiwiki.com/wiki/艺术家万神殿" },
-                { key: "bossDoorStateTier3.completed", name: "三门 | 贤者万神殿", wiki: "https://hkss.huijiwiki.com/wiki/贤者万神殿" },
-                { key: "bossDoorStateTier4.completed", name: "四门 | 骑士万神殿", wiki: "https://hkss.huijiwiki.com/wiki/骑士万神殿" }
+                { 
+                    key: "hasGodfinder", 
+                    name: "神明调谐器", 
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/9/92/Godtuner.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/神明调谐器" 
+                },
+                { 
+                    key: "bossDoorStateTier1.completed", 
+                    name: "大师万神殿", 
+                    icon: "https://huiji-thumb.huijistatic.com/hkss/uploads/thumb/6/6b/Pantheon_of_the_Master.png/300px-Pantheon_of_the_Master.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/大师万神殿" 
+                },
+                { 
+                    key: "bossDoorStateTier2.completed", 
+                    name: "艺术家万神殿", 
+                    icon: "https://huiji-thumb.huijistatic.com/hkss/uploads/thumb/1/1a/Pantheon_of_the_Artist.png/300px-Pantheon_of_the_Artist.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/艺术家万神殿" 
+                },
+                { 
+                    key: "bossDoorStateTier3.completed", 
+                    name: "贤者万神殿", 
+                    icon: "https://huiji-thumb.huijistatic.com/hkss/uploads/thumb/a/ad/Pantheon_of_the_Sage.png/300px-Pantheon_of_the_Sage.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/贤者万神殿" 
+                },
+                { 
+                    key: "bossDoorStateTier4.completed", 
+                    name: "骑士万神殿", 
+                    icon: "https://huiji-thumb.huijistatic.com/hkss/uploads/thumb/e/e4/Pantheon_of_the_Knight.png/300px-Pantheon_of_the_Knight.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/骑士万神殿" 
+                }
             ]
         }
     ],
