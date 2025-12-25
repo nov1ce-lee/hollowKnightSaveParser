@@ -53,9 +53,6 @@
                     sectionItems = block.querySelector(".section-items");
                 }
 
-                // 🧹 清空旧内容（防止重复渲染）
-                sectionItems.innerHTML = "";
-
                 // 渲染 items
                 section.items.forEach(item => {
                     // 1️⃣ 创建容器 (如果是链接则用 a 标签)

@@ -225,13 +225,13 @@ window.GAMES.hollow = {
                 { 
                     key: "fireballLevelWhite",
                     name: "复仇之魂 | 白波", 
-                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2a/Icon_HK_Fireball_White.png",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/a/ab/Icon_HK_Vengeful_Spirit.png",
                     wiki: "https://hkss.huijiwiki.com/wiki/复仇之魂" 
                 },
                 { 
                     key: "fireballLevelBlack",
                     name: "暗影之魂 | 黑波", 
-                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2a/Icon_HK_Fireball_Black.png",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/e/ef/Icon_HK_Shade_Soul.png",
                     wiki: "https://hkss.huijiwiki.com/wiki/暗影之魂" 
                 }
             ]
@@ -245,13 +245,13 @@ window.GAMES.hollow = {
                 { 
                     key: "screamLevelWhite",
                     name: "嚎叫幽灵 | 白吼", 
-                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2a/Icon_HK_Scream_White.png",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/1/16/Icon_HK_Howling_Wraiths.png",
                     wiki: "https://hkss.huijiwiki.com/wiki/嚎叫幽灵" 
                 },
                 { 
                     key: "screamLevelBlack",
                     name: "深渊尖啸 | 黑吼", 
-                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2a/Icon_HK_Scream_Black.png",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/b/bf/Icon_HK_Abyss_Shriek.png",
                     wiki: "https://hkss.huijiwiki.com/wiki/深渊尖啸" 
                 }
             ]
@@ -265,13 +265,13 @@ window.GAMES.hollow = {
                 { 
                     key: "quakeLevelWhite",
                     name: "荒芜俯冲 | 白砸", 
-                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2a/Icon_HK_Quake_White.png",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/c/c3/Icon_HK_Desolate_Dive.png",
                     wiki: "https://hkss.huijiwiki.com/wiki/荒芜俯冲" 
                 },
                 { 
                     key: "quakeLevelBlack",
                     name: "黑暗降临 | 黑砸", 
-                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2a/Icon_HK_Quake_Black.png",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/a/a1/Icon_HK_Descending_Dark.png",
                     wiki: "https://hkss.huijiwiki.com/wiki/黑暗降临" 
                 }
             ]
