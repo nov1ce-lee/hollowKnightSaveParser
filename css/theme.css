@@ -363,3 +363,54 @@ a.item:hover {
 
 .group-item .icon-wrapper {
 }
+
+/* === Path Hint === */
+.path-hint-container {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-main);
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin: 20px auto;
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.path-hint-container code {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: var(--text-header);
+    font-family: monospace;
+    flex: 1;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+#copyPathBtn {
+    background: transparent;
+    border: 1px solid var(--border-accent);
+    color: var(--text-main);
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 4px;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+}
+
+#copyPathBtn svg {
+    fill: currentColor;
+    width: 18px;
+    height: 18px;
+}
+
+#copyPathBtn:hover {
+    background: var(--border-accent);
+    color: white;
+}
