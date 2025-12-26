@@ -74,6 +74,47 @@
                 }
 
                 section.items.forEach(item => {
+                    // === 处理 Group 类型 ===
+                    if (item.type === 'group') {
+                        const subResults = item.items.map(subItem => {
+                            let subDone;
+                            if (subItem.checkCollectables) subDone = subItem.checkCollectables(collectablesMap, save);
+                            else if (subItem.checkCreasts) subDone = subItem.checkCreasts(creastsMap, save);
+                            else if (subItem.checkTools) subDone = subItem.checkTools(toolsMap, save);
+                            else if (gameConfig.specialCheck) {
+                                const res = gameConfig.specialCheck(subItem, save);
+                                if (res !== null && res !== undefined) subDone = res;
+                            }
+                            
+                            if (subDone === undefined && subItem.key) {
+                                subDone = !!getNestedValue(save, subItem.key);
+                            }
+                            
+                            return { ...subItem, done: !!subDone };
+                        });
+
+                        const anyDone = subResults.some(r => r.done);
+                        
+                        sectionResult.items.push({
+                            type: 'group',
+                            items: subResults,
+                            anyDone: anyDone
+                        });
+
+                        if (anyDone) {
+                            total += unit;
+                        } else {
+                            missing.push({
+                                category: section.category,
+                                name: subResults.map(r => r.name).join('/'),
+                                wiki: subResults[0].wiki,
+                                icon: subResults[0].icon,
+                                percent: unit
+                            });
+                        }
+                        return;
+                    }
+
                     let done;
 
                     // 1️⃣ item 自定义检查（优先级最高）

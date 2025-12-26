@@ -41,10 +41,21 @@ window.GAMES.silksong = {
                     wiki: "https://hkss.huijiwiki.com/wiki/棘刺手环" 
                 },
                 { 
-                    name: "亡虫囊/壳囊", 
-                    checkTools: (toolsMap) => toolsMap["Dead Mans Purse"]?.IsUnlocked || toolsMap["Silk Snare"]?.IsUnlocked, 
-                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/f/fc/Dead_Bug%27s_Purse.png",
-                    wiki: "https://hkss.huijiwiki.com/wiki/亡虫囊" 
+                    type: "group",
+                    items: [
+                        {
+                            name: "亡虫囊", 
+                            checkTools: (toolsMap) => toolsMap["Dead Mans Purse"]?.IsUnlocked, 
+                            icon: "https://huiji-public.huijistatic.com/hkss/uploads/f/fc/Dead_Bug%27s_Purse.png",
+                            wiki: "https://hkss.huijiwiki.com/wiki/亡虫囊" 
+                        },
+                        {
+                            name: "壳囊",
+                            checkTools: (toolsMap) => toolsMap["Shell Satchel"]?.IsUnlocked,
+                            icon: "https://huiji-public.huijistatic.com/hkss/uploads/a/ad/Shell_Satchel.png",
+                            wiki: "https://hkss.huijiwiki.com/wiki/壳囊"
+                        }
+                    ]
                 },
                 { 
                     name: "磁石骰", 
@@ -119,11 +130,21 @@ window.GAMES.silksong = {
                     wiki: "https://hkss.huijiwiki.com/wiki/长针" 
                 },
                 { 
-                    name: "弧爪/曲镰", 
-                    checkTools: (toolsMap) => 
-                        toolsMap["Curve Claws"]?.IsUnlocked || toolsMap["Extractor"]?.IsUnlocked, 
-                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/20/Curveclaw.png",
-                    wiki: "https://hkss.huijiwiki.com/wiki/弧爪" 
+                    type: "group",
+                    items: [
+                        {
+                            name: "弧爪", 
+                            checkTools: (toolsMap) => toolsMap["Curve Claws"]?.IsUnlocked, 
+                            icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/20/Curveclaw.png",
+                            wiki: "https://hkss.huijiwiki.com/wiki/弧爪" 
+                        },
+                        {
+                            name: "曲镰",
+                            checkTools: (toolsMap) => toolsMap["Curvesickle"]?.IsUnlocked,
+                            icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/60/Curvesickle.png",
+                            wiki: "https://hkss.huijiwiki.com/wiki/曲镰"
+                        }
+                    ]
                 },
                 { 
                     name: "投掷环", 
@@ -204,10 +225,21 @@ window.GAMES.silksong = {
             unit: 1,
             items: [
                 { 
-                    name: "德鲁伊之眼/双瞳", 
-                    checkTools: (toolsMap) => toolsMap["Mosscreep Tool 1"]?.IsUnlocked || toolsMap["Mosscreep Tool 2"]?.IsUnlocked, 
-                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/1/13/Druid%27s_Eye.png",
-                    wiki: "https://hkss.huijiwiki.com/wiki/德鲁伊之眼" 
+                    type: "group",
+                    items: [
+                        {
+                            name: "德鲁伊之眼", 
+                            checkTools: (toolsMap) => toolsMap["Mosscreep Tool 1"]?.IsUnlocked, 
+                            icon: "https://huiji-public.huijistatic.com/hkss/uploads/1/13/Druid%27s_Eye.png",
+                            wiki: "https://hkss.huijiwiki.com/wiki/德鲁伊之眼" 
+                        },
+                        {
+                            name: "德鲁伊双瞳",
+                            checkTools: (toolsMap) => toolsMap["Mosscreep Tool 2"]?.IsUnlocked,
+                            icon: "https://huiji-public.huijistatic.com/hkss/uploads/c/c2/Druid%27s_Eyes.png",
+                            wiki: "https://hkss.huijiwiki.com/wiki/德鲁伊双瞳"
+                        }
+                    ]
                 },
                 { 
                     name: "熔岩钟", 
@@ -270,11 +302,21 @@ window.GAMES.silksong = {
                     wiki: "https://hkss.huijiwiki.com/wiki/储备缚丝" 
                 },
                 { 
-                    name: "爪镜/双生爪镜", 
-                    checkTools: (toolsMap) => 
-                        toolsMap["Dazzle Bind"]?.IsUnlocked || toolsMap["Dazzle Bind Upgraded"]?.IsUnlocked, 
-                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/f/fe/Claw_Mirror.png",
-                    wiki: "https://hkss.huijiwiki.com/wiki/爪镜" 
+                    type: "group",
+                    items: [
+                        {
+                            name: "爪镜", 
+                            checkTools: (toolsMap) => toolsMap["Dazzle Bind"]?.IsUnlocked, 
+                            icon: "https://huiji-public.huijistatic.com/hkss/uploads/f/fe/Claw_Mirror.png",
+                            wiki: "https://hkss.huijiwiki.com/wiki/爪镜" 
+                        },
+                        {
+                            name: "双生爪镜",
+                            checkTools: (toolsMap) => toolsMap["Dazzle Bind Upgraded"]?.IsUnlocked,
+                            icon: "https://huiji-public.huijistatic.com/hkss/uploads/7/75/Claw_Mirrors.png",
+                            wiki: "https://hkss.huijiwiki.com/wiki/双生爪镜"
+                        }
+                    ]
                 },
                 { 
                     name: "记忆晶石", 

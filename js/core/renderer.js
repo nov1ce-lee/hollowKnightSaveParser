@@ -55,6 +55,58 @@
 
                 // 渲染 items
                 section.items.forEach(item => {
+                    // === Group Item Rendering ===
+                    if (item.type === 'group') {
+                        const groupContainer = document.createElement("div");
+                        groupContainer.className = "item-group";
+                        
+                        // Attach original index to preserve L-R order in fan view
+                        const itemsWithIndex = item.items.map((subItem, idx) => ({...subItem, originalIndex: idx}));
+
+                        // Sort items: Uncompleted first (bottom), Completed last (top)
+                        // This ensures "Completed" items are visible on top of the stack (covering uncompleted ones)
+                        const uncompleted = itemsWithIndex.filter(i => !i.done);
+                        const completed = itemsWithIndex.filter(i => i.done);
+                        const sortedItems = [...uncompleted, ...completed];
+
+                        sortedItems.forEach((subItem) => {
+                            const el = document.createElement(subItem.wiki ? "a" : "div");
+                            el.className = `item group-item ${subItem.done ? "done" : "missing"}`;
+                            
+                            // Set CSS variables for fan effect using ORIGINAL index
+                            el.style.setProperty('--i', subItem.originalIndex);
+                            el.style.setProperty('--n', item.items.length);
+
+                            if (subItem.wiki) {
+                                el.href = subItem.wiki;
+                                el.target = "_blank";
+                                el.rel = "noopener noreferrer";
+                                el.title = subItem.name;
+                            }
+
+                            if (subItem.icon) {
+                                const iconWrapper = document.createElement("div");
+                                iconWrapper.className = "icon-wrapper";
+                                const img = document.createElement("img");
+                                img.src = subItem.icon;
+                                img.className = "item-icon";
+                                img.referrerPolicy = "no-referrer";
+                                img.onerror = () => { iconWrapper.style.display = 'none'; };
+                                iconWrapper.appendChild(img);
+                                el.appendChild(iconWrapper);
+                            }
+
+                            const span = document.createElement("span");
+                            span.textContent = subItem.name;
+                            el.appendChild(span);
+
+                            groupContainer.appendChild(el);
+                        });
+                        
+                        sectionItems.appendChild(groupContainer);
+                        return;
+                    }
+
                     // 1️⃣ 创建容器 (如果是链接则用 a 标签)
                     const el = document.createElement(item.wiki ? "a" : "div");
                     el.className = `item ${item.done ? "done" : "missing"}`;
