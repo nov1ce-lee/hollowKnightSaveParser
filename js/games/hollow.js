@@ -453,29 +453,50 @@ window.GAMES.hollow = {
                     key: "gotCharm_22", name: "发光子宫", 
                     icon: "https://cdn.wikimg.net/en/hkwiki/images/c/c6/Glowing_Womb.png",
                     wiki: "https://hkss.huijiwiki.com/wiki/发光子宫" },
-                { 
-                    key: "gotCharm_23", name: "易碎心脏", 
-                    icon: "https://cdn.wikimg.net/en/hkwiki/images/1/13/Fragile_Heart.png",
-                    wiki: "https://hkss.huijiwiki.com/wiki/易碎心脏",
-                    getIcon: (save) => save.fragileHealth_unbreakable ? 
-                        "https://cdn.wikimg.net/en/hkwiki/images/1/15/Unbreakable_Heart.png" : 
-                        "https://cdn.wikimg.net/en/hkwiki/images/1/13/Fragile_Heart.png"
+                {
+                    type: "group",
+                    items: [
+                        { 
+                            key: "gotCharm_23", name: "易碎心脏", 
+                            icon: "https://cdn.wikimg.net/en/hkwiki/images/1/13/Fragile_Heart.png",
+                            wiki: "https://hkss.huijiwiki.com/wiki/易碎心脏"
+                        },
+                        {
+                            key: "fragileHealth_unbreakable", name: "坚固心脏",
+                            icon: "https://cdn.wikimg.net/en/hkwiki/images/1/15/Unbreakable_Heart.png",
+                            wiki: "https://hkss.huijiwiki.com/wiki/易碎心脏"
+                        }
+                    ]
                 },
-                { 
-                    key: "gotCharm_24", name: "易碎贪婪", 
-                    icon: "https://cdn.wikimg.net/en/hkwiki/images/b/b6/Fragile_Greed.png",
-                    wiki: "https://hkss.huijiwiki.com/wiki/易碎贪婪",
-                    getIcon: (save) => save.fragileGreed_unbreakable ? 
-                        "https://cdn.wikimg.net/en/hkwiki/images/2/2a/Unbreakable_Greed.png" : 
-                        "https://cdn.wikimg.net/en/hkwiki/images/b/b6/Fragile_Greed.png"
+                {
+                    type: "group",
+                    items: [
+                        { 
+                            key: "gotCharm_24", name: "易碎贪婪", 
+                            icon: "https://cdn.wikimg.net/en/hkwiki/images/b/b6/Fragile_Greed.png",
+                            wiki: "https://hkss.huijiwiki.com/wiki/易碎贪婪"
+                        },
+                        {
+                            key: "fragileGreed_unbreakable", name: "坚固贪婪",
+                            icon: "https://cdn.wikimg.net/en/hkwiki/images/2/2a/Unbreakable_Greed.png",
+                            wiki: "https://hkss.huijiwiki.com/wiki/易碎贪婪"
+                        }
+                    ]
                 },
-                { 
-                    key: "gotCharm_25", name: "易碎力量", 
-                    icon: "https://cdn.wikimg.net/en/hkwiki/images/7/7b/Fragile_Strength.png",
-                    wiki: "https://hkss.huijiwiki.com/wiki/易碎力量",
-                    getIcon: (save) => save.fragileStrength_unbreakable ? 
-                        "https://cdn.wikimg.net/en/hkwiki/images/a/ac/Unbreakable_Strength.png" : 
-                        "https://cdn.wikimg.net/en/hkwiki/images/7/7b/Fragile_Strength.png"
+                {
+                    type: "group",
+                    items: [
+                        { 
+                            key: "gotCharm_25", name: "易碎力量", 
+                            icon: "https://cdn.wikimg.net/en/hkwiki/images/7/7b/Fragile_Strength.png",
+                            wiki: "https://hkss.huijiwiki.com/wiki/易碎力量"
+                        },
+                        {
+                            key: "fragileStrength_unbreakable", name: "坚固力量",
+                            icon: "https://cdn.wikimg.net/en/hkwiki/images/a/ac/Unbreakable_Strength.png",
+                            wiki: "https://hkss.huijiwiki.com/wiki/易碎力量"
+                        }
+                    ]
                 },
                 { 
                     key: "gotCharm_26", name: "骨钉大师的荣耀", 

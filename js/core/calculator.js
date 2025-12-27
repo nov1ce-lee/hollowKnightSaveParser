@@ -151,15 +151,17 @@
                         done: !!done
                     });
 
+                    const itemUnit = item.unit !== undefined ? item.unit : unit;
+
                     if (done) {
-                        total += unit;
+                        total += itemUnit;
                     } else {
                         missing.push({
                             ...item, // Pass through here as well
                             icon: finalIcon,
                             category: section.category,
                             name: item.name,
-                            percent: unit
+                            percent: itemUnit
                         });
                     }
                 });
