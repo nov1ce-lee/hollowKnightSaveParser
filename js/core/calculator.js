@@ -98,8 +98,14 @@
                         done = !!getNestedValue(save, item.key);
                     }
 
+                    let finalIcon = item.icon;
+                    if (item.getIcon && typeof item.getIcon === 'function') {
+                        finalIcon = item.getIcon(save);
+                    }
+
                     sectionResult.items.push({
                         ...item, // Pass through all original properties (icon, wiki, etc.)
+                        icon: finalIcon,
                         name: item.name,
                         done: !!done
                     });
@@ -109,6 +115,7 @@
                     } else {
                         missing.push({
                             ...item, // Pass through here as well
+                            icon: finalIcon,
                             category: section.category,
                             name: item.name,
                             percent: unit

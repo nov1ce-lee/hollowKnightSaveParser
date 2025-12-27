@@ -456,15 +456,27 @@ window.GAMES.hollow = {
                 { 
                     key: "gotCharm_23", name: "易碎心脏", 
                     icon: "https://cdn.wikimg.net/en/hkwiki/images/1/13/Fragile_Heart.png",
-                    wiki: "https://hkss.huijiwiki.com/wiki/易碎心脏" },
+                    wiki: "https://hkss.huijiwiki.com/wiki/易碎心脏",
+                    getIcon: (save) => save.fragileHealth_unbreakable ? 
+                        "https://cdn.wikimg.net/en/hkwiki/images/1/15/Unbreakable_Heart.png" : 
+                        "https://cdn.wikimg.net/en/hkwiki/images/1/13/Fragile_Heart.png"
+                },
                 { 
                     key: "gotCharm_24", name: "易碎贪婪", 
                     icon: "https://cdn.wikimg.net/en/hkwiki/images/b/b6/Fragile_Greed.png",
-                    wiki: "https://hkss.huijiwiki.com/wiki/易碎贪婪" },
+                    wiki: "https://hkss.huijiwiki.com/wiki/易碎贪婪",
+                    getIcon: (save) => save.fragileGreed_unbreakable ? 
+                        "https://cdn.wikimg.net/en/hkwiki/images/2/2a/Unbreakable_Greed.png" : 
+                        "https://cdn.wikimg.net/en/hkwiki/images/b/b6/Fragile_Greed.png"
+                },
                 { 
                     key: "gotCharm_25", name: "易碎力量", 
                     icon: "https://cdn.wikimg.net/en/hkwiki/images/7/7b/Fragile_Strength.png",
-                    wiki: "https://hkss.huijiwiki.com/wiki/易碎力量" },
+                    wiki: "https://hkss.huijiwiki.com/wiki/易碎力量",
+                    getIcon: (save) => save.fragileStrength_unbreakable ? 
+                        "https://cdn.wikimg.net/en/hkwiki/images/a/ac/Unbreakable_Strength.png" : 
+                        "https://cdn.wikimg.net/en/hkwiki/images/7/7b/Fragile_Strength.png"
+                },
                 { 
                     key: "gotCharm_26", name: "骨钉大师的荣耀", 
                     icon: "https://cdn.wikimg.net/en/hkwiki/images/0/0f/Nailmaster%27s_Glory.png",
@@ -523,7 +535,7 @@ window.GAMES.hollow = {
                     wiki: "https://hkss.huijiwiki.com/wiki/编织者之歌" },
                 { 
                     key: "gotCharm_40", name: "格林之子", 
-                    icon: "https://cdn.wikimg.net/en/hkwiki/images/6/6a/Grimmchild01.png",
+                    icon: "https://cdn.wikimg.net/en/hkwiki/images/9/91/Grimmchild.png",
                     wiki: "https://hkss.huijiwiki.com/wiki/格林之子" }
             ]
         },
