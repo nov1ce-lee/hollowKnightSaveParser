@@ -100,10 +100,11 @@ details {
     border-radius: 4px;
     margin-bottom: 20px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-    overflow: hidden;
+    overflow: hidden; /* This might clip the expanding cards. Need to check. */
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    overflow: visible; /* CHANGED: to allow cards to expand outside */
 }
 
 #missingList {
@@ -299,4 +300,117 @@ a.item:hover {
 }
 ::-webkit-scrollbar-thumb:hover {
     background: #5c657a;
+}
+
+/* === Stacked Card Groups === */
+.item-group {
+    position: relative;
+    aspect-ratio: 1 / 1.2;
+    min-height: 130px;
+    width: 100%;
+    z-index: 1;
+    perspective: 1000px;
+}
+
+.item-group:hover {
+    z-index: 100;
+}
+
+.group-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.3s, box-shadow 0.3s;
+    background: var(--bg-panel);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    
+    /* Initial stack: slightly rotated based on index */
+    transform: rotate(calc((var(--i) - (var(--n) - 1) / 2) * 4deg));
+    transform-origin: center 80%;
+}
+
+.group-item.done {
+    background: var(--bg-panel);
+    background-color: rgba(20, 35, 50, 0.95);
+}
+
+/* Hover Effect: Fan out */
+.item-group:hover .group-item {
+    /* Fan spread calculation */
+    --angle: calc((var(--i) - (var(--n) - 1) / 2) * 15deg);
+    --x-off: calc((var(--i) - (var(--n) - 1) / 2) * 50%);
+    
+    transform: translateX(var(--x-off)) rotate(var(--angle)) scale(1.1) translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.7);
+    z-index: calc(10 + var(--i));
+    
+    background-color: var(--bg-panel);
+}
+
+/* Highlight individual card on hover */
+.item-group:hover .group-item:hover {
+    z-index: 100;
+    transform: translateX(var(--x-off)) rotate(var(--angle)) scale(1.25) translateY(-25px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.9);
+    border-color: var(--text-header);
+}
+
+.group-item.done {
+    border-color: var(--status-done-border);
+}
+
+.group-item .icon-wrapper {
+}
+
+/* === Path Hint === */
+.path-hint-container {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-main);
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin: 20px auto;
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.path-hint-container code {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: var(--text-header);
+    font-family: monospace;
+    flex: 1;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+#copyPathBtn {
+    background: transparent;
+    border: 1px solid var(--border-accent);
+    color: var(--text-main);
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 4px;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+}
+
+#copyPathBtn svg {
+    fill: currentColor;
+    width: 18px;
+    height: 18px;
+}
+
+#copyPathBtn:hover {
+    background: var(--border-accent);
+    color: white;
 }
