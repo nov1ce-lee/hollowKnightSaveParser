@@ -457,7 +457,8 @@ window.GAMES.hollow = {
                     type: "group",
                     items: [
                         { 
-                            key: "gotCharm_23", name: "易碎心脏", 
+                            name: "易碎心脏", 
+                            customCheck: (save) => save.gotCharm_23 && !save.fragileHealth_unbreakable,
                             icon: "https://cdn.wikimg.net/en/hkwiki/images/1/13/Fragile_Heart.png",
                             wiki: "https://hkss.huijiwiki.com/wiki/易碎心脏"
                         },
@@ -472,7 +473,8 @@ window.GAMES.hollow = {
                     type: "group",
                     items: [
                         { 
-                            key: "gotCharm_24", name: "易碎贪婪", 
+                            name: "易碎贪婪", 
+                            customCheck: (save) => save.gotCharm_24 && !save.fragileGreed_unbreakable,
                             icon: "https://cdn.wikimg.net/en/hkwiki/images/b/b6/Fragile_Greed.png",
                             wiki: "https://hkss.huijiwiki.com/wiki/易碎贪婪"
                         },
@@ -487,7 +489,8 @@ window.GAMES.hollow = {
                     type: "group",
                     items: [
                         { 
-                            key: "gotCharm_25", name: "易碎力量", 
+                            name: "易碎力量", 
+                            customCheck: (save) => save.gotCharm_25 && !save.fragileStrength_unbreakable,
                             icon: "https://cdn.wikimg.net/en/hkwiki/images/7/7b/Fragile_Strength.png",
                             wiki: "https://hkss.huijiwiki.com/wiki/易碎力量"
                         },
@@ -538,10 +541,20 @@ window.GAMES.hollow = {
                     key: "gotCharm_35", name: "蜕变挽歌", 
                     icon: "https://cdn.wikimg.net/en/hkwiki/images/b/bd/Grubberfly%27s_Elegy.png",
                     wiki: "https://hkss.huijiwiki.com/wiki/蜕变挽歌" },
-                { 
-                    key: "gotCharm_36", name: "国王之魂", 
-                    icon: "https://cdn.wikimg.net/en/hkwiki/images/3/34/Kingsoul.png",
-                    wiki: "https://hkss.huijiwiki.com/wiki/国王之魂" },
+                {
+                    type: "group",
+                    items: [
+                        { 
+                            name: "国王之魂", 
+                            customCheck: (save) => save.gotCharm_36 && !save.gotShadeCharm,
+                            icon: "https://cdn.wikimg.net/en/hkwiki/images/3/34/Kingsoul.png",
+                            wiki: "https://hkss.huijiwiki.com/wiki/国王之魂" },
+                        {
+                            key: "gotShadeCharm", name: "虚空之心",
+                            icon: "https://cdn.wikimg.net/en/hkwiki/images/b/bb/Void_Heart.png",
+                            wiki: "https://hkss.huijiwiki.com/wiki/虚空之心" }
+                    ]
+                },
                 { 
                     key: "gotCharm_37", name: "飞毛腿", 
                     icon: "https://cdn.wikimg.net/en/hkwiki/images/e/e9/Sprintmaster.png",
@@ -554,10 +567,23 @@ window.GAMES.hollow = {
                     key: "gotCharm_39", name: "编织者之歌", 
                     icon: "https://cdn.wikimg.net/en/hkwiki/images/2/26/Weaversong.png",
                     wiki: "https://hkss.huijiwiki.com/wiki/编织者之歌" },
-                { 
-                    key: "gotCharm_40", name: "格林之子", 
-                    icon: "https://cdn.wikimg.net/en/hkwiki/images/9/91/Grimmchild.png",
-                    wiki: "https://hkss.huijiwiki.com/wiki/格林之子" }
+                {
+                    type: "group",
+                    items: [
+                        { 
+                            name: "格林之子", 
+                            customCheck: (save) => save.grimmChildLevel != 5 && save.gotCharm_40,
+                            icon: "https://cdn.wikimg.net/en/hkwiki/images/9/91/Grimmchild.png",
+                            wiki: "https://hkss.huijiwiki.com/wiki/格林之子" 
+                        },
+                        {
+                            name: "无忧旋律",
+                            customCheck: (save) => save.grimmChildLevel === 5,
+                            icon: "https://cdn.wikimg.net/en/hkwiki/images/c/c4/Carefree_Melody.png",
+                            wiki: "https://hkss.huijiwiki.com/wiki/无忧旋律"
+                        }
+                    ]
+                }
             ]
         },
         {

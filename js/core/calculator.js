@@ -78,7 +78,8 @@
                     if (item.type === 'group') {
                         const subResults = item.items.map(subItem => {
                             let subDone;
-                            if (subItem.checkCollectables) subDone = subItem.checkCollectables(collectablesMap, save);
+                            if (subItem.customCheck) subDone = subItem.customCheck(save);
+                            else if (subItem.checkCollectables) subDone = subItem.checkCollectables(collectablesMap, save);
                             else if (subItem.checkCreasts) subDone = subItem.checkCreasts(creastsMap, save);
                             else if (subItem.checkTools) subDone = subItem.checkTools(toolsMap, save);
                             else if (gameConfig.specialCheck) {
@@ -118,7 +119,9 @@
                     let done;
 
                     // 1️⃣ item 自定义检查（优先级最高）
-                    if (item.checkCollectables) {
+                    if (item.customCheck) {
+                        done = item.customCheck(save);
+                    } else if (item.checkCollectables) {
                         done = item.checkCollectables(collectablesMap, save);
                     } else if (item.checkCreasts) {
                         done = item.checkCreasts(creastsMap, save);
