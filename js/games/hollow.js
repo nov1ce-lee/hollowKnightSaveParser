@@ -458,7 +458,7 @@ window.GAMES.hollow = {
                     items: [
                         { 
                             name: "易碎心脏", 
-                            customCheck: (save) => save.gotCharm_23 && !save.fragileHealth_unbreakable,
+                            customCheck: (save) => save.gotCharm_23,
                             icon: "https://cdn.wikimg.net/en/hkwiki/images/1/13/Fragile_Heart.png",
                             wiki: "https://hkss.huijiwiki.com/wiki/易碎心脏"
                         },
@@ -474,7 +474,7 @@ window.GAMES.hollow = {
                     items: [
                         { 
                             name: "易碎贪婪", 
-                            customCheck: (save) => save.gotCharm_24 && !save.fragileGreed_unbreakable,
+                            customCheck: (save) => save.gotCharm_24,
                             icon: "https://cdn.wikimg.net/en/hkwiki/images/b/b6/Fragile_Greed.png",
                             wiki: "https://hkss.huijiwiki.com/wiki/易碎贪婪"
                         },
@@ -490,7 +490,7 @@ window.GAMES.hollow = {
                     items: [
                         { 
                             name: "易碎力量", 
-                            customCheck: (save) => save.gotCharm_25 && !save.fragileStrength_unbreakable,
+                            customCheck: (save) => save.gotCharm_25,
                             icon: "https://cdn.wikimg.net/en/hkwiki/images/7/7b/Fragile_Strength.png",
                             wiki: "https://hkss.huijiwiki.com/wiki/易碎力量"
                         },
