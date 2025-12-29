@@ -5,6 +5,45 @@ window.GAMES.hollow = {
     title: 'Hollow Knight 112% 分析器',
     maxPercent: 112,
 
+    modifiableItems: [
+        {
+            name: "吉欧 (Geo)",
+            type: "number",
+            getValue: (save) => save.geo || 0,
+            setValue: (save, val) => save.geo = parseInt(val)
+        },
+        {
+            name: "最大生命值 (Max Health)",
+            type: "number",
+            getValue: (save) => save.maxHealth || 5,
+            setValue: (save, val) => save.maxHealth = parseInt(val)
+        },
+        {
+            name: "苍白矿石 (Pale Ore)",
+            type: "number",
+            getValue: (save) => save.ore || 0,
+            setValue: (save, val) => save.ore = parseInt(val)
+        },
+        {
+            name: "简单钥匙 (Simple Keys)",
+            type: "number",
+            getValue: (save) => save.simpleKeys || 0,
+            setValue: (save, val) => save.simpleKeys = parseInt(val)
+        },
+        {
+            name: "腐臭蛋 (Rancid Eggs)",
+            type: "number",
+            getValue: (save) => save.rancidEggs || 0,
+            setValue: (save, val) => save.rancidEggs = parseInt(val)
+        },
+        {
+            name: "拥有梦之钉 (Has Dream Nail)",
+            type: "boolean",
+            getValue: (save) => save.hasDreamNail,
+            setValue: (save, val) => save.hasDreamNail = !!val
+        }
+    ],
+
     completionMap: [
         {
             category: "Boss",

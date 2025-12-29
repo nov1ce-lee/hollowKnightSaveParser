@@ -5,6 +5,172 @@ window.GAMES.silksong = {
     title: 'Silksong 100% 分析器',
     maxPercent: 100,
 
+    // Modifiable Items Configuration
+    modifiableItems: [
+        {
+            name: "念珠",
+            type: "number",
+            getValue: (save) => save.geo || 0,
+            setValue: (save, val) => save.geo = parseInt(val)
+        },
+        {
+            name: "最大生命值 (Masks)",
+            type: "number",
+            getValue: (save) => save.maxHealth || 5,
+            setValue: (save, val) => save.maxHealth = parseInt(val)
+        },
+        {
+            name: "壳囊",
+            type: "boolean",
+            getValue: (save) => save.Tools?.savedData?.find(t => t.Name === "Shell Satchel")?.Data?.IsUnlocked,
+            setValue: (save, val) => {
+                const toolName = "Shell Satchel";
+                if (!save.Tools?.savedData) return;
+                
+                let item = save.Tools.savedData.find(t => t.Name === toolName);
+                if (val) {
+                    if (!item) {
+                        save.Tools.savedData.push({
+                            "Name": toolName,
+                            "Data": {
+                                "IsUnlocked": true,
+                                "IsHidden": false,
+                                "HasBeenSeen": true,
+                                "HasBeenSelected": false,
+                                "AmountLeft": 0
+                            }
+                        });
+                    } else {
+                        if (!item.Data) item.Data = {};
+                        item.Data.IsUnlocked = true;
+                    }
+                } else {
+                    if (item && item.Data) item.Data.IsUnlocked = false;
+                }
+            }
+        },
+        {
+            name: "碎壳坠 (Bone Necklace)",
+            type: "boolean",
+            getValue: (save) => save.Tools?.savedData?.find(t => t.Name === "Bone Necklace")?.Data?.IsUnlocked,
+            setValue: (save, val) => {
+                const toolName = "Bone Necklace";
+                if (!save.Tools?.savedData) return;
+                
+                let item = save.Tools.savedData.find(t => t.Name === toolName);
+                if (val) {
+                    if (!item) {
+                        save.Tools.savedData.push({
+                            "Name": toolName,
+                            "Data": {
+                                "IsUnlocked": true,
+                                "IsHidden": false,
+                                "HasBeenSeen": true,
+                                "HasBeenSelected": false,
+                                "AmountLeft": 0
+                            }
+                        });
+                    } else {
+                        if (!item.Data) item.Data = {};
+                        item.Data.IsUnlocked = true;
+                    }
+                } else {
+                    if (item && item.Data) item.Data.IsUnlocked = false;
+                }
+            }
+        },
+        {
+            name: "丝弹 (雪山自制版)",
+            type: "boolean",
+            getValue: (save) => save.Tools?.savedData?.find(t => t.Name === "WebShot Weaver")?.Data?.IsUnlocked,
+            setValue: (save, val) => {
+                const toolName = "WebShot Weaver";
+                if (!save.Tools?.savedData) return;
+                
+                let item = save.Tools.savedData.find(t => t.Name === toolName);
+                if (val) {
+                    if (!item) {
+                        save.Tools.savedData.push({
+                            "Name": toolName,
+                            "Data": {
+                                "IsUnlocked": true,
+                                "IsHidden": false,
+                                "HasBeenSeen": true,
+                                "HasBeenSelected": false,
+                                "AmountLeft": 0
+                            }
+                        });
+                    } else {
+                        if (!item.Data) item.Data = {};
+                        item.Data.IsUnlocked = true;
+                    }
+                } else {
+                    if (item && item.Data) item.Data.IsUnlocked = false;
+                }
+            }
+        },
+        {
+            name: "丝弹 (建筑师版)",
+            type: "boolean",
+            getValue: (save) => save.Tools?.savedData?.find(t => t.Name === "WebShot Architect")?.Data?.IsUnlocked,
+            setValue: (save, val) => {
+                const toolName = "WebShot Architect";
+                if (!save.Tools?.savedData) return;
+                
+                let item = save.Tools.savedData.find(t => t.Name === toolName);
+                if (val) {
+                    if (!item) {
+                        save.Tools.savedData.push({
+                            "Name": toolName,
+                            "Data": {
+                                "IsUnlocked": true,
+                                "IsHidden": false,
+                                "HasBeenSeen": true,
+                                "HasBeenSelected": false,
+                                "AmountLeft": 0
+                            }
+                        });
+                    } else {
+                        if (!item.Data) item.Data = {};
+                        item.Data.IsUnlocked = true;
+                    }
+                } else {
+                    if (item && item.Data) item.Data.IsUnlocked = false;
+                }
+            }
+        },
+        {
+            name: "丝弹 (熔炉之女版)",
+            type: "boolean",
+            getValue: (save) => save.Tools?.savedData?.find(t => t.Name === "WebShot Forge")?.Data?.IsUnlocked,
+            setValue: (save, val) => {
+                const toolName = "WebShot Forge";
+                if (!save.Tools?.savedData) return;
+                
+                let item = save.Tools.savedData.find(t => t.Name === toolName);
+                if (val) {
+                    if (!item) {
+                        save.Tools.savedData.push({
+                            "Name": toolName,
+                            "Data": {
+                                "IsUnlocked": true,
+                                "IsHidden": false,
+                                "HasBeenSeen": true,
+                                "HasBeenSelected": false,
+                                "AmountLeft": 0
+                            }
+                        });
+                    } else {
+                        if (!item.Data) item.Data = {};
+                        item.Data.IsUnlocked = true;
+                    }
+                } else {
+                    if (item && item.Data) item.Data.IsUnlocked = false;
+                }
+            }
+        }
+    ],
+
     completionMap: [
         {
             category: "黄色工具",

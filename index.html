@@ -20,12 +20,6 @@
     <!-- 标题 -->
     <h1 id="pageTitle">Hollow Knight 112% 分析器</h1>
 
-    <!-- 控制区 -->
-    <div id="controls">
-        <input type="file" id="fileInput" accept=".dat">
-        <button id="parseBtn">解析存档</button>
-    </div>
-
     <!-- 路径提示 -->
     <div class="path-hint-container">
         <span class="path-label">参考存档路径:</span>
@@ -35,6 +29,29 @@
                 <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
             </svg>
         </button>
+    </div>
+
+    <!-- 控制区 -->
+    <div id="controls">
+        <input type="file" id="fileInput" accept=".dat">
+        <button id="parseBtn">解析存档</button>
+        <button id="exportBtn" style="display:none; margin-left: 10px;">导出修改</button>
+        
+        <label class="toggle-wrapper" style="margin-left: 15px;">
+            <span class="toggle-label">存档修改功能</span>
+            <input type="checkbox" id="modifierToggle">
+        </label>
+    </div>
+
+    <!-- 修改区 -->
+    <div id="modifierUI" class="modifier-panel" style="display:none;">
+        <div class="modifier-header">
+            <h3>存档修改</h3>
+            <div class="modifier-warning">
+                修改前请务必备份原存档！
+            </div>
+        </div>
+        <div id="modifierList" class="modifier-grid"></div>
     </div>
 
     <!-- 缺失列表 -->

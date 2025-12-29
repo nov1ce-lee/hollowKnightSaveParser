@@ -145,6 +145,97 @@
                     sectionItems.appendChild(el);
                 });
             });
+        },
+
+        renderModifier: function(save, gameConfig) {
+            const modifierUI = document.getElementById("modifierUI");
+            const modifierList = document.getElementById("modifierList");
+            const modifierToggle = document.getElementById("modifierToggle");
+            
+            // Clear list
+            modifierList.innerHTML = "";
+
+            // Check if modifiable items exist
+            const hasItems = gameConfig.modifiableItems && gameConfig.modifiableItems.length > 0;
+
+            // Handle Toggle Visibility
+            if (modifierToggle) {
+                if (!hasItems) {
+                    modifierToggle.disabled = true;
+                    modifierToggle.parentElement.style.display = "none";
+                    modifierUI.style.display = "none";
+                    return;
+                } else {
+                    modifierToggle.disabled = false;
+                    modifierToggle.parentElement.style.display = "flex";
+                    // Initial State
+                    modifierUI.style.display = modifierToggle.checked ? "block" : "none";
+                    
+                    // Event Listener (bind once or overwrite)
+                    modifierToggle.onchange = (e) => {
+                        modifierUI.style.display = e.target.checked ? "block" : "none";
+                    };
+                }
+            } else {
+                // Fallback if toggle missing
+                if (!hasItems) {
+                    modifierUI.style.display = "none";
+                    return;
+                }
+                modifierUI.style.display = "block";
+            }
+
+            gameConfig.modifiableItems.forEach(item => {
+                const container = document.createElement("div");
+                container.className = "modifier-item";
+
+                const label = document.createElement("label");
+                label.textContent = item.name;
+                container.appendChild(label);
+
+                let input;
+                const currentValue = item.getValue(save);
+
+                if (item.type === 'boolean') {
+                    input = document.createElement("select");
+                    
+                    const optTrue = document.createElement("option");
+                    optTrue.value = "true";
+                    optTrue.textContent = "已获得 / 是";
+                    optTrue.selected = !!currentValue;
+
+                    const optFalse = document.createElement("option");
+                    optFalse.value = "false";
+                    optFalse.textContent = "未获得 / 否";
+                    optFalse.selected = !currentValue;
+
+                    input.appendChild(optTrue);
+                    input.appendChild(optFalse);
+
+                    input.onchange = (e) => {
+                        const val = e.target.value === "true";
+                        item.setValue(save, val);
+                        // Re-render results to show impact
+                        window.SaveRenderer.renderResult(save, gameConfig);
+                    };
+
+                } else if (item.type === 'number') {
+                    input = document.createElement("input");
+                    input.type = "number";
+                    input.value = currentValue;
+                    
+                    input.onchange = (e) => {
+                        const val = parseInt(e.target.value);
+                        item.setValue(save, val);
+                        window.SaveRenderer.renderResult(save, gameConfig);
+                    };
+                }
+
+                if (input) {
+                    container.appendChild(input);
+                    modifierList.appendChild(container);
+                }
+            });
         }
     };
 

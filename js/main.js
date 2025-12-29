@@ -1,5 +1,7 @@
 let currentGame = window.GAMES.hollow;
-let currentSave = null;
+let currentSave = null;     // The playerData object (used for calculation)
+let currentFullJson = null; // The full JSON object (root)
+let currentMeta = null;     // Metadata for export
 
 document.getElementById("parseBtn").onclick = async () => {
     const fileInput = document.getElementById("fileInput");
@@ -12,14 +14,74 @@ document.getElementById("parseBtn").onclick = async () => {
     }
 
     try {
-        const data = await window.SaveParser.parseDatFile(file);
-        currentSave = data.playerData;
+        const parsed = await window.SaveParser.parseDatFile(file);
+        
+        currentFullJson = parsed.json;
+        currentMeta = parsed.meta;
+        // Assume structure is { playerData: ... } or root is playerData.
+        // Based on hollow.js keys (e.g. hasDash), if root has them, use root.
+        // Usually HK saves are { "playerData": { ... }, ... }
+        currentSave = currentFullJson.playerData || currentFullJson;
+
         window.SaveRenderer.renderResult(currentSave, currentGame);
+        
+        // Render Modifier UI (Always render, visibility controlled by toggle)
+        if (window.SaveRenderer.renderModifier) {
+            window.SaveRenderer.renderModifier(currentSave, currentGame);
+        }
+        
+        updateModifierVisibility();
+
     } catch (e) {
         console.error("Parsing error:", e);
         alert("解析失败: " + e.message);
     }
 };
+
+document.getElementById("exportBtn").onclick = () => {
+    if (!currentFullJson || !currentMeta) {
+        alert("没有可导出的存档数据");
+        return;
+    }
+
+    try {
+        const newDat = window.SaveParser.exportDatFile(currentFullJson, currentMeta);
+        
+        // Trigger download
+        const blob = new Blob([newDat], { type: "application/octet-stream" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "user2.dat"; // Default name
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    } catch (e) {
+        console.error("Export error:", e);
+        alert("导出失败: " + e.message);
+    }
+};
+
+function updateModifierVisibility() {
+    const toggle = document.getElementById("modifierToggle");
+    const modifierUI = document.getElementById("modifierUI");
+    const exportBtn = document.getElementById("exportBtn");
+    
+    const hasData = currentSave !== null;
+    const isEnabled = toggle.checked;
+    const hasModifiableItems = currentGame.modifiableItems && currentGame.modifiableItems.length > 0;
+
+    if (hasData && isEnabled && hasModifiableItems) {
+        modifierUI.style.display = "block";
+        exportBtn.style.display = "inline-block";
+    } else {
+        modifierUI.style.display = "none";
+        exportBtn.style.display = "none";
+    }
+}
+
+document.getElementById("modifierToggle").onchange = updateModifierVisibility;
 
 function switchGame(gameId) {
     if (!window.GAMES || !window.GAMES[gameId]) return;
@@ -33,6 +95,11 @@ function switchGame(gameId) {
     document.getElementById("result").innerHTML = "";
     document.getElementById("missingList").innerHTML = "";
     
+    // Clear Modifier UI
+    document.getElementById("modifierUI").style.display = "none";
+    document.getElementById("modifierList").innerHTML = "";
+    document.getElementById("exportBtn").style.display = "none";
+    
     // Update path hint
     const paths = {
         hollow: String.raw`C:\Users\%USERNAME%\AppData\LocalLow\Team Cherry\Hollow Knight`,
@@ -43,9 +110,9 @@ function switchGame(gameId) {
         pathDisplay.textContent = paths[gameId] || paths.hollow;
     }
 
-    // If we have a save loaded, re-render it with the new game config (though usually save formats differ)
-    // But for now, let's just clear.
     currentSave = null;
+    currentFullJson = null;
+    currentMeta = null;
 }
 
 // Copy path logic
