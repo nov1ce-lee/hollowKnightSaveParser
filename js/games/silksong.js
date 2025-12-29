@@ -140,7 +140,7 @@ window.GAMES.silksong = {
                         },
                         {
                             name: "曲镰",
-                            checkTools: (toolsMap) => toolsMap["Curvesickle"]?.IsUnlocked,
+                            checkTools: (toolsMap) => toolsMap["Curve Claws Upgraded"]?.IsUnlocked,
                             icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/60/Curvesickle.png",
                             wiki: "https://hkss.huijiwiki.com/wiki/曲镰"
                         }
