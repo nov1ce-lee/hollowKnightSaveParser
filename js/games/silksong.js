@@ -164,11 +164,28 @@ window.GAMES.silksong = {
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0f/Conchcutter.png",
                     wiki: "https://hkss.huijiwiki.com/wiki/螺切刃" 
                 },
-                { 
-                    name: "丝弹", 
-                    checkTools: (toolsMap) => toolsMap["WebShot Architect"]?.IsUnlocked, 
-                    icon: "https://huiji-thumb.huijistatic.com/hkss/uploads/thumb/3/32/Silkshot%28Twelfth_Architect%29.png/108px-Silkshot%28Twelfth_Architect%29.png",
-                    wiki: "https://hkss.huijiwiki.com/wiki/丝弹" 
+                {
+                    type: "group",
+                    items: [
+                        {
+                            name: "丝弹", 
+                            checkTools: (toolsMap) => toolsMap["WebShot Weaver"]?.IsUnlocked, 
+                            icon: "https://huiji-thumb.huijistatic.com/hkss/uploads/thumb/b/b3/Silkshot.png/72px-Silkshot.png",
+                            wiki: "https://hkss.huijiwiki.com/wiki/丝弹" 
+                        },
+                        {
+                            name: "丝弹", 
+                            checkTools: (toolsMap) => toolsMap["WebShot Architect"]?.IsUnlocked, 
+                            icon: "https://huiji-thumb.huijistatic.com/hkss/uploads/thumb/3/32/Silkshot%28Twelfth_Architect%29.png/72px-Silkshot%28Twelfth_Architect%29.png",
+                            wiki: "https://hkss.huijiwiki.com/wiki/丝弹" 
+                        },
+                        {
+                            name: "丝弹", 
+                            checkTools: (toolsMap) => toolsMap["WebShot Forge"]?.IsUnlocked, 
+                            icon: "https://huiji-thumb.huijistatic.com/hkss/uploads/thumb/b/b9/Silkshot%28Forge_Daughter%29.png/72px-Silkshot%28Forge_Daughter%29.png",
+                            wiki: "https://hkss.huijiwiki.com/wiki/丝弹" 
+                        }
+                    ]
                 },
                 { 
                     name: "掘洞钻", 
