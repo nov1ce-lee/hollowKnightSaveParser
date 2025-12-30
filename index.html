@@ -35,12 +35,18 @@
     <div id="controls">
         <input type="file" id="fileInput" accept=".dat">
         <button id="parseBtn">解析存档</button>
-        <button id="exportBtn" style="display:none; margin-left: 10px;">导出修改</button>
-        
-        <label class="toggle-wrapper" style="margin-left: 15px;">
+    </div>
+
+    <!-- 修改功能控制栏 -->
+    <div id="modifierControls" class="modifier-controls" style="display:none;">
+        <!-- 左侧：开关 -->
+        <label class="toggle-wrapper">
             <span class="toggle-label">存档修改功能</span>
             <input type="checkbox" id="modifierToggle">
         </label>
+
+        <!-- 右侧：导出按钮 -->
+        <button id="exportBtn" style="display:none;">导出修改</button>
     </div>
 
     <!-- 修改区 -->

@@ -13,12 +13,6 @@ window.GAMES.hollow = {
             setValue: (save, val) => save.geo = parseInt(val)
         },
         {
-            name: "最大生命值 (Max Health)",
-            type: "number",
-            getValue: (save) => save.maxHealth || 5,
-            setValue: (save, val) => save.maxHealth = parseInt(val)
-        },
-        {
             name: "苍白矿石 (Pale Ore)",
             type: "number",
             getValue: (save) => save.ore || 0,
@@ -37,11 +31,14 @@ window.GAMES.hollow = {
             setValue: (save, val) => save.rancidEggs = parseInt(val)
         },
         {
-            name: "拥有梦之钉 (Has Dream Nail)",
+            name: "铁匠存活",
             type: "boolean",
-            getValue: (save) => save.hasDreamNail,
-            setValue: (save, val) => save.hasDreamNail = !!val
-        }
+            getValue: (save) => !save.nailsmithKilled && save.nailsmithSpared,
+            setValue: (save, val) => {
+                save.nailsmithKilled = !val;
+                save.nailsmithSpared = val;
+            }
+        },
     ],
 
     completionMap: [
@@ -585,7 +582,7 @@ window.GAMES.hollow = {
                     items: [
                         { 
                             name: "国王之魂", 
-                            customCheck: (save) => save.gotCharm_36 && !save.gotShadeCharm,
+                            customCheck: (save) => save.gotQueenFragment && save.gotKingFragment && !save.gotShadeCharm,
                             icon: "https://cdn.wikimg.net/en/hkwiki/images/3/34/Kingsoul.png",
                             wiki: "https://hkss.huijiwiki.com/wiki/国王之魂" },
                         {
@@ -743,12 +740,5 @@ window.GAMES.hollow = {
                 }
             ]
         }
-    ],
-
-    specialCheck(item, save) {
-        if (item.name === '国王之魂') {
-            return save.gotQueenFragment && save.gotKingFragment;
-        }
-        return null; // 使用默认逻辑
-    }
+    ]
 };

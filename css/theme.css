@@ -60,12 +60,21 @@ h1 {
     flex-wrap: wrap;
 }
 
+.modifier-controls {
+    margin: 0 auto 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    gap: 20px;
+}
+
 .game-switcher {
     margin: 20px 0 30px;
     text-align: center;
 }
 
-.game-switcher button, #controls button {
+.game-switcher button, #controls button, .modifier-controls button {
     background: linear-gradient(to bottom, #2a3040, #1a202c);
     border: 1px solid var(--border-accent);
     color: #c8d6e5;
@@ -80,7 +89,7 @@ h1 {
     cursor: pointer;
 }
 
-.game-switcher button.active, #controls button:hover {
+.game-switcher button.active, #controls button:hover, .modifier-controls button:hover {
     background: linear-gradient(to bottom, #3a4050, #2a3040);
     border-color: var(--text-header);
     color: var(--text-header);

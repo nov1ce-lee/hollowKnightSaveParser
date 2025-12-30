@@ -67,12 +67,22 @@ function updateModifierVisibility() {
     const toggle = document.getElementById("modifierToggle");
     const modifierUI = document.getElementById("modifierUI");
     const exportBtn = document.getElementById("exportBtn");
+    const modifierControls = document.getElementById("modifierControls");
     
     const hasData = currentSave !== null;
     const isEnabled = toggle.checked;
     const hasModifiableItems = currentGame.modifiableItems && currentGame.modifiableItems.length > 0;
 
-    if (hasData && isEnabled && hasModifiableItems) {
+    // Control the container visibility (Toggle + Export Button)
+    if (hasData && hasModifiableItems) {
+        modifierControls.style.display = "flex";
+    } else {
+        modifierControls.style.display = "none";
+        // Reset toggle if hidden? Maybe not needed.
+    }
+
+    // Control the UI and Export visibility based on Toggle
+    if (hasData && hasModifiableItems && isEnabled) {
         modifierUI.style.display = "block";
         exportBtn.style.display = "inline-block";
     } else {

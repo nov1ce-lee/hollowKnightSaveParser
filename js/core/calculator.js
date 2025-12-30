@@ -82,10 +82,6 @@
                             else if (subItem.checkCollectables) subDone = subItem.checkCollectables(collectablesMap, save);
                             else if (subItem.checkCreasts) subDone = subItem.checkCreasts(creastsMap, save);
                             else if (subItem.checkTools) subDone = subItem.checkTools(toolsMap, save);
-                            else if (gameConfig.specialCheck) {
-                                const res = gameConfig.specialCheck(subItem, save);
-                                if (res !== null && res !== undefined) subDone = res;
-                            }
                             
                             if (subDone === undefined && subItem.key) {
                                 subDone = !!getNestedValue(save, subItem.key);

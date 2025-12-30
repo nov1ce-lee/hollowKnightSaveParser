@@ -14,47 +14,11 @@ window.GAMES.silksong = {
             setValue: (save, val) => save.geo = parseInt(val)
         },
         {
-            name: "最大生命值 (Masks)",
-            type: "number",
-            getValue: (save) => save.maxHealth || 5,
-            setValue: (save, val) => save.maxHealth = parseInt(val)
-        },
-        {
             name: "壳囊",
             type: "boolean",
             getValue: (save) => save.Tools?.savedData?.find(t => t.Name === "Shell Satchel")?.Data?.IsUnlocked,
             setValue: (save, val) => {
                 const toolName = "Shell Satchel";
-                if (!save.Tools?.savedData) return;
-                
-                let item = save.Tools.savedData.find(t => t.Name === toolName);
-                if (val) {
-                    if (!item) {
-                        save.Tools.savedData.push({
-                            "Name": toolName,
-                            "Data": {
-                                "IsUnlocked": true,
-                                "IsHidden": false,
-                                "HasBeenSeen": true,
-                                "HasBeenSelected": false,
-                                "AmountLeft": 0
-                            }
-                        });
-                    } else {
-                        if (!item.Data) item.Data = {};
-                        item.Data.IsUnlocked = true;
-                    }
-                } else {
-                    if (item && item.Data) item.Data.IsUnlocked = false;
-                }
-            }
-        },
-        {
-            name: "碎壳坠 (Bone Necklace)",
-            type: "boolean",
-            getValue: (save) => save.Tools?.savedData?.find(t => t.Name === "Bone Necklace")?.Data?.IsUnlocked,
-            setValue: (save, val) => {
-                const toolName = "Bone Necklace";
                 if (!save.Tools?.savedData) return;
                 
                 let item = save.Tools.savedData.find(t => t.Name === toolName);
