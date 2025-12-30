@@ -162,6 +162,14 @@
                 const container = document.createElement("div");
                 container.className = "modifier-item";
 
+                // Tooltip
+                if (item.desc) {
+                    const tooltip = document.createElement("div");
+                    tooltip.className = "tooltip-text";
+                    tooltip.innerHTML = item.desc; // Allow HTML in description
+                    container.appendChild(tooltip);
+                }
+
                 const label = document.createElement("label");
                 label.textContent = item.name;
                 container.appendChild(label);
@@ -171,15 +179,21 @@
 
                 if (item.type === 'boolean') {
                     input = document.createElement("select");
+
+                    // If preventManualTrue is set and current value is false, disable input or restrict options
+                    if (item.preventManualTrue && !currentValue) {
+                        input.disabled = true;
+                        input.title = "此项不可手动标记为完成，仅支持从完成状态回退";
+                    }
                     
                     const optTrue = document.createElement("option");
                     optTrue.value = "true";
-                    optTrue.textContent = "已获得 / 是";
+                    optTrue.textContent = item.trueText || "已获得 / 是";
                     optTrue.selected = !!currentValue;
 
                     const optFalse = document.createElement("option");
                     optFalse.value = "false";
-                    optFalse.textContent = "未获得 / 否";
+                    optFalse.textContent = item.falseText || "未获得 / 否";
                     optFalse.selected = !currentValue;
 
                     input.appendChild(optTrue);

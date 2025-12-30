@@ -220,11 +220,15 @@ details {
 .modifier-item {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     background: rgba(0,0,0,0.3);
     padding: 15px;
     border-radius: 4px;
     border: 1px solid transparent;
     transition: border-color 0.2s;
+    position: relative; /* For tooltip positioning */
 }
 
 .modifier-item:hover {
@@ -232,24 +236,58 @@ details {
 }
 
 .modifier-item label {
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     color: var(--text-main);
     font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
 }
 
 .modifier-item input, .modifier-item select {
-    padding: 8px;
-    background: #1a202c;
+    padding: 10px 15px;
+    background-color: rgba(20, 24, 35, 0.8);
     color: var(--text-main);
     border: 1px solid var(--border-main);
-    border-radius: 4px;
+    border-radius: 6px;
     font-family: 'Spectral', serif;
+    font-size: 1rem;
     width: 100%;
+    text-align: left;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.modifier-item select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f0d096' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 18px;
+    padding-right: 35px; /* Space for the custom arrow */
+}
+
+.modifier-item input:hover, .modifier-item select:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    border-color: var(--text-header);
+    background-color: rgba(30, 36, 50, 0.9);
 }
 
 .modifier-item input:focus, .modifier-item select:focus {
     outline: none;
     border-color: var(--text-header);
+    transform: scale(0.98);
+    box-shadow: 0 0 0 3px rgba(240, 208, 150, 0.2);
+    background-color: rgba(20, 24, 35, 1);
+}
+
+/* Fix for select options not inheriting styles on some browsers */
+.modifier-item select option {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    padding: 10px;
 }
 
 summary {
@@ -540,4 +578,48 @@ a.item:hover {
 #copyPathBtn:hover {
     background: var(--border-accent);
     color: white;
+}
+
+/* Tooltip Styles */
+.modifier-item {
+    position: relative; /* Ensure positioning context for tooltip */
+}
+
+.modifier-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.tooltip-text {
+    visibility: hidden;
+    width: 250px;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    text-align: center;
+    border-radius: 6px;
+    padding: 12px;
+    position: absolute;
+    z-index: 1000;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px) scale(0.9);
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid var(--text-header);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.8);
+    pointer-events: none;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: normal;
+    margin-bottom: 10px;
+}
+
+.tooltip-text::after {
+    display: none;
+}
+
+.modifier-item:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
 }

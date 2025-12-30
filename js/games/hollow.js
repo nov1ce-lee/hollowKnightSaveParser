@@ -31,14 +31,48 @@ window.GAMES.hollow = {
             setValue: (save, val) => save.rancidEggs = parseInt(val)
         },
         {
-            name: "铁匠存活",
+            name: "剧团仪式",
             type: "boolean",
-            getValue: (save) => !save.nailsmithKilled && save.nailsmithSpared,
+            trueText: "完成",
+            falseText: "未完成",
+            preventManualTrue: true,
+            desc: "回退完成剧团仪式的操作<br>存档状态恢复至仪式未完成的状态<br><b>格林之子</b>也会降至等级3<br><span style='color: #e74c3c'>此操作不可逆，仅支持回退</span>",
+            getValue: (save) => save.killedNightmareGrimm && save.grimmChildLevel == 4,
             setValue: (save, val) => {
-                save.nailsmithKilled = !val;
-                save.nailsmithSpared = val;
+                if (!val) {
+                    save.killedNightmareGrimm = false;
+                    save.grimmChildLevel = 3;
+                    save.troupeInTown = true;
+                    save.divineInTown = true;
+                    save.flamesCollected = 0;
+                    // Ensure Banishment flags are cleared just in case (though they shouldn't be set)
+                    save.destroyedNightmareLantern = false;
+                    save.nymmInTown = false;
+                }
             }
         },
+        {
+            name: "放逐剧团",
+            type: "boolean",
+            trueText: "完成",
+            falseText: "未完成",
+            preventManualTrue: true,
+            desc: "回退放逐剧团的操作<br>存档状态恢复至未放逐剧团的状态<br><b>无忧旋律</b>也会被恢复为<b>格林之子</b><br><span style='color: #e74c3c'>此操作不可逆，仅支持回退</span>",
+            getValue: (save) => save.destroyedNightmareLantern && save.grimmChildLevel == 5,
+            setValue: (save, val) => {
+                if (!val) {
+                    save.troupeInTown = true;
+                    save.divineInTown = true;
+                    save.gotBrummsFlame = false;
+                    save.brummBrokeBrazier = false;
+                    save.destroyedNightmareLantern = false;
+                    save.grimmChildLevel = 3;
+                    save.nymmInTown = false;
+                    save.nymmSpoken = false;
+                    save.flamesCollected = 0;
+                }
+            }
+        }
     ],
 
     completionMap: [
@@ -614,7 +648,7 @@ window.GAMES.hollow = {
                         },
                         {
                             name: "无忧旋律",
-                            customCheck: (save) => save.grimmChildLevel === 5,
+                            customCheck: (save) => save.grimmChildLevel === 5 && save.gotCharm_40,
                             icon: "https://cdn.wikimg.net/en/hkwiki/images/c/c4/Carefree_Melody.png",
                             wiki: "https://hkss.huijiwiki.com/wiki/无忧旋律"
                         }

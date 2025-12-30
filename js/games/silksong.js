@@ -22,6 +22,9 @@ window.GAMES.silksong = {
         {
             name: "壳囊",
             type: "boolean",
+            trueText: "已获取",
+            falseText: "未获取",
+            desc: "在非钢魂模式下<br>获取<b>钢魂模式下</b>特有的<b>壳囊</b><br>会在背包中额外多出壳囊",
             getValue: (save) => save.Tools?.savedData?.find(t => t.Name === "Shell Satchel")?.Data?.IsUnlocked,
             setValue: (save, val) => {
                 const toolName = "Shell Satchel";
@@ -50,8 +53,11 @@ window.GAMES.silksong = {
             }
         },
         {
-            name: "丝弹 (雪山自制版)",
+            name: "丝弹 (雪山版)",
             type: "boolean",
+            trueText: "已获取",
+            falseText: "未获取",
+            desc: "可额外获取<b>雪山</b>自己修复的丝弹",
             getValue: (save) => save.Tools?.savedData?.find(t => t.Name === "WebShot Weaver")?.Data?.IsUnlocked,
             setValue: (save, val) => {
                 const toolName = "WebShot Weaver";
@@ -82,6 +88,9 @@ window.GAMES.silksong = {
         {
             name: "丝弹 (建筑师版)",
             type: "boolean",
+            trueText: "已获取",
+            falseText: "未获取",
+            desc: "可额外获取<b>建筑师</b>改装的丝弹",
             getValue: (save) => save.Tools?.savedData?.find(t => t.Name === "WebShot Architect")?.Data?.IsUnlocked,
             setValue: (save, val) => {
                 const toolName = "WebShot Architect";
@@ -112,6 +121,9 @@ window.GAMES.silksong = {
         {
             name: "丝弹 (熔炉之女版)",
             type: "boolean",
+            trueText: "已获取",
+            falseText: "未获取",
+            desc: "可额外获取<b>熔炉之女</b>改装的丝弹",
             getValue: (save) => save.Tools?.savedData?.find(t => t.Name === "WebShot Forge")?.Data?.IsUnlocked,
             setValue: (save, val) => {
                 const toolName = "WebShot Forge";
