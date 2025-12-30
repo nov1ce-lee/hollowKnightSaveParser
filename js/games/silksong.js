@@ -14,6 +14,12 @@ window.GAMES.silksong = {
             setValue: (save, val) => save.geo = parseInt(val)
         },
         {
+            name: "甲壳碎片",
+            type: "number",
+            getValue: (save) => save.ShellShards || 0,
+            setValue: (save, val) => save.ShellShards = parseInt(val)
+        },
+        {
             name: "壳囊",
             type: "boolean",
             getValue: (save) => save.Tools?.savedData?.find(t => t.Name === "Shell Satchel")?.Data?.IsUnlocked,
