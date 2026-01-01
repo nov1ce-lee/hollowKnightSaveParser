@@ -23,7 +23,7 @@ document.getElementById("parseBtn").onclick = async () => {
         // Usually HK saves are { "playerData": { ... }, ... }
         currentSave = currentFullJson.playerData || currentFullJson;
 
-        window.SaveRenderer.renderResult(currentSave, currentGame);
+        window.SaveRenderer.renderResult(currentSave, currentGame, currentFullJson);
         
         // Render Modifier UI (Always render, visibility controlled by toggle)
         if (window.SaveRenderer.renderModifier) {

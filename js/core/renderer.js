@@ -1,6 +1,6 @@
 (function(window) {
     const SaveRenderer = {
-        renderResult: function(save, gameConfig) {
+        renderResult: function(save, gameConfig, fullJson) {
             const missingListDiv = document.getElementById("missingList");
             const root = document.getElementById("result");
 
@@ -14,7 +14,9 @@
             }
 
             // 2️⃣ 计算完成度
-            const { total, missing, detailedSections } = window.SaveCalculator.calculateCompletion(save, gameConfig);
+            // Use passed fullJson, or fallback to window.currentFullJson if available (for backward compat)
+            const effectiveFullJson = fullJson || window.currentFullJson || null;
+            const { total, missing, detailedSections } = window.SaveCalculator.calculateCompletion(save, gameConfig, effectiveFullJson);
 
             // 3️⃣ 渲染缺失列表
             missingListDiv.innerHTML = `
@@ -223,6 +225,146 @@
                     modifierList.appendChild(container);
                 }
             });
+        },
+
+        renderSceneData: function(sceneData) {
+            const container = document.getElementById("sceneDataList");
+            container.innerHTML = ""; // Clear
+
+            if (!sceneData) return;
+
+            // Create a main Details element
+            const mainDetails = document.createElement("details");
+            // mainDetails.open = false; // Closed by default
+            
+            const summary = document.createElement("summary");
+            summary.textContent = "场景数据 (Scene Data)";
+            mainDetails.appendChild(summary);
+
+            const content = document.createElement("div");
+            content.style.padding = "20px";
+            content.style.color = "var(--text-main)";
+
+            // Helper to render a list of items grouped by SceneName
+            const renderGroupedItems = (title, items, valueKey, sceneKey, idKey) => {
+                if (!items || items.length === 0) return;
+
+                const sectionDetails = document.createElement("details");
+                sectionDetails.style.marginBottom = "10px";
+                const secSummary = document.createElement("summary");
+                secSummary.textContent = `${title} (${items.length})`;
+                secSummary.style.fontSize = "1.1rem";
+                secSummary.style.color = "var(--text-muted)";
+                sectionDetails.appendChild(secSummary);
+
+                const table = document.createElement("table");
+                table.style.width = "100%";
+                table.style.borderCollapse = "collapse";
+                table.style.marginTop = "10px";
+                table.style.fontSize = "0.9rem";
+
+                // Group by sceneName
+                const grouped = {};
+                items.forEach(item => {
+                    // Try to resolve scene name from configured key, fallback to common keys
+                    const scene = item[sceneKey] || item.SceneName || item.sceneName || "Global";
+                    if (!grouped[scene]) grouped[scene] = [];
+                    grouped[scene].push(item);
+                });
+
+                // Sort scenes alphabetically
+                Object.keys(grouped).sort().forEach(scene => {
+                    // Scene Header Row
+                    const sceneRow = document.createElement("tr");
+                    sceneRow.style.background = "rgba(255,255,255,0.1)";
+                    const sceneCell = document.createElement("td");
+                    sceneCell.colSpan = 2;
+                    sceneCell.textContent = scene;
+                    sceneCell.style.padding = "8px";
+                    sceneCell.style.fontWeight = "bold";
+                    sceneRow.appendChild(sceneCell);
+                    table.appendChild(sceneRow);
+
+                    // Items
+                    grouped[scene].forEach(item => {
+                        const tr = document.createElement("tr");
+                        tr.style.borderBottom = "1px solid rgba(255,255,255,0.05)";
+                        
+                        const tdName = document.createElement("td");
+                        // Resolve ID/Name
+                        tdName.textContent = item[idKey] || item.id || item.ID || item.name || item.Name || "Unknown";
+                        tdName.style.padding = "6px 8px 6px 20px"; // Indent
+
+                        const tdValue = document.createElement("td");
+                        // Try to find the value based on typical keys if valueKey is not found
+                        let val = item[valueKey];
+                        if (val === undefined && valueKey === "value") val = item.value; // Explicit check
+                        if (val === undefined) {
+                            // Fallback for unknown structure
+                             val = JSON.stringify(item);
+                        }
+                        
+                        tdValue.textContent = val;
+                        tdValue.style.padding = "6px";
+                        tdValue.style.textAlign = "right";
+                        tdValue.style.fontFamily = "monospace";
+
+                        tr.appendChild(tdName);
+                        tr.appendChild(tdValue);
+                        table.appendChild(tr);
+                    });
+                });
+
+                sectionDetails.appendChild(table);
+                content.appendChild(sectionDetails);
+            };
+
+            // 使用 SCENE_DATA_MAP 进行驱动解析
+            const map = window.SCENE_DATA_MAP || {};
+            const knownKeys = new Set(Object.keys(map));
+
+            // Iterate through defined map keys
+            Object.keys(map).forEach(key => {
+                const config = map[key];
+                let data = sceneData[key];
+
+                if (!data) return;
+
+                // Handle Unity serialization wrapper
+                if (!Array.isArray(data) && data.serializedList) {
+                    data = data.serializedList;
+                }
+
+                if (Array.isArray(data)) {
+                    renderGroupedItems(config.label, data, config.valueKey, config.sceneKey, config.idKey);
+                }
+            });
+
+            // Fallback: If no known lists, just dump keys
+            const otherKeys = Object.keys(sceneData).filter(k => !knownKeys.has(k));
+
+            if (otherKeys.length > 0) {
+                 const otherDetails = document.createElement("details");
+                 const otherSummary = document.createElement("summary");
+                 otherSummary.textContent = "Other Data";
+                 otherDetails.appendChild(otherSummary);
+                 
+                 const pre = document.createElement("pre");
+                 pre.style.background = "rgba(0,0,0,0.3)";
+                 pre.style.padding = "10px";
+                 pre.style.overflowX = "auto";
+                 
+                 // Construct a clean object with just other keys
+                 const otherObj = {};
+                 otherKeys.forEach(k => otherObj[k] = sceneData[k]);
+                 pre.textContent = JSON.stringify(otherObj, null, 2);
+                 
+                 otherDetails.appendChild(pre);
+                 content.appendChild(otherDetails);
+            }
+
+            mainDetails.appendChild(content);
+            container.appendChild(mainDetails);
         }
     };
 

@@ -605,15 +605,39 @@ window.GAMES.silksong = {
                 },
             ]
         },
+        // {
+        //     category: "丝之心",
+        //     unit: 1,
+        //     key: "silkRegenMax",
+        //     max: 3,
+        //     items: [
+        //         { name: "+1", icon: "https://huiji-public.huijistatic.com/hkss/uploads/d/de/Icon_SS_Silk_Heart.png", wiki: "https://hkss.huijiwiki.com/wiki/丝之心" },
+        //         { name: "+2", icon: "https://huiji-public.huijistatic.com/hkss/uploads/d/de/Icon_SS_Silk_Heart.png", wiki: "https://hkss.huijiwiki.com/wiki/丝之心" },
+        //         { name: "+3", icon: "https://huiji-public.huijistatic.com/hkss/uploads/d/de/Icon_SS_Silk_Heart.png", wiki: "https://hkss.huijiwiki.com/wiki/丝之心" }
+        //     ]
+        // },
         {
             category: "丝之心",
             unit: 1,
-            key: "silkRegenMax",
-            max: 3,
             items: [
-                { name: "+1", icon: "https://huiji-public.huijistatic.com/hkss/uploads/d/de/Icon_SS_Silk_Heart.png", wiki: "https://hkss.huijiwiki.com/wiki/丝之心" },
-                { name: "+2", icon: "https://huiji-public.huijistatic.com/hkss/uploads/d/de/Icon_SS_Silk_Heart.png", wiki: "https://hkss.huijiwiki.com/wiki/丝之心" },
-                { name: "+3", icon: "https://huiji-public.huijistatic.com/hkss/uploads/d/de/Icon_SS_Silk_Heart.png", wiki: "https://hkss.huijiwiki.com/wiki/丝之心" }
+                { 
+                    name: "髓骨洞窟-钟道兽", 
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/9/93/Bell_Beast_Idle.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/丝之心",
+                    sceneCheck: { scene: "Memory_Silk_Heart_BellBeast", id: "glow_rim_Remasker", type: "bool" },
+                },
+                { 
+                    name: "白愈厅-失缚怨魂", 
+                    icon: "https://huiji-thumb.huijistatic.com/hkss/uploads/thumb/e/e2/B_The_Unravelled.png/438px-B_The_Unravelled.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/丝之心",
+                    sceneCheck: { scene: "Memory_Silk_Heart_WardBoss", id: "glow_rim_Remasker", type: "bool" },
+                },
+                { 
+                    name: "摇篮圣所-蕾丝", 
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/e/e6/B_Lace.png",
+                    wiki: "https://hkss.huijiwiki.com/wiki/丝之心",
+                    sceneCheck: { scene: "Memory_Silk_Heart_LaceTower", id: "glow_rim_Remasker", type: "bool" },
+                },
             ]
         },
         {
@@ -707,20 +731,133 @@ window.GAMES.silksong = {
             ]
         },
         {
-            category: "面甲",
+            category: "面具",
             unit: 1,
             max: 5,
             key: "maxHealthBase",
             items: [
-                { name: "+1", icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png", wiki: "https://hkss.huijiwiki.com/wiki/面甲" },
-                { name: "+2", icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png", wiki: "https://hkss.huijiwiki.com/wiki/面甲" },
-                { name: "+3", icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png", wiki: "https://hkss.huijiwiki.com/wiki/面甲" },
-                { name: "+4", icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png", wiki: "https://hkss.huijiwiki.com/wiki/面甲" },
-                { name: "+5", icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png", wiki: "https://hkss.huijiwiki.com/wiki/面甲" }
+                { name: "+1", icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片_(丝之歌)" },
+                { name: "+2", icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片_(丝之歌)" },
+                { name: "+3", icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片_(丝之歌)" },
+                { name: "+4", icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片_(丝之歌)" },
+                { name: "+5", icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片_(丝之歌)" }
             ],
             transform(value) {
                 return value - 5;
             },
+        },
+        {
+            category: "面具碎片",
+            unit: 0,
+            items: [
+                // === Mask Shards (NPC) ===
+                { 
+                    name: "骸底镇佩珀", 
+                    key: "PurchasedBonebottomHeartPiece",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png",
+                    unit: 0
+                },
+
+                // === Mask Shards (Scene Data) ===
+                { 
+                    name: "Crawl_02", 
+                    desc: "",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png",
+                    sceneCheck: { scene: "Crawl_02", id: "Heart Piece", type: "bool" },
+                    unit: 0
+                },
+                { 
+                    name: "Dock_08", 
+                    desc: "",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png",
+                    sceneCheck: { scene: "Dock_08", id: "Heart Piece", type: "bool" },
+                    unit: 0
+                },
+                { 
+                    name: "Bone_East_20", 
+                    desc: "",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png",
+                    sceneCheck: { scene: "Bone_East_20", id: "Heart Piece", type: "bool" },
+                    unit: 0
+                },
+                { 
+                    name: "Shellwood_14", 
+                    desc: "",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png",
+                    sceneCheck: { scene: "Shellwood_14", id: "Heart Piece", type: "bool" },
+                    unit: 0
+                },
+                { 
+                    name: "Song_09", 
+                    desc: "",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png",
+                    sceneCheck: { scene: "Song_09", id: "Heart Piece", type: "bool" },
+                    unit: 0
+                },
+                { 
+                    name: "Library_05", 
+                    desc: "",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png",
+                    sceneCheck: { scene: "Library_05", id: "Heart Piece", type: "bool" },
+                    unit: 0
+                },
+                { 
+                    name: "Peak_04c", 
+                    desc: "",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png",
+                    sceneCheck: { scene: "Peak_04c", id: "Heart Piece", type: "bool" },
+                    unit: 0
+                },
+                { 
+                    name: "Bone_East_LavaChallenge", 
+                    desc: "",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png",
+                    sceneCheck: { scene: "Bone_East_LavaChallenge", id: "Heart Piece (1)", type: "bool" },
+                    unit: 0
+                },
+                { 
+                    name: "Weave_05b", 
+                    desc: "",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png",
+                    sceneCheck: { scene: "Weave_05b", id: "Heart Piece", type: "bool" },
+                    unit: 0
+                },
+                { 
+                    name: "Coral_19b", 
+                    desc: "",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png",
+                    sceneCheck: { scene: "Coral_19b", id: "Heart Piece", type: "bool" },
+                    unit: 0
+                },
+                { 
+                    name: "Wisp_07", 
+                    desc: "",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png",
+                    sceneCheck: { scene: "Wisp_07", id: "Heart Piece", type: "bool" },
+                    unit: 0
+                },
+                { 
+                    name: "Slab_17", 
+                    desc: "",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png",
+                    sceneCheck: { scene: "Slab_17", id: "Heart Piece", type: "bool" },
+                    unit: 0
+                },
+                { 
+                    name: "Shadow_13", 
+                    desc: "",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png",
+                    sceneCheck: { scene: "Shadow_13", id: "Heart Piece", type: "bool" },
+                    unit: 0
+                },
+                { 
+                    name: "Coral_19b", 
+                    desc: "",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png",
+                    sceneCheck: { scene: "Coral_19b", id: "Heart Piece", type: "bool" },
+                    unit: 0
+                },
+            ]
         },
         {
             category: "灵丝轴",
@@ -728,19 +865,117 @@ window.GAMES.silksong = {
             max: 9,
             key: "silkMax",
             items: [
-                { name: "+1", icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴" },
-                { name: "+2", icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴" },
-                { name: "+3", icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴" },
-                { name: "+4", icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴" },
-                { name: "+5", icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴" },
-                { name: "+6", icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴" },
-                { name: "+7", icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴" },
-                { name: "+8", icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴" },
-                { name: "+9", icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴" }
+                { name: "+1", icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" },
+                { name: "+2", icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" },
+                { name: "+3", icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" },
+                { name: "+4", icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" },
+                { name: "+5", icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" },
+                { name: "+6", icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" },
+                { name: "+7", icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" },
+                { name: "+8", icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" },
+                { name: "+9", icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" }
             ],
             transform(value) {
                 return value - 9;
             },
+        },
+        {
+            category: "灵丝轴碎片",
+            unit: 0,
+            items: [
+                // === Silk Spool Fragments (Scene Data) ===
+                { 
+                    name: "Bone_11b", 
+                    desc: "1111",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png",
+                    sceneCheck: { scene: "Bone_11b", id: "Silk Spool", type: "bool" },
+                    unit: 0
+                },
+                { 
+                    name: "Bone_East_13", 
+                    desc: "",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png",
+                    sceneCheck: { scene: "Bone_East_13", id: "Silk Spool", type: "bool" },
+                    unit: 0
+                },
+                { 
+                    name: "Greymoor_02", 
+                    desc: "",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png",
+                    sceneCheck: { scene: "Greymoor_02", id: "Silk Spool", type: "bool" },
+                    unit: 0
+                },
+                { 
+                    name: "Peak_01", 
+                    desc: "",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png",
+                    sceneCheck: { scene: "Peak_01", id: "Silk Spool", type: "bool" },
+                    unit: 0
+                },
+                { 
+                    name: "Song_19_entrance", 
+                    desc: "",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png",
+                    sceneCheck: { scene: "Song_19_entrance", id: "Silk Spool", type: "bool" },
+                    unit: 0
+                },
+                { 
+                    name: "Ward_01", 
+                    desc: "",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png",
+                    sceneCheck: { scene: "Ward_01", id: "Silk Spool", type: "bool" },
+                    unit: 0
+                },
+                { 
+                    name: "Cog_07", 
+                    desc: "",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png",
+                    sceneCheck: { scene: "Cog_07", id: "Silk Spool", type: "bool" },
+                    unit: 0
+                },
+                { 
+                    name: "Library_11b", 
+                    desc: "",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png",
+                    sceneCheck: { scene: "Library_11b", id: "Silk Spool", type: "bool" },
+                    unit: 0
+                },
+                { 
+                    name: "Under_10", 
+                    desc: "",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png",
+                    sceneCheck: { scene: "Under_10", id: "Silk Spool", type: "bool" },
+                    unit: 0
+                },
+                { 
+                    name: "Hang_03_top", 
+                    desc: "",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png",
+                    sceneCheck: { scene: "Hang_03_top", id: "Silk Spool", type: "bool" },
+                    unit: 0
+                },
+                { 
+                    name: "Arborium_09", 
+                    desc: "",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png",
+                    sceneCheck: { scene: "Arborium_09", id: "Silk Spool", type: "bool" },
+                    unit: 0
+                },
+                { 
+                    name: "Dock_03c", 
+                    desc: "",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png",
+                    sceneCheck: { scene: "Dock_03c", id: "Silk Spool", type: "bool" },
+                    unit: 0
+                },
+                { 
+                    name: "Weave_11", 
+                    desc: "",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png",
+                    sceneCheck: { scene: "Weave_11", id: "Silk Spool", type: "bool" },
+                    unit: 0
+                },
+            ]
         },
         {
             category: "织针磨砺",
