@@ -24,7 +24,7 @@ window.GAMES.silksong = {
             type: "boolean",
             trueText: "已获取",
             falseText: "未获取",
-            desc: "在非钢魂模式下<br>获取<b>钢魂模式下</b>特有的<b>壳囊</b><br>会在背包中额外多出壳囊",
+            desc: "在非钢魂模式下获取<b>钢魂模式下</b>特有的<b>壳囊</b><br>会在背包中额外多出壳囊",
             getValue: (save) => save.Tools?.savedData?.find(t => t.Name === "Shell Satchel")?.Data?.IsUnlocked,
             setValue: (save, val) => {
                 const toolName = "Shell Satchel";
@@ -736,11 +736,11 @@ window.GAMES.silksong = {
             max: 5,
             key: "maxHealthBase",
             items: [
-                { name: "+1", icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片_(丝之歌)" },
-                { name: "+2", icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片_(丝之歌)" },
-                { name: "+3", icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片_(丝之歌)" },
-                { name: "+4", icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片_(丝之歌)" },
-                { name: "+5", icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片_(丝之歌)" }
+                { name: "+1", icon: "https://pic-1326566629.cos.ap-shanghai.myqcloud.com/wiki%5Cmask_black", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片_(丝之歌)" },
+                { name: "+2", icon: "https://pic-1326566629.cos.ap-shanghai.myqcloud.com/wiki%5Cmask_black", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片_(丝之歌)" },
+                { name: "+3", icon: "https://pic-1326566629.cos.ap-shanghai.myqcloud.com/wiki%5Cmask_black", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片_(丝之歌)" },
+                { name: "+4", icon: "https://pic-1326566629.cos.ap-shanghai.myqcloud.com/wiki%5Cmask_black", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片_(丝之歌)" },
+                { name: "+5", icon: "https://pic-1326566629.cos.ap-shanghai.myqcloud.com/wiki%5Cmask_black", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片_(丝之歌)" }
             ],
             transform(value) {
                 return value - 5;
@@ -750,111 +750,127 @@ window.GAMES.silksong = {
             category: "面具碎片",
             unit: 0,
             items: [
-                // === Mask Shards (NPC) ===
+                // === NPC ===
                 { 
-                    name: "骸底镇佩珀", 
+                    name: "骸底镇", 
                     key: "PurchasedBonebottomHeartPiece",
+                    desc: "花费300念珠在骸底镇佩珀处购买<br>若未购买，到第三幕时，则需从蚀阶中格林德尔处购买",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/4/4f/Mapshot_SS_Pebb.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png",
                     unit: 0
                 },
 
-                // === Mask Shards (Scene Data) ===
+                // === Scene Data ===
                 { 
-                    name: "Crawl_02", 
-                    desc: "",
+                    name: "沙噬虫道", 
+                    desc: "在沙噬虫道简单钥匙门的下方获取，在一堵易碎墙壁的后方",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/a/a8/Mapshot_SS_Mask_Shard_02.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png",
                     sceneCheck: { scene: "Crawl_02", id: "Heart Piece", type: "bool" },
                     unit: 0
                 },
                 { 
-                    name: "Dock_08", 
-                    desc: "",
+                    name: "深坞", 
+                    desc: "在髓骨洞窟和深坞中间的上通道",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/e/e2/Mapshot_SS_Mask_Shard_03.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png",
                     sceneCheck: { scene: "Dock_08", id: "Heart Piece", type: "bool" },
                     unit: 0
                 },
                 { 
-                    name: "Bone_East_20", 
-                    desc: "",
+                    name: "远野", 
+                    desc: "在远野织姬左上角的区域获取，需要飘泊者披风",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/7/71/Mapshot_SS_Mask_Shard_04.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png",
                     sceneCheck: { scene: "Bone_East_20", id: "Heart Piece", type: "bool" },
                     unit: 0
                 },
                 { 
-                    name: "Shellwood_14", 
-                    desc: "",
+                    name: "甲木林", 
+                    desc: "在甲木林钟道站右边，需要完成平台跳跃挑战，中间有一堵易碎墙壁",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/f/f1/Mapshot_SS_Mask_Shard_05.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png",
                     sceneCheck: { scene: "Shellwood_14", id: "Heart Piece", type: "bool" },
                     unit: 0
                 },
                 { 
-                    name: "Song_09", 
-                    desc: "",
+                    name: "圣堡机枢核心", 
+                    desc: "圣堡机枢核心下半部分左边通道尽头",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/d/d6/Mapshot_SS_Mask_Shard_08.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png",
                     sceneCheck: { scene: "Song_09", id: "Heart Piece", type: "bool" },
                     unit: 0
                 },
                 { 
-                    name: "Library_05", 
-                    desc: "",
+                    name: "低语书库", 
+                    desc: "需要解密低语书库的移动方块",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/7/79/Mapshot_SS_Mask_Shard_09.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png",
                     sceneCheck: { scene: "Library_05", id: "Heart Piece", type: "bool" },
                     unit: 0
                 },
                 { 
-                    name: "Peak_04c", 
-                    desc: "",
+                    name: "费耶山", 
+                    desc: "费耶山左下角，需要雪灵披风",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/2/24/Mapshot_SS_Mask_Shard_12.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png",
                     sceneCheck: { scene: "Peak_04c", id: "Heart Piece", type: "bool" },
                     unit: 0
                 },
                 { 
-                    name: "Bone_East_LavaChallenge", 
-                    desc: "",
+                    name: "远野东部", 
+                    desc: "远野东部的骨头建筑内，需要完成战斗和岩浆逃生",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/5/57/Mapshot_SS_Mask_Shard_11.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png",
                     sceneCheck: { scene: "Bone_East_LavaChallenge", id: "Heart Piece (1)", type: "bool" },
                     unit: 0
                 },
                 { 
-                    name: "Weave_05b", 
-                    desc: "",
+                    name: "阿特拉织巢", 
+                    desc: "阿特拉织巢的中部隐藏区域往右边的通道，需要织忆弦针",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/c/c2/Mapshot_SS_Mask_Shard_06.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png",
                     sceneCheck: { scene: "Weave_05b", id: "Heart Piece", type: "bool" },
                     unit: 0
                 },
                 { 
-                    name: "Coral_19b", 
-                    desc: "",
+                    name: "蚀阶", 
+                    desc: "蚀阶左下角的向上通道，需要蛛攀术与雪灵披风",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/a/a2/Mapshot_SS_Mask_Shard_16.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png",
                     sceneCheck: { scene: "Coral_19b", id: "Heart Piece", type: "bool" },
                     unit: 0
                 },
                 { 
-                    name: "Wisp_07", 
-                    desc: "",
+                    name: "火灵竹丛", 
+                    desc: "火灵竹丛右边通道尽头，需要雪灵披风",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/e/e9/Mapshot_SS_Mask_Shard_15.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png",
                     sceneCheck: { scene: "Wisp_07", id: "Heart Piece", type: "bool" },
                     unit: 0
                 },
                 { 
-                    name: "Slab_17", 
-                    desc: "",
+                    name: "罪石牢狱", 
+                    desc: "罪石牢狱的右上角，需要叛教之钥与雪灵披风",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/d/d4/Mapshot_SS_Mask_Shard_13.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png",
                     sceneCheck: { scene: "Slab_17", id: "Heart Piece", type: "bool" },
                     unit: 0
                 },
                 { 
-                    name: "Shadow_13", 
-                    desc: "",
+                    name: "腐汁泽", 
+                    desc: "腐汁泽右边的一条通道尽头，需要飞针冲刺，通道里面挤满了沼蛆",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/4/46/Mapshot_SS_Mask_Shard_14.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png",
                     sceneCheck: { scene: "Shadow_13", id: "Heart Piece", type: "bool" },
                     unit: 0
                 },
                 { 
-                    name: "Coral_19b", 
-                    desc: "",
+                    name: "费耶山", 
+                    desc: "在费耶山冰晶脉窟顶端，需要灵丝升腾",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/5/5a/Mapshot_SS_Mask_Shard_17.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png",
-                    sceneCheck: { scene: "Coral_19b", id: "Heart Piece", type: "bool" },
+                    sceneCheck: { scene: "Peak_06", id: "Heart Piece", type: "bool" },
                     unit: 0
                 },
             ]
@@ -883,6 +899,20 @@ window.GAMES.silksong = {
             category: "灵丝轴碎片",
             unit: 0,
             items: [
+                // Silk Spool Fragments (NPC Data)
+                { 
+                    name: "钟心镇商店", 
+                    key: "PurchasedBelltownSpoolSegment",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png",
+                    unit: 0
+                },
+                { 
+                    name: "小偷商店", 
+                    key: "purchasedGrindleSpoolPiece",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png",
+                    unit: 0
+                },
+
                 // === Silk Spool Fragments (Scene Data) ===
                 { 
                     name: "Bone_11b", 

@@ -86,6 +86,29 @@
                                 el.title = subItem.name;
                             }
 
+                            // Add Description Tooltip (Group Item)
+                            if (subItem.desc) {
+                                const tooltip = document.createElement('div');
+                                tooltip.className = 'tooltip-text';
+                                tooltip.innerHTML = subItem.desc;
+                                el.appendChild(tooltip);
+                            }
+
+                            // If locationImage exists, make the whole card clickable to open Lightbox
+                            if (subItem.locationImage) {
+                                el.style.cursor = 'pointer';
+                                // Add hover hint
+                                const currentTitle = el.title || "";
+                                el.title = currentTitle ? `${currentTitle} (点击打开地图位置图片)` : "点击打开地图位置图片";
+
+                                // Override default click if it's a link, or add listener if div
+                                el.addEventListener('click', (e) => {
+                                    e.preventDefault();
+                                    e.stopPropagation();
+                                    window.SaveRenderer.openLightbox(subItem.locationImage, subItem.name);
+                                });
+                            }
+
                             if (subItem.icon) {
                                 const iconWrapper = document.createElement("div");
                                 iconWrapper.className = "icon-wrapper";
@@ -110,6 +133,10 @@
                     }
 
                     // 1️⃣ 创建容器 (如果是链接则用 a 标签)
+                    // If item has locationImage, prefer 'div' (unless we want to preserve wiki link as secondary)
+                    // But user requested "click this to open image".
+                    // So we will use 'div' if locationImage is present, or 'a' if only wiki.
+                    // Or keep 'a' but override click. Let's keep existing logic but attach listener.
                     const el = document.createElement(item.wiki ? "a" : "div");
                     el.className = `item ${item.done ? "done" : "missing"}`;
                     
@@ -118,6 +145,29 @@
                         el.target = "_blank";
                         el.rel = "noopener noreferrer";
                         el.title = "点击查看 Wiki";
+                    }
+
+                    // Add Description Tooltip (Standard Item)
+                    if (item.desc) {
+                        const tooltip = document.createElement('div');
+                        tooltip.className = 'tooltip-text';
+                        tooltip.innerHTML = item.desc;
+                        el.appendChild(tooltip);
+                    }
+
+                    // If locationImage exists, make the whole card clickable to open Lightbox
+                    if (item.locationImage) {
+                        el.style.cursor = 'pointer';
+                        
+                        // Add hover hint
+                        const currentTitle = el.title || "";
+                        el.title = currentTitle ? `${currentTitle} (点击打开地图位置图片)` : "点击打开地图位置图片";
+
+                        el.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            window.SaveRenderer.openLightbox(item.locationImage, item.name);
+                        });
                     }
 
                     // 2️⃣ 添加图标 (如果有)
@@ -147,6 +197,177 @@
                     sectionItems.appendChild(el);
                 });
             });
+        },
+
+        // === Lightbox Functionality ===
+        _lightboxState: {
+            isDragging: false,
+            scale: 1,
+            panning: false,
+            pointX: 0,
+            pointY: 0,
+            startX: 0,
+            startY: 0
+        },
+
+        openLightbox: function(url, title) {
+            let overlay = document.getElementById('global-lightbox');
+            if (!overlay) {
+                // Create Lightbox
+                overlay = document.createElement('div');
+                overlay.id = 'global-lightbox';
+                overlay.className = 'lightbox-overlay';
+                
+                const wrapper = document.createElement('div');
+                wrapper.className = 'lightbox-content-wrapper';
+                
+                const closeBtn = document.createElement('div');
+                closeBtn.className = 'lightbox-close';
+                closeBtn.innerHTML = '×';
+                closeBtn.title = '关闭 (Close)';
+                closeBtn.onclick = () => {
+                    overlay.classList.remove('active');
+                    setTimeout(() => overlay.style.display = 'none', 300);
+                };
+                
+                const img = document.createElement('img');
+                img.className = 'lightbox-content';
+                img.id = 'lightbox-img';
+                img.referrerPolicy = "no-referrer"; // Avoid hotlink protection
+                img.onerror = () => {
+                    console.error('Lightbox image failed to load');
+                    // Optional: show placeholder or error message
+                };
+                
+                const titleEl = document.createElement('div');
+                titleEl.className = 'lightbox-title';
+                
+                wrapper.appendChild(img);
+                // Move close button inside wrapper but absolute positioned relative to it?
+                // Or better, keep it outside or ensure z-index is high.
+                // Let's keep it in wrapper for transform consistency or move out?
+                // If we move it out, it stays fixed while image zooms. This is usually better.
+                // Let's append to overlay instead of wrapper for the close button to be static relative to screen.
+                overlay.appendChild(closeBtn);
+                
+                wrapper.appendChild(titleEl);
+                overlay.appendChild(wrapper);
+                document.body.appendChild(overlay);
+                
+                // --- Zoom & Pan Logic ---
+                const state = this._lightboxState;
+
+                const setTransform = () => {
+                    wrapper.style.transform = `translate(${state.pointX}px, ${state.pointY}px) scale(${state.scale})`;
+                };
+
+                // Zoom (Wheel)
+                overlay.addEventListener('wheel', (e) => {
+                    e.preventDefault();
+                    const xs = (e.clientX - state.pointX) / state.scale;
+                    const ys = (e.clientY - state.pointY) / state.scale;
+                    
+                    const delta = -Math.sign(e.deltaY);
+                    const step = 0.1;
+                    
+                    let newScale = state.scale + (delta * step);
+                    if (newScale < 0.5) newScale = 0.5; // Min zoom
+                    if (newScale > 5) newScale = 5;     // Max zoom
+
+                    state.pointX = e.clientX - xs * newScale;
+                    state.pointY = e.clientY - ys * newScale;
+                    state.scale = newScale;
+
+                    setTransform();
+                });
+
+                // Pan (Drag)
+                const onMouseDown = (e) => {
+                    // Only drag if target is image or wrapper
+                    if (e.target !== img && e.target !== wrapper && e.target !== overlay) return;
+                    
+                    e.preventDefault();
+                    state.startX = e.clientX - state.pointX;
+                    state.startY = e.clientY - state.pointY;
+                    state.panning = true;
+                    state.hasMoved = false; // Reset drag flag
+                    wrapper.style.cursor = 'grabbing';
+                    img.style.cursor = 'grabbing';
+                };
+
+                const onMouseMove = (e) => {
+                    if (!state.panning) return;
+                    e.preventDefault();
+                    
+                    // Only mark as moved if there's actual movement distance > threshold
+                    // But here we update continuously, so just checking movement is enough.
+                    state.hasMoved = true;
+                    
+                    state.pointX = e.clientX - state.startX;
+                    state.pointY = e.clientY - state.startY;
+                    setTransform();
+                };
+
+                const onMouseUp = () => {
+                    state.panning = false;
+                    wrapper.style.cursor = 'grab';
+                    img.style.cursor = 'grab';
+                };
+
+                overlay.addEventListener('mousedown', onMouseDown);
+                overlay.addEventListener('mousemove', onMouseMove);
+                overlay.addEventListener('mouseup', onMouseUp);
+                overlay.addEventListener('mouseleave', onMouseUp);
+
+                // Close on background click (if not dragging)
+                overlay.addEventListener('click', (e) => {
+                    // Prevent closing if we just dragged
+                    if (state.hasMoved) return;
+
+                    if (e.target === overlay) {
+                        closeBtn.click();
+                    }
+                });
+            }
+            
+            // Reset State
+            const state = this._lightboxState;
+            state.scale = 1;
+            state.pointX = 0;
+            state.pointY = 0;
+            state.panning = false;
+            state.hasMoved = false;
+            
+            const wrapper = overlay.querySelector('.lightbox-content-wrapper');
+            wrapper.style.transform = `translate(0px, 0px) scale(1)`;
+            wrapper.style.cursor = 'grab';
+
+            const img = overlay.querySelector('#lightbox-img');
+            img.src = url;
+            
+            const titleEl = overlay.querySelector('.lightbox-title');
+            titleEl.textContent = title || '';
+            
+            const closeBtn = overlay.querySelector('.lightbox-close');
+            
+            // Re-bind ESC and Close logic for every open session
+            const escHandler = (e) => {
+                if (e.key === "Escape") {
+                    closeBtn.click();
+                }
+            };
+            document.addEventListener('keydown', escHandler);
+
+            closeBtn.onclick = () => {
+                document.removeEventListener('keydown', escHandler);
+                overlay.classList.remove('active');
+                setTimeout(() => overlay.style.display = 'none', 300);
+            };
+
+            overlay.style.display = 'flex';
+            // Trigger reflow
+            overlay.offsetHeight; 
+            overlay.classList.add('active');
         },
 
         renderModifier: function(save, gameConfig) {
