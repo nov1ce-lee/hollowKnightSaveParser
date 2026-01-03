@@ -767,8 +767,8 @@ window.GAMES.silksong = {
                 { 
                     name: "隐秘猎手祈愿", 
                     desc: "与卡梅莉塔交谈或使用深邃挽歌进入过她的记忆后，在钟心镇接取祈愿",
-                    customCheck: (save) => save.QuestCompletionData?.savedData?.find(t => t.Name === "Save Sherma")?.Data?.IsCompleted,
-                    locationImage: "",
+                    customCheck: (save) => save.QuestCompletionData?.savedData?.find(t => t.Name === "Ant Trapper")?.Data?.IsCompleted,
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/3/3b/Mapshot_SS_Bellhart_Wishwall.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png",
                     unit: 0
                 },
