@@ -759,6 +759,14 @@ window.GAMES.silksong = {
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png",
                     unit: 0
                 },
+                { 
+                    name: "圣歌盟地", 
+                    key: "MerchantEnclaveShellFragment",
+                    desc: "花费750念珠在圣歌盟地购买<br>完成任务商贾无踪后朱比拉娜会在圣歌盟地出售",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/4/4f/Mapshot_SS_Pebb.png",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png",
+                    unit: 0
+                },
 
                 // === Scene Data ===
                 { 
@@ -881,15 +889,15 @@ window.GAMES.silksong = {
             max: 9,
             key: "silkMax",
             items: [
-                { name: "+1", icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" },
-                { name: "+2", icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" },
-                { name: "+3", icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" },
-                { name: "+4", icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" },
-                { name: "+5", icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" },
-                { name: "+6", icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" },
-                { name: "+7", icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" },
-                { name: "+8", icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" },
-                { name: "+9", icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" }
+                { name: "+1", icon: "https://pic-1326566629.cos.ap-shanghai.myqcloud.com/wiki%5CSilk_Spool", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" },
+                { name: "+2", icon: "https://pic-1326566629.cos.ap-shanghai.myqcloud.com/wiki%5CSilk_Spool", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" },
+                { name: "+3", icon: "https://pic-1326566629.cos.ap-shanghai.myqcloud.com/wiki%5CSilk_Spool", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" },
+                { name: "+4", icon: "https://pic-1326566629.cos.ap-shanghai.myqcloud.com/wiki%5CSilk_Spool", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" },
+                { name: "+5", icon: "https://pic-1326566629.cos.ap-shanghai.myqcloud.com/wiki%5CSilk_Spool", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" },
+                { name: "+6", icon: "https://pic-1326566629.cos.ap-shanghai.myqcloud.com/wiki%5CSilk_Spool", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" },
+                { name: "+7", icon: "https://pic-1326566629.cos.ap-shanghai.myqcloud.com/wiki%5CSilk_Spool", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" },
+                { name: "+8", icon: "https://pic-1326566629.cos.ap-shanghai.myqcloud.com/wiki%5CSilk_Spool", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" },
+                { name: "+9", icon: "https://pic-1326566629.cos.ap-shanghai.myqcloud.com/wiki%5CSilk_Spool", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" }
             ],
             transform(value) {
                 return value - 9;
@@ -903,104 +911,145 @@ window.GAMES.silksong = {
                 { 
                     name: "钟心镇商店", 
                     key: "PurchasedBelltownSpoolSegment",
+                    desc: "花费270念珠从芙蕾的商店中购买，需要完成祈愿<b>失踪送货员</b>",
+                    locationImage: "https://huiji-thumb.huijistatic.com/hkss/uploads/thumb/f/fa/Mapshot_SS_Frey_01.png/225px-Mapshot_SS_Frey_01.png",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png",
+                    unit: 0
+                },
+                { 
+                    name: "圣歌盟地商店", 
+                    key: "MerchantEnclaveSpoolPiece",
+                    desc: "花费500念珠从朱比拉娜处购买，需要完成祈愿<b>商贾无踪</b>",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/5/5c/Mapshot_SS_Grindle_01.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png",
                     unit: 0
                 },
                 { 
                     name: "小偷商店", 
                     key: "purchasedGrindleSpoolPiece",
+                    desc: "花费680念珠从小偷格林德尔处购买，需要雪灵披风",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/5/5c/Mapshot_SS_Grindle_01.png",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png",
+                    unit: 0
+                },
+                { 
+                    name: "跳蚤旅团", 
+                    key: "MetCaravanTroupeLeaderJudge",
+                    desc: "找到至少12个跳蚤并击败末代裁决者，由跳蚤旅团团长穆什卡赠予",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/8/84/Mapshot_SS_Flea_Caravan_03.png",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png",
+                    unit: 0
+                },
+                { 
+                    name: "圣歌盟地谢尔玛", 
+                    desc: "完成祈愿<b>愈伤良方</b>后，由谢尔玛赠与需要使用白愈钥匙打开通往白愈厅的电梯",
+                    customCheck: (save) => save.QuestCompletionData?.savedData?.find(t => t.Name === "Save Sherma")?.Data?.IsCompleted,
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/7/7a/Mapshot_SS_Sherma_08.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png",
                     unit: 0
                 },
 
                 // === Silk Spool Fragments (Scene Data) ===
                 { 
-                    name: "Bone_11b", 
-                    desc: "1111",
+                    name: "骸底镇", 
+                    desc: "位于骸底镇上方被苔藓覆盖的一面可打碎的墙壁后面",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/e/eb/Mapshot_SS_Spool_Fragment_01.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png",
                     sceneCheck: { scene: "Bone_11b", id: "Silk Spool", type: "bool" },
                     unit: 0
                 },
                 { 
-                    name: "Bone_East_13", 
-                    desc: "",
+                    name: "深坞右下角", 
+                    desc: "位于深坞的右下角，需要蛛攀术和飞针冲刺",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/a/a6/Mapshot_SS_Spool_Fragment_11.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png",
                     sceneCheck: { scene: "Bone_East_13", id: "Silk Spool", type: "bool" },
                     unit: 0
                 },
                 { 
-                    name: "Greymoor_02", 
-                    desc: "",
+                    name: "灰沼", 
+                    desc: "位于灰沼，沙克拉长椅上方，需要打开气球机关，需要蛛攀术",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/b/b7/Mapshot_SS_Spool_Fragment_03.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png",
                     sceneCheck: { scene: "Greymoor_02", id: "Silk Spool", type: "bool" },
                     unit: 0
                 },
                 { 
-                    name: "Peak_01", 
-                    desc: "",
+                    name: "罪石牢狱", 
+                    desc: "位于罪石牢狱左侧的开放区域，需要被狱卒蝇抓捕至罪石牢狱，或者通过叛教之钥进入",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/e/ef/Mapshot_SS_Spool_Fragment_05.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png",
                     sceneCheck: { scene: "Peak_01", id: "Silk Spool", type: "bool" },
                     unit: 0
                 },
                 { 
-                    name: "Song_19_entrance", 
-                    desc: "",
+                    name: "圣堡巨扉圣门", 
+                    desc: "位于圣堡巨扉圣门顶端，可以通过敲打天秤上来",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/c/c6/Mapshot_SS_Spool_Fragment_06.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png",
                     sceneCheck: { scene: "Song_19_entrance", id: "Silk Spool", type: "bool" },
                     unit: 0
                 },
                 { 
-                    name: "Ward_01", 
-                    desc: "",
+                    name: "白愈厅", 
+                    desc: "位于白愈厅的电梯井下方，需要使用白愈钥匙打开通往白愈厅的电梯",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/6/68/Mapshot_SS_Spool_Fragment_08.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png",
                     sceneCheck: { scene: "Ward_01", id: "Silk Spool", type: "bool" },
                     unit: 0
                 },
                 { 
-                    name: "Cog_07", 
-                    desc: "",
+                    name: "圣堡机枢核心", 
+                    desc: "位于机枢核心的右下方",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/b/b9/Mapshot_SS_Spool_Fragment_09.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png",
                     sceneCheck: { scene: "Cog_07", id: "Silk Spool", type: "bool" },
                     unit: 0
                 },
                 { 
-                    name: "Library_11b", 
-                    desc: "",
+                    name: "圣堡工厂右下方", 
+                    desc: "位于圣堡工厂的右下方，从第十二席建筑师的房间向右",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/5/52/Mapshot_SS_Spool_Fragment_10.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png",
                     sceneCheck: { scene: "Library_11b", id: "Silk Spool", type: "bool" },
                     unit: 0
                 },
                 { 
-                    name: "Under_10", 
-                    desc: "",
+                    name: "圣堡工厂中心", 
+                    desc: "位于圣堡工厂的中心",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/8/85/Mapshot_SS_Spool_Fragment_07.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png",
                     sceneCheck: { scene: "Under_10", id: "Silk Spool", type: "bool" },
                     unit: 0
                 },
                 { 
-                    name: "Hang_03_top", 
-                    desc: "",
+                    name: "高庭顶端", 
+                    desc: "位于高庭的塔楼顶端，需要蛛攀术和飞针冲刺",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/8/8d/Mapshot_SS_Spool_Fragment_12.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png",
                     sceneCheck: { scene: "Hang_03_top", id: "Silk Spool", type: "bool" },
                     unit: 0
                 },
                 { 
-                    name: "Arborium_09", 
-                    desc: "",
+                    name: "忆廊", 
+                    desc: "位于忆廊的左侧，翠庭展示区域，需要从四楼进入，需要飞针冲刺和雪灵披风",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/e/e2/Mapshot_SS_Spool_Fragment_13.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png",
                     sceneCheck: { scene: "Arborium_09", id: "Silk Spool", type: "bool" },
                     unit: 0
                 },
                 { 
-                    name: "Dock_03c", 
-                    desc: "",
+                    name: "深坞左下", 
+                    desc: "位于深坞，熔炉之女的左下侧",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/7/79/Mapshot_SS_Spool_Fragment_02.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png",
                     sceneCheck: { scene: "Dock_03c", id: "Silk Spool", type: "bool" },
                     unit: 0
                 },
                 { 
-                    name: "Weave_11", 
-                    desc: "",
+                    name: "阿特拉织巢", 
+                    desc: "位于阿特拉织巢，垂直通道的左侧，需要织忆弦针进入织巢",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/4/49/Mapshot_SS_Spool_Fragment_04.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png",
                     sceneCheck: { scene: "Weave_11", id: "Silk Spool", type: "bool" },
                     unit: 0
