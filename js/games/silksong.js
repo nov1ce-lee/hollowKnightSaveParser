@@ -605,17 +605,6 @@ window.GAMES.silksong = {
                 },
             ]
         },
-        // {
-        //     category: "丝之心",
-        //     unit: 1,
-        //     key: "silkRegenMax",
-        //     max: 3,
-        //     items: [
-        //         { name: "+1", icon: "https://huiji-public.huijistatic.com/hkss/uploads/d/de/Icon_SS_Silk_Heart.png", wiki: "https://hkss.huijiwiki.com/wiki/丝之心" },
-        //         { name: "+2", icon: "https://huiji-public.huijistatic.com/hkss/uploads/d/de/Icon_SS_Silk_Heart.png", wiki: "https://hkss.huijiwiki.com/wiki/丝之心" },
-        //         { name: "+3", icon: "https://huiji-public.huijistatic.com/hkss/uploads/d/de/Icon_SS_Silk_Heart.png", wiki: "https://hkss.huijiwiki.com/wiki/丝之心" }
-        //     ]
-        // },
         {
             category: "丝之心",
             unit: 1,
@@ -752,7 +741,7 @@ window.GAMES.silksong = {
             items: [
                 // === NPC ===
                 { 
-                    name: "骸底镇", 
+                    name: "骸底镇商店", 
                     key: "PurchasedBonebottomHeartPiece",
                     desc: "花费300念珠在骸底镇佩珀处购买<br>若未购买，到第三幕时，则需从蚀阶中格林德尔处购买",
                     locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/4/4f/Mapshot_SS_Pebb.png",
@@ -760,10 +749,42 @@ window.GAMES.silksong = {
                     unit: 0
                 },
                 { 
-                    name: "圣歌盟地", 
+                    name: "圣歌盟地商店", 
                     key: "MerchantEnclaveShellFragment",
                     desc: "花费750念珠在圣歌盟地购买<br>完成任务商贾无踪后朱比拉娜会在圣歌盟地出售",
                     locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/4/4f/Mapshot_SS_Pebb.png",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png",
+                    unit: 0
+                },
+                { 
+                    name: "暴怒兽蝇祈愿", 
+                    desc: "完成祈愿<b>暴怒兽蝇</b>的奖励，需要击败第一只兽蝇与第四圣咏团并且进入纺络后在钟心镇接取",
+                    customCheck: (save) => save.QuestCompletionData?.savedData?.find(t => t.Name === "Beastfly Hunt")?.Data?.IsCompleted,
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/3/3b/Mapshot_SS_Bellhart_Wishwall.png",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png",
+                    unit: 0
+                },
+                { 
+                    name: "隐秘猎手祈愿", 
+                    desc: "与卡梅莉塔交谈或使用深邃挽歌进入过她的记忆后，在钟心镇接取祈愿",
+                    customCheck: (save) => save.QuestCompletionData?.savedData?.find(t => t.Name === "Save Sherma")?.Data?.IsCompleted,
+                    locationImage: "",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png",
+                    unit: 0
+                },
+                { 
+                    name: "竞速冠军祈愿", 
+                    desc: "完成祈愿<b>纺络竞速冠军</b>，在飞毛腿斯威夫特设置的第三轮赛跑比赛中获胜",
+                    customCheck: (save) => save.QuestCompletionData?.savedData?.find(t => t.Name === "Sprintmaster Race")?.Data?.IsCompleted,
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/d/d8/Mapshot_SS_Sprintmaster_Swift_01.png",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png",
+                    unit: 0
+                },
+                { 
+                    name: "暗蚀之心祈愿", 
+                    desc: "完成主线任务寻觅：等候终局的暗蚀之心祈愿，在钟心镇接取",
+                    customCheck: (save) => save.QuestCompletionData?.savedData?.find(t => t.Name === "Black Thread Pt5 Heart")?.Data?.IsCompleted,
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/3/3b/Mapshot_SS_Bellhart_Wishwall.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png",
                     unit: 0
                 },
@@ -912,7 +933,7 @@ window.GAMES.silksong = {
                     name: "钟心镇商店", 
                     key: "PurchasedBelltownSpoolSegment",
                     desc: "花费270念珠从芙蕾的商店中购买，需要完成祈愿<b>失踪送货员</b>",
-                    locationImage: "https://huiji-thumb.huijistatic.com/hkss/uploads/thumb/f/fa/Mapshot_SS_Frey_01.png/225px-Mapshot_SS_Frey_01.png",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/f/fa/Mapshot_SS_Frey_01.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png",
                     unit: 0
                 },
@@ -920,7 +941,7 @@ window.GAMES.silksong = {
                     name: "圣歌盟地商店", 
                     key: "MerchantEnclaveSpoolPiece",
                     desc: "花费500念珠从朱比拉娜处购买，需要完成祈愿<b>商贾无踪</b>",
-                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/5/5c/Mapshot_SS_Grindle_01.png",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/3/3c/Mapshot_SS_Jubilana_01.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png",
                     unit: 0
                 },
@@ -941,8 +962,8 @@ window.GAMES.silksong = {
                     unit: 0
                 },
                 { 
-                    name: "圣歌盟地谢尔玛", 
-                    desc: "完成祈愿<b>愈伤良方</b>后，由谢尔玛赠与需要使用白愈钥匙打开通往白愈厅的电梯",
+                    name: "谢尔玛祈愿", 
+                    desc: "完成祈愿<b>愈伤良方</b>后，由谢尔玛赠与，需要使用白愈钥匙打开通往白愈厅的电梯",
                     customCheck: (save) => save.QuestCompletionData?.savedData?.find(t => t.Name === "Save Sherma")?.Data?.IsCompleted,
                     locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/7/7a/Mapshot_SS_Sherma_08.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Spool_Fragment.png",
