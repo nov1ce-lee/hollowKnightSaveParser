@@ -1,6 +1,6 @@
 let currentGame = window.GAMES.hollow;
-let currentSave = null;     // The playerData object (used for calculation)
-let currentFullJson = null; // The full JSON object (root)
+window.currentSave = null;     // The playerData object (used for calculation)
+window.currentFullJson = null; // The full JSON object (root)
 let currentMeta = null;     // Metadata for export
 
 document.getElementById("parseBtn").onclick = async () => {
