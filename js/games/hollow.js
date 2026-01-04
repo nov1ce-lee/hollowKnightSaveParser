@@ -398,36 +398,36 @@ window.GAMES.hollow = {
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/69/Mask_Shard.png",
                     unit: 0
                 },
-                { 
-                    name: "", 
-                    desc: "",
-                    customCheck: (save) => save.QuestCompletionData?.savedData?.find(t => t.Name === "Beastfly Hunt")?.Data?.IsCompleted,
-                    locationImage: "",
+                {
+                    name: "先知给予", 
+                    key: "",
+                    desc: "由安息之地的先知给予，需要收集1500精华",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/e/e3/Mapshot_HK_Vessel_Fragment_07.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/69/Mask_Shard.png",
                     unit: 0
                 },
 
                 // === Scene Data ===
                 { 
-                    name: "", 
-                    desc: "",
-                    locationImage: "",
+                    name: "毛里克巢穴", 
+                    desc: "遗忘十字路左部，杀死躁郁的毛里克的奖励",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/b/bc/Mapshot_HK_Mask_Shard_01.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/69/Mask_Shard.png",
                     sceneCheck: { scene: "Crossroads_13", id: "Heart Piece", type: "bool" },
                     unit: 0
                 },
                 { 
-                    name: "", 
-                    desc: "",
-                    locationImage: "",
+                    name: "虫爷爷赠予", 
+                    desc: "由虫爷爷赠予，需要营救5只幼虫",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/4/4b/Mapshot_HK_Mask_Shard_02.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/69/Mask_Shard.png",
                     sceneCheck: { scene: "Crossroads_38", id: "Heart Piece", type: "bool" },
                     unit: 0
                 },
                 { 
-                    name: "", 
-                    desc: "",
-                    locationImage: "",
+                    name: "遗忘十字路", 
+                    desc: "遗忘十字路，假骑士下方有很多戈姆处，推荐先获取螳螂爪，或使用下劈",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/d/db/Mapshot_HK_Mask_Shard_03.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/69/Mask_Shard.png",
                     sceneCheck: { scene: "Crossroads_09", id: "Heart Piece", type: "bool" },
                     unit: 0
@@ -441,57 +441,57 @@ window.GAMES.hollow = {
                     unit: 0
                 },
                 { 
-                    name: "", 
-                    desc: "",
-                    locationImage: "",
+                    name: "王后驿站", 
+                    desc: "王后驿站右部，需要螳螂爪",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/4/49/Mapshot_HK_Mask_Shard_04.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/69/Mask_Shard.png",
                     sceneCheck: { scene: "Fungus2_01", id: "Heart Piece", type: "bool" },
                     unit: 0
                 },
                 { 
-                    name: "", 
-                    desc: "",
-                    locationImage: "",
-                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/69/Mask_Shard.png",
-                    sceneCheck: { scene: "Fungus2_25", id: "Heart Piece", type: "bool" },
-                    unit: 0
-                },
-                { 
-                    name: "", 
-                    desc: "",
-                    locationImage: "",
+                    name: "石之庇护所", 
+                    desc: "苍绿之径的石之庇护所，推荐先获取光蝇灯笼",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/b/bb/Mapshot_HK_Mask_Shard_06.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/69/Mask_Shard.png",
                     sceneCheck: { scene: "Fungus1_36", id: "Heart Piece", type: "bool" },
                     unit: 0
                 },
                 { 
-                    name: "", 
-                    desc: "",
-                    locationImage: "",
+                    name: "皇家下水道", 
+                    desc: "皇家下水道左上部，游到左边的房间主道下",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/c/ce/Mapshot_HK_Mask_Shard_07.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/69/Mask_Shard.png",
                     sceneCheck: { scene: "Waterways_04b", id: "Heart Piece", type: "bool" },
                     unit: 0
                 },
                 { 
-                    name: "", 
-                    desc: "",
-                    locationImage: "",
+                    name: "水晶山峰", 
+                    desc: "水晶山峰，击败暴怒守卫的奖励，需要帝王之翼",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/9/9d/Mapshot_HK_Mask_Shard_09.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/69/Mask_Shard.png",
                     sceneCheck: { scene: "Mines_32", id: "Heart Piece", type: "bool" },
                     unit: 0
                 },
                 { 
-                    name: "", 
-                    desc: "",
-                    locationImage: "",
+                    name: "深邃巢穴", 
+                    desc: "通过真菌核心进入深邃巢穴，在螳螂领主附近，需要帝王之翼",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/a/a3/Mapshot_HK_Mask_Shard_08.png",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/69/Mask_Shard.png",
+                    sceneCheck: { scene: "Fungus2_25", id: "Heart Piece", type: "bool" },
+                    unit: 0
+                },
+                { 
+                    name: "蜂巢", 
+                    desc: "在蜂巢的一堵墙后，需要引蜂巢守卫撞碎墙壁",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/a/a1/Mapshot_HK_Mask_Shard_10.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/69/Mask_Shard.png",
                     sceneCheck: { scene: "Hive_04", id: "Heart Piece", type: "bool" },
                     unit: 0
                 },
                 { 
-                    name: "", 
-                    desc: "",
-                    locationImage: "",
+                    name: "送花任务", 
+                    desc: "由安息之地的灰色哀悼者给予，需要完成送娇嫩的花的任务",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/3/3b/Mapshot_HK_Mask_Shard_11.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/69/Mask_Shard.png",
                     sceneCheck: { scene: "Room_Mansion", id: "Heart Piece", type: "bool" },
                     unit: 0
@@ -511,6 +511,86 @@ window.GAMES.hollow = {
             transform(value) {
                 return value / 33;
             },
+        },
+        {
+            category: "容器碎片",
+            unit: 0,
+            items: [
+                // === NPC ===
+                { 
+                    name: "斯莱商店", 
+                    key: "slyVesselFrag1",
+                    desc: "花费550吉欧从德特茅斯斯莱的商店中购买，需要唤醒斯莱",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/4/41/Mapshot_HK_Sly_02.png",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/29/Vessel_Fragment.png",
+                    unit: 0
+                },
+                { 
+                    name: "斯莱商店", 
+                    key: "slyVesselFrag2",
+                    desc: "花费900吉欧从德特茅斯斯莱的商店中购买，需要店主的钥匙",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/4/41/Mapshot_HK_Sly_02.png",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/29/Vessel_Fragment.png",
+                    unit: 0
+                },
+                { 
+                    name: "先知给予", 
+                    key: "",
+                    desc: "由安息之地的先知给予，需要收集700点梦境精华",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/1/18/Mapshot_HK_Seer_01.png",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/29/Vessel_Fragment.png",
+                    unit: 0
+                },
+                { 
+                    name: "鹿角虫巢穴", 
+                    key: "vesselFragStagNest",
+                    desc: "鹿角虫巢穴入口处，解锁所有鹿角虫站后前往",
+                    locationImage: "https://huiji-thumb.huijistatic.com/hkss/uploads/thumb/0/0a/Mapshot_HK_Vessel_Fragment_05.png/225px-Mapshot_HK_Vessel_Fragment_05.png",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/29/Vessel_Fragment.png",
+                    unit: 0
+                },
+                // === 场景收集 ===
+                { 
+                    name: "苍绿之径", 
+                    desc: "苍绿之径中，通往王后花园但无法从这侧打开的入口附近",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/1/17/Mapshot_HK_Vessel_Fragment_01.png",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/29/Vessel_Fragment.png",
+                    sceneCheck: { scene: "Fungus1_13", id: "Vessel Fragment", type: "bool" },
+                    unit: 0
+                },
+                { 
+                    name: "遗忘十字路", 
+                    desc: "遗忘十字路电梯左边，需要在泪水之城解锁电梯",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/f/fb/Mapshot_HK_Vessel_Fragment_02.png",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/29/Vessel_Fragment.png",
+                    sceneCheck: { scene: "Crossroads_37", id: "Vessel Fragment", type: "bool" },
+                    unit: 0
+                },
+                { 
+                    name: "国王驿站", 
+                    desc: "国王驿站上方的电梯旁，通过遭遇战后",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/0/0f/Mapshot_HK_Vessel_Fragment_03.png",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/29/Vessel_Fragment.png",
+                    sceneCheck: { scene: "Ruins2_09", id: "Vessel Fragment", type: "bool" },
+                    unit: 0
+                },
+                { 
+                    name: "深邃巢穴", 
+                    desc: "深邃巢穴可使用的电车上方",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/5/58/Mapshot_HK_Vessel_Fragment_04.png",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/29/Vessel_Fragment.png",
+                    sceneCheck: { scene: "Deepnest_38", id: "Vessel Fragment", type: "bool" },
+                    unit: 0
+                },
+                { 
+                    name: "古老盆地", 
+                    desc: "向古老盆地喷泉中投入3000吉欧获得",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/4/4d/Mapshot_HK_Vessel_Fragment_06.png",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/29/Vessel_Fragment.png",
+                    sceneCheck: { scene: "Abyss_04", id: "Vessel Fragment", type: "bool" },
+                    unit: 0
+                },
+            ]
         },
         {
             category: "骨钉升级",
