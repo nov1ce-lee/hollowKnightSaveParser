@@ -409,11 +409,91 @@ window.GAMES.hollow = {
 
                 // === Scene Data ===
                 { 
+                    name: "", 
+                    desc: "",
+                    locationImage: "",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/69/Mask_Shard.png",
+                    sceneCheck: { scene: "Crossroads_13", id: "Heart Piece", type: "bool" },
+                    unit: 0
+                },
+                { 
+                    name: "", 
+                    desc: "",
+                    locationImage: "",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/69/Mask_Shard.png",
+                    sceneCheck: { scene: "Crossroads_38", id: "Heart Piece", type: "bool" },
+                    unit: 0
+                },
+                { 
+                    name: "", 
+                    desc: "",
+                    locationImage: "",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/69/Mask_Shard.png",
+                    sceneCheck: { scene: "Crossroads_09", id: "Heart Piece", type: "bool" },
+                    unit: 0
+                },
+                { 
                     name: "布蕾塔房间", 
                     desc: "德特茅斯布蕾塔的屋子里，需要在真菌荒地救出布蕾塔",
                     locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/f/f1/Mapshot_HK_Mask_Shard_05.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/69/Mask_Shard.png",
                     sceneCheck: { scene: "Room_Bretta", id: "Heart Piece", type: "bool" },
+                    unit: 0
+                },
+                { 
+                    name: "", 
+                    desc: "",
+                    locationImage: "",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/69/Mask_Shard.png",
+                    sceneCheck: { scene: "Fungus2_01", id: "Heart Piece", type: "bool" },
+                    unit: 0
+                },
+                { 
+                    name: "", 
+                    desc: "",
+                    locationImage: "",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/69/Mask_Shard.png",
+                    sceneCheck: { scene: "Fungus2_25", id: "Heart Piece", type: "bool" },
+                    unit: 0
+                },
+                { 
+                    name: "", 
+                    desc: "",
+                    locationImage: "",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/69/Mask_Shard.png",
+                    sceneCheck: { scene: "Fungus1_36", id: "Heart Piece", type: "bool" },
+                    unit: 0
+                },
+                { 
+                    name: "", 
+                    desc: "",
+                    locationImage: "",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/69/Mask_Shard.png",
+                    sceneCheck: { scene: "Waterways_04b", id: "Heart Piece", type: "bool" },
+                    unit: 0
+                },
+                { 
+                    name: "", 
+                    desc: "",
+                    locationImage: "",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/69/Mask_Shard.png",
+                    sceneCheck: { scene: "Mines_32", id: "Heart Piece", type: "bool" },
+                    unit: 0
+                },
+                { 
+                    name: "", 
+                    desc: "",
+                    locationImage: "",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/69/Mask_Shard.png",
+                    sceneCheck: { scene: "Hive_04", id: "Heart Piece", type: "bool" },
+                    unit: 0
+                },
+                { 
+                    name: "", 
+                    desc: "",
+                    locationImage: "",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/69/Mask_Shard.png",
+                    sceneCheck: { scene: "Room_Mansion", id: "Heart Piece", type: "bool" },
                     unit: 0
                 },
             ]
