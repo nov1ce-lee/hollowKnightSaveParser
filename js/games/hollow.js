@@ -362,6 +362,63 @@ window.GAMES.hollow = {
             },
         },
         {
+            category: "面具碎片",
+            unit: 0,
+            items: [
+                // === NPC ===
+                { 
+                    name: "斯莱商店", 
+                    key: "slyShellFrag1",
+                    desc: "花费150吉欧从德特茅斯斯莱的商店中购买，需要唤醒斯莱",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/4/41/Mapshot_HK_Sly_02.png",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/69/Mask_Shard.png",
+                    unit: 0
+                },
+                { 
+                    name: "斯莱商店", 
+                    key: "slyShellFrag2",
+                    desc: "花费500吉欧从德特茅斯斯莱的商店中购买，需要唤醒斯莱",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/4/41/Mapshot_HK_Sly_02.png",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/69/Mask_Shard.png",
+                    unit: 0
+                },
+                { 
+                    name: "斯莱商店", 
+                    key: "slyShellFrag3",
+                    desc: "花费800吉欧从德特茅斯斯莱的商店中购买，需要店主的钥匙",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/4/41/Mapshot_HK_Sly_02.png",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/69/Mask_Shard.png",
+                    unit: 0
+                },
+                { 
+                    name: "斯莱商店", 
+                    key: "slyShellFrag4",
+                    desc: "花费1500吉欧从德特茅斯斯莱的商店中购买，需要店主的钥匙",
+                    locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/4/41/Mapshot_HK_Sly_02.png",
+                    icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/69/Mask_Shard.png",
+                    unit: 0
+                },
+                { 
+                    name: "", 
+                    desc: "",
+                    customCheck: (save) => save.QuestCompletionData?.savedData?.find(t => t.Name === "Beastfly Hunt")?.Data?.IsCompleted,
+                    locationImage: "",
+                    icon: "",
+                    unit: 0
+                },
+
+                // === Scene Data ===
+                { 
+                    name: "", 
+                    desc: "",
+                    locationImage: "",
+                    icon: "",
+                    sceneCheck: { scene: "Crawl_02", id: "Heart Piece", type: "bool" },
+                    unit: 0
+                },
+            ]
+        },
+        {
             category: "容器",
             unit: 1,
             max: 3,
