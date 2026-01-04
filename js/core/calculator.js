@@ -15,7 +15,8 @@
             // Preprocess sceneData if available
             let sceneDataMap = null;
             if (fullJson && fullJson.sceneData) {
-                const persistentBools = fullJson.sceneData.persistentBools;
+                // Silksong uses persistentBools, Hollow Knight uses persistentBoolItems
+                const persistentBools = fullJson.sceneData.persistentBools || fullJson.sceneData.persistentBoolItems;
                 // Handle both nested serializedList and direct array
                 const boolList = (persistentBools && persistentBools.serializedList) ? persistentBools.serializedList : persistentBools;
                 
@@ -40,7 +41,14 @@
                 if (!item) return false;
                 
                 // Value checks
-                const val = item.value !== undefined ? item.value : item.Value;
+                // Silksong: value/Value, Hollow Knight: activated
+                let val;
+                if (item.activated !== undefined) {
+                    val = item.activated;
+                } else {
+                    val = item.value !== undefined ? item.value : item.Value;
+                }
+
                 if (checkConfig.type === 'bool') {
                     return val === true; // explicitly true
                 }
