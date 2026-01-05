@@ -400,7 +400,7 @@ window.GAMES.hollow = {
                 },
                 {
                     name: "先知给予", 
-                    key: "",
+                    key: "dreamReward8",
                     desc: "由安息之地的先知给予，需要收集1500精华",
                     locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/e/e3/Mapshot_HK_Vessel_Fragment_07.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/69/Mask_Shard.png",
@@ -535,7 +535,7 @@ window.GAMES.hollow = {
                 },
                 { 
                     name: "先知给予", 
-                    key: "",
+                    key: "dreamReward5",
                     desc: "由安息之地的先知给予，需要收集700点梦境精华",
                     locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/1/18/Mapshot_HK_Seer_01.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/29/Vessel_Fragment.png",
