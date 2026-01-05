@@ -23,6 +23,7 @@ document.getElementById("parseBtn").onclick = async () => {
         // Usually HK saves are { "playerData": { ... }, ... }
         currentSave = currentFullJson.playerData || currentFullJson;
 
+        buildJournalMapFromSave(currentSave, currentGame.id);
         window.SaveRenderer.renderResult(currentSave, currentGame, currentFullJson);
         
         // Render Modifier UI (Always render, visibility controlled by toggle)
@@ -63,23 +64,54 @@ document.getElementById("exportBtn").onclick = () => {
     }
 };
 
+let isJournalView = false;
+document.getElementById("journalBtn").onclick = () => {
+    if (!window.SaveRenderer) return;
+    if (!currentSave) return;
+    isJournalView = !isJournalView;
+    const journalPanel = document.getElementById("journalPanel");
+    const journalBtn = document.getElementById("journalBtn");
+    const missingList = document.getElementById("missingList");
+    const result = document.getElementById("result");
+    const modifierUI = document.getElementById("modifierUI");
+    if (isJournalView) {
+        journalBtn.textContent = "关闭猎人日志";
+        missingList.style.display = "none";
+        result.style.display = "none";
+        modifierUI.style.display = "none";
+        journalPanel.style.display = "block";
+        window.SaveRenderer.renderJournal(currentSave, currentGame);
+    } else {
+        journalBtn.textContent = "浏览猎人日志完成情况";
+        journalPanel.style.display = "none";
+        missingList.style.display = "block";
+        result.style.display = "block";
+        updateModifierVisibility();
+        window.SaveRenderer.renderResult(currentSave, currentGame, currentFullJson);
+    }
+};
+
 function updateModifierVisibility() {
     const toggle = document.getElementById("modifierToggle");
     const modifierUI = document.getElementById("modifierUI");
     const exportBtn = document.getElementById("exportBtn");
     const modifierControls = document.getElementById("modifierControls");
+    const journalBtn = document.getElementById("journalBtn");
     
     const hasData = currentSave !== null;
     const isEnabled = toggle.checked;
     const hasModifiableItems = currentGame.modifiableItems && currentGame.modifiableItems.length > 0;
 
-    // Control the container visibility (Toggle + Export Button)
-    if (hasData && hasModifiableItems) {
+    // Show container when data is parsed
+    if (hasData) {
         modifierControls.style.display = "flex";
     } else {
         modifierControls.style.display = "none";
         // Reset toggle if hidden? Maybe not needed.
     }
+
+    // Journal button appears after parse
+    journalBtn.style.display = hasData ? "inline-block" : "none";
 
     // Control the UI and Export visibility based on Toggle
     if (hasData && hasModifiableItems && isEnabled) {
@@ -109,6 +141,10 @@ function switchGame(gameId) {
     document.getElementById("modifierUI").style.display = "none";
     document.getElementById("modifierList").innerHTML = "";
     document.getElementById("exportBtn").style.display = "none";
+    document.getElementById("journalPanel").style.display = "none";
+    document.getElementById("journalContent").innerHTML = "";
+    document.getElementById("journalBtn").textContent = "浏览猎人日志完成情况";
+    isJournalView = false;
     
     // Update path hint
     const paths = {
@@ -125,6 +161,33 @@ function switchGame(gameId) {
     currentMeta = null;
 }
 
+function buildJournalMapFromSave(save, gameId) {
+    if (!save) return;
+    window.JOURNAL_MAPS = window.JOURNAL_MAPS || {};
+    window.JOURNAL_MAPS[gameId] = window.JOURNAL_MAPS[gameId] || { entries: [] };
+    const existing = window.JOURNAL_MAPS[gameId].entries || [];
+    const bySuffix = {};
+    existing.forEach(e => {
+        const s = (e.killsKey || e.killedKey || e.name || "").toString().toLowerCase();
+        if (!bySuffix[s]) bySuffix[s] = e;
+    });
+    Object.keys(save).forEach(k => {
+        if (k.startsWith("killed")) {
+            const suffix = k.slice(6).toLowerCase();
+            const keyId = suffix || k.toLowerCase();
+            const ent = bySuffix[keyId] || { name: suffix || k, requiredKills: 1 };
+            ent.killedKey = k;
+            bySuffix[keyId] = ent;
+        } else if (k.startsWith("kills")) {
+            const suffix = k.slice(5).toLowerCase();
+            const keyId = suffix || k.toLowerCase();
+            const ent = bySuffix[keyId] || { name: suffix || k, requiredKills: 1 };
+            ent.killsKey = k;
+            bySuffix[keyId] = ent;
+        }
+    });
+    window.JOURNAL_MAPS[gameId].entries = Object.values(bySuffix).sort((a,b) => (a.name||"").localeCompare(b.name||""));
+}
 // Copy path logic
 document.getElementById("copyPathBtn").onclick = () => {
     const text = document.getElementById("savePathDisplay").textContent;

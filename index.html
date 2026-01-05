@@ -39,14 +39,17 @@
 
     <!-- 修改功能控制栏 -->
     <div id="modifierControls" class="modifier-controls" style="display:none;">
-        <!-- 左侧：开关 -->
+        <!-- 修改功能开关 -->
         <label class="toggle-wrapper">
             <span class="toggle-label">存档修改功能</span>
             <input type="checkbox" id="modifierToggle">
         </label>
-
-        <!-- 右侧：导出按钮 -->
+        
+        <!-- 导出按钮 -->
         <button id="exportBtn" style="display:none;">导出修改</button>
+
+        <!-- 猎人日志按钮 -->
+        <button id="journalBtn" style="display:none;">浏览猎人日志完成情况</button>
     </div>
 
     <!-- 修改区 -->
@@ -58,6 +61,14 @@
             </div>
         </div>
         <div id="modifierList" class="modifier-grid"></div>
+    </div>
+
+    <!-- 猎人日志 -->
+    <div id="journalPanel" class="modifier-panel" style="display:none;">
+        <div class="modifier-header">
+            <h3>猎人日志</h3>
+        </div>
+        <div id="journalContent"></div>
     </div>
 
     <!-- 缺失列表 -->
@@ -92,6 +103,8 @@
     <!-- ========== 游戏配置 ========== -->
     <script src="js/games/hollow.js"></script>
     <script src="js/games/silksong.js"></script>
+    <script src="js/journal/hollowJournalMap.js"></script>
+    <script src="js/journal/silksongJournalMap.js"></script>
 
     <!-- ========== 主控制 ========== -->
     <script src="js/main.js"></script>

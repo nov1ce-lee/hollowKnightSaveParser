@@ -198,6 +198,65 @@
                 });
             });
         },
+        renderJournal: function(save, gameConfig) {
+            const content = document.getElementById("journalContent");
+            content.innerHTML = "";
+            const gameId = gameConfig.id === 'silksong' ? 'silksong' : 'hollow';
+            const map = (window.JOURNAL_MAPS && window.JOURNAL_MAPS[gameId] && Array.isArray(window.JOURNAL_MAPS[gameId].entries)) ? window.JOURNAL_MAPS[gameId].entries : [];
+            let total = 0;
+            let unlocked = 0;
+            if (map.length > 0) {
+                total = map.length;
+                const list = document.createElement("div");
+                list.className = "section-items";
+                map.forEach(entry => {
+                    const killedKey = entry.killedKey;
+                    const killsKey = entry.killsKey;
+                    const requiredKills = entry.requiredKills || 1;
+                    const killedVal = killedKey ? !!save[killedKey] : false;
+                    const killsVal = killsKey ? (parseInt(save[killsKey] || 0) >= requiredKills) : false;
+                    const done = killedVal || killsVal;
+                    if (done) unlocked++;
+                    const el = document.createElement("div");
+                    el.className = `item ${done ? "done" : "missing"}`;
+                    const span = document.createElement("span");
+                    span.textContent = entry.name || (killsKey || killedKey || "");
+                    el.appendChild(span);
+                    list.appendChild(el);
+                });
+                const stat = document.createElement("h2");
+                stat.className = "completion-stat";
+                stat.textContent = `猎人日志 ${unlocked}/${total}`;
+                content.appendChild(stat);
+                content.appendChild(list);
+                return;
+            }
+            const keys = Object.keys(save || {});
+            const killedKeys = keys.filter(k => k.startsWith("killed"));
+            const killsKeys = keys.filter(k => k.startsWith("kills"));
+            const killedCount = killedKeys.reduce((acc, k) => acc + (save[k] === true ? 1 : 0), 0);
+            const killsCount = killsKeys.reduce((acc, k) => acc + ((parseInt(save[k] || 0) > 0) ? 1 : 0), 0);
+            const suffixSet = new Set();
+            killedKeys.forEach(k => {
+                if (save[k] === true) {
+                    suffixSet.add(k.slice("killed".length).toLowerCase());
+                }
+            });
+            killsKeys.forEach(k => {
+                if (parseInt(save[k] || 0) > 0) {
+                    suffixSet.add(k.slice("kills".length).toLowerCase());
+                }
+            });
+            const combined = suffixSet.size;
+            const stat = document.createElement("h2");
+            stat.className = "completion-stat";
+            stat.textContent = `猎人日志 已解锁条目 ${combined}`;
+            const summary = document.createElement("div");
+            summary.className = "missing-content";
+            summary.innerHTML = `<div class="missing-sub">killed 为 true 的条目 ${killedCount} 个；kills 大于 0 的条目 ${killsCount} 个</div>`;
+            content.appendChild(stat);
+            content.appendChild(summary);
+        },
 
         // === Lightbox Functionality ===
         _lightboxState: {
