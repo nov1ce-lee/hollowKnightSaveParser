@@ -1,10 +1,22 @@
 window.JOURNAL_MAPS = window.JOURNAL_MAPS || {};
 window.JOURNAL_MAPS.hollow = {
     entries: [
-        { name: "古蜥蜴", killedKey: "killedGruzMother", killsKey: "killsGruzMother", requiredKills: 1 },
-        { name: "狂虫", killedKey: "killedInfectedBalloon", killsKey: "killsInfectedBalloon", requiredKills: 1 },
-        { name: "螳螂幼体", killedKey: "killedMantisCrawler", killsKey: "killsMantisCrawler", requiredKills: 1 },
-        { name: "哀鸣之蝇", killedKey: "killedVengefly", killsKey: "killsVengefly", requiredKills: 1 },
-        { name: "蘑菇炮手", killedKey: "killedMushroomTurret", killsKey: "killsMushroomTurret", requiredKills: 1 }
+        { 
+            name: "格鲁兹之母", 
+            killedKey: "killedBigFly", 
+            killsKey: "killsBigFly", 
+            requiredKills: 1,
+            icon: "https://huiji-public.huijistatic.com/hkss/uploads/b/bc/Gruz_Mother_Awake.png",
+            wiki: "https://hkss.huijiwiki.com/wiki/格鲁兹之母"
+        },
+        { 
+            name: "", 
+            killedKey: "", 
+            killsKey: "", 
+            requiredKills: 1,
+            icon: "",
+            wiki: ""
+        },
+        
     ]
 };

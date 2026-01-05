@@ -23,7 +23,6 @@ document.getElementById("parseBtn").onclick = async () => {
         // Usually HK saves are { "playerData": { ... }, ... }
         currentSave = currentFullJson.playerData || currentFullJson;
 
-        buildJournalMapFromSave(currentSave, currentGame.id);
         window.SaveRenderer.renderResult(currentSave, currentGame, currentFullJson);
         
         // Render Modifier UI (Always render, visibility controlled by toggle)
@@ -161,33 +160,6 @@ function switchGame(gameId) {
     currentMeta = null;
 }
 
-function buildJournalMapFromSave(save, gameId) {
-    if (!save) return;
-    window.JOURNAL_MAPS = window.JOURNAL_MAPS || {};
-    window.JOURNAL_MAPS[gameId] = window.JOURNAL_MAPS[gameId] || { entries: [] };
-    const existing = window.JOURNAL_MAPS[gameId].entries || [];
-    const bySuffix = {};
-    existing.forEach(e => {
-        const s = (e.killsKey || e.killedKey || e.name || "").toString().toLowerCase();
-        if (!bySuffix[s]) bySuffix[s] = e;
-    });
-    Object.keys(save).forEach(k => {
-        if (k.startsWith("killed")) {
-            const suffix = k.slice(6).toLowerCase();
-            const keyId = suffix || k.toLowerCase();
-            const ent = bySuffix[keyId] || { name: suffix || k, requiredKills: 1 };
-            ent.killedKey = k;
-            bySuffix[keyId] = ent;
-        } else if (k.startsWith("kills")) {
-            const suffix = k.slice(5).toLowerCase();
-            const keyId = suffix || k.toLowerCase();
-            const ent = bySuffix[keyId] || { name: suffix || k, requiredKills: 1 };
-            ent.killsKey = k;
-            bySuffix[keyId] = ent;
-        }
-    });
-    window.JOURNAL_MAPS[gameId].entries = Object.values(bySuffix).sort((a,b) => (a.name||"").localeCompare(b.name||""));
-}
 // Copy path logic
 document.getElementById("copyPathBtn").onclick = () => {
     const text = document.getElementById("savePathDisplay").textContent;

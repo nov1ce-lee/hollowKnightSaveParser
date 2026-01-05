@@ -205,6 +205,8 @@
             const map = (window.JOURNAL_MAPS && window.JOURNAL_MAPS[gameId] && Array.isArray(window.JOURNAL_MAPS[gameId].entries)) ? window.JOURNAL_MAPS[gameId].entries : [];
             let total = 0;
             let unlocked = 0;
+            
+            // Use map entries
             if (map.length > 0) {
                 total = map.length;
                 const list = document.createElement("div");
@@ -217,10 +219,31 @@
                     const killsVal = killsKey ? (parseInt(save[killsKey] || 0) >= requiredKills) : false;
                     const done = killedVal || killsVal;
                     if (done) unlocked++;
-                    const el = document.createElement("div");
+                    
+                    const el = document.createElement(entry.wiki ? "a" : "div");
                     el.className = `item ${done ? "done" : "missing"}`;
+                    
+                    if (entry.wiki) {
+                        el.href = entry.wiki;
+                        el.target = "_blank";
+                        el.rel = "noopener noreferrer";
+                        el.title = "点击查看 Wiki";
+                    }
+
+                    if (entry.icon) {
+                        const iconWrapper = document.createElement("div");
+                        iconWrapper.className = "icon-wrapper";
+                        const img = document.createElement("img");
+                        img.src = entry.icon;
+                        img.className = "item-icon";
+                        img.referrerPolicy = "no-referrer";
+                        img.onerror = () => { iconWrapper.style.display = 'none'; };
+                        iconWrapper.appendChild(img);
+                        el.appendChild(iconWrapper);
+                    }
+
                     const span = document.createElement("span");
-                    span.textContent = entry.name || (killsKey || killedKey || "");
+                    span.textContent = entry.name || (killsKey || killedKey || "Unknown");
                     el.appendChild(span);
                     list.appendChild(el);
                 });
@@ -229,33 +252,17 @@
                 stat.textContent = `猎人日志 ${unlocked}/${total}`;
                 content.appendChild(stat);
                 content.appendChild(list);
-                return;
+            } else {
+                // If map is empty, show message
+                const stat = document.createElement("h2");
+                stat.className = "completion-stat";
+                stat.textContent = `猎人日志`;
+                const summary = document.createElement("div");
+                summary.className = "missing-content";
+                summary.textContent = "暂无猎人日志映射数据，请在 js/journal/hollowJournalMap.js 或 silksongJournalMap.js 中添加条目。";
+                content.appendChild(stat);
+                content.appendChild(summary);
             }
-            const keys = Object.keys(save || {});
-            const killedKeys = keys.filter(k => k.startsWith("killed"));
-            const killsKeys = keys.filter(k => k.startsWith("kills"));
-            const killedCount = killedKeys.reduce((acc, k) => acc + (save[k] === true ? 1 : 0), 0);
-            const killsCount = killsKeys.reduce((acc, k) => acc + ((parseInt(save[k] || 0) > 0) ? 1 : 0), 0);
-            const suffixSet = new Set();
-            killedKeys.forEach(k => {
-                if (save[k] === true) {
-                    suffixSet.add(k.slice("killed".length).toLowerCase());
-                }
-            });
-            killsKeys.forEach(k => {
-                if (parseInt(save[k] || 0) > 0) {
-                    suffixSet.add(k.slice("kills".length).toLowerCase());
-                }
-            });
-            const combined = suffixSet.size;
-            const stat = document.createElement("h2");
-            stat.className = "completion-stat";
-            stat.textContent = `猎人日志 已解锁条目 ${combined}`;
-            const summary = document.createElement("div");
-            summary.className = "missing-content";
-            summary.innerHTML = `<div class="missing-sub">killed 为 true 的条目 ${killedCount} 个；kills 大于 0 的条目 ${killsCount} 个</div>`;
-            content.appendChild(stat);
-            content.appendChild(summary);
         },
 
         // === Lightbox Functionality ===
