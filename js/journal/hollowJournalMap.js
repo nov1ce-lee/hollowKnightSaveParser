@@ -1,20 +1,197 @@
-window.JOURNAL_MAPS = window.JOURNAL_MAPS || {};
-window.JOURNAL_MAPS.hollow = {
-    entries: [
-        { 
-            name: "格鲁兹之母", 
-            killedKey: "killedBigFly", 
-            killsKey: "killsBigFly", 
-            icon: "https://huiji-public.huijistatic.com/hkss/uploads/b/bc/Gruz_Mother_Awake.png",
-            wiki: "https://hkss.huijiwiki.com/wiki/格鲁兹之母"
-        },
-        { 
-            name: "", 
-            killedKey: "", 
-            killsKey: "", 
-            icon: "",
-            wiki: ""
-        },
-        
-    ]
-};
+(function(window) {
+    window.JOURNAL_MAPS = window.JOURNAL_MAPS || {};
+    
+    // Helper to generate Huiji Wiki URL
+    const getWiki = (name) => name ? `https://hkss.huijiwiki.com/wiki/${name}` : "";
+    
+    // Helper to generate Huiji Icon URL (using a generic search or placeholder if specific URL unknown)
+    // Ideally we would have exact URLs, but for now we'll use a placeholder or rely on the name matching a file.
+    // Since we can't guess the exact hash in the URL (e.g. /b/bc/...), we might have to leave icon blank or use a default.
+    // However, the renderer might handle missing icons gracefully.
+    
+    window.JOURNAL_MAPS.hollow = {
+        entries: [
+            // Crossroads
+            { name: "小爬虫", killedKey: "killedCrawler", killsKey: "killsCrawler", wiki: getWiki("小爬虫"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/5/5b/B_Crawlid.png" },
+            { name: "复仇蝇", killedKey: "killedBuzzer", killsKey: "killsBuzzer", wiki: getWiki("复仇蝇"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/f/fc/Vengefly_Idle.png" },
+            { name: "蒂克蒂克", killedKey: "killedBouncer", killsKey: "killsBouncer", wiki: getWiki("蒂克蒂克"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/9/91/B_Tiktik.png" },
+            { name: "攀爬者", killedKey: "killedClimber", killsKey: "killsClimber", wiki: getWiki("攀爬者"), icon: "" }, // Generic climber?
+            { name: "跳蚤", killedKey: "killedHopper", killsKey: "killsHopper", wiki: getWiki("跳蚤"), icon: "" },
+            { name: "戈姆", killedKey: "killedWorm", killsKey: "killsWorm", wiki: getWiki("戈姆"), icon: "" },
+            { name: "阿斯皮德猎人", killedKey: "killedSpitter", killsKey: "killsSpitter", wiki: getWiki("阿斯皮德猎人"), icon: "" },
+            { name: "阿斯皮德之母", killedKey: "killedHatcher", killsKey: "killsHatcher", wiki: getWiki("阿斯皮德之母"), icon: "" },
+            { name: "阿斯皮德幼体", killedKey: "killedHatchling", killsKey: "killsHatchling", wiki: getWiki("阿斯皮德幼体"), icon: "" },
+            
+            // Husks
+            { name: "游荡躯壳", killedKey: "killedZombieRunner", killsKey: "killsZombieRunner", wiki: getWiki("游荡躯壳"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/e/ec/B_Wandering_Husk.png" },
+            { name: "有角躯壳", killedKey: "killedZombieHornhead", killsKey: "killsZombieHornhead", wiki: getWiki("有角躯壳"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/c/cf/B_Husk_Hornhead.png" },
+            { name: "跳跃躯壳", killedKey: "killedZombieLeaper", killsKey: "killsZombieLeaper", wiki: getWiki("跳跃躯壳"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/4/4d/B_Leaping_Husk.png" },
+            { name: "躯壳恶霸", killedKey: "killedZombieBarger", killsKey: "killsZombieBarger", wiki: getWiki("躯壳恶霸"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/6a/B_Husk_Bully.png" },
+            { name: "躯壳战士", killedKey: "killedZombieShield", killsKey: "killsZombieShield", wiki: getWiki("躯壳战士"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/69/B_Husk_Warrior.png" },
+            { name: "躯壳守卫", killedKey: "killedZombieGuard", killsKey: "killsZombieGuard", wiki: getWiki("躯壳守卫"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/1/1b/B_Husk_Guard.png" },
+            
+            // Bosses / Minibosses
+            { name: "复仇蝇之王", killedKey: "killedBigBuzzer", killsKey: "killsBigBuzzer", wiki: getWiki("复仇蝇之王"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/4/41/B_Vengefly_King.png" },
+            { name: "格鲁兹之母", killedKey: "killedBigFly", killsKey: "killsBigFly", wiki: getWiki("格鲁兹之母"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/9/9f/B_Gruz_Mother.png" },
+            { name: "躁郁的毛里克", killedKey: "killedMawlek", killsKey: "killsMawlek", wiki: getWiki("躁郁的毛里克"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/02/B_Brooding_Mawlek_2.png" },
+            { name: "假骑士", killedKey: "killedFalseKnight", killsKey: "killsFalseKnight", wiki: getWiki("假骑士"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/9/98/B_False_Knight.png" },
+            
+            // Greenpath / Fungal
+            { name: "巴德尔", killedKey: "killedRoller", killsKey: "killsRoller", wiki: getWiki("巴德尔"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/4/4c/B_Baldur.png" },
+            { name: "巴德尔长老", killedKey: "killedBlocker", killsKey: "killsBlocker", wiki: getWiki("巴德尔长老"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/5/52/B_Elder_Baldur.png" },
+            { name: "苔藓流浪者", killedKey: "killedPrayerSlug", killsKey: "killsPrayerSlug", wiki: getWiki("苔藓流浪者"), icon: "" },
+            { name: "修理虫", killedKey: "killedMenderBug", killsKey: "killsMenderBug", wiki: getWiki("修理虫"), icon: "" },
+            { name: "苔藓爬虫", killedKey: "killedMossmanRunner", killsKey: "killsMossmanRunner", wiki: getWiki("苔藓爬虫"), icon: "" },
+            { name: "苔藓族", killedKey: "killedMossmanShaker", killsKey: "killsMossmanShaker", wiki: getWiki("苔藓族"), icon: "" },
+            { name: "斯奎特", killedKey: "killedMosquito", killsKey: "killsMosquito", wiki: getWiki("斯奎特"), icon: "" },
+            { name: "奥波", killedKey: "killedBlobFlyer", killsKey: "killsBlobFlyer", wiki: getWiki("奥波"), icon: "" },
+            { name: "真菌躯壳", killedKey: "killedFungifiedZombie", killsKey: "killsFungifiedZombie", wiki: getWiki("真菌躯壳"), icon: "" },
+            { name: "孢子", killedKey: "killedPlantShooter", killsKey: "killsPlantShooter", wiki: getWiki("孢子"), icon: "" },
+            { name: "苔藓冲锋者", killedKey: "killedMossCharger", killsKey: "killsMossCharger", wiki: getWiki("苔藓冲锋者"), icon: "" },
+            { name: "大型苔藓冲锋者", killedKey: "killedMegaMossCharger", killsKey: "killsMegaMossCharger", wiki: getWiki("大型苔藓冲锋者"), icon: "" },
+            { name: "愚人吞噬者", killedKey: "killedSnapperTrap", killsKey: "killsSnapperTrap", wiki: getWiki("愚人吞噬者"), icon: "" },
+            { name: "苔藓骑士", killedKey: "killedMossKnight", killsKey: "killsMossKnight", wiki: getWiki("苔藓骑士"), icon: "" },
+            { name: "大跳蚤", killedKey: "killedGrassHopper", killsKey: "killsGrassHopper", wiki: getWiki("大跳蚤"), icon: "" },
+            { name: "杜兰杜", killedKey: "killedAcidFlyer", killsKey: "killsAcidFlyer", wiki: getWiki("杜兰杜"), icon: "" },
+            { name: "杜兰达", killedKey: "killedAcidWalker", killsKey: "killsAcidWalker", wiki: getWiki("杜兰达"), icon: "" },
+            { name: "苔藓飞虫", killedKey: "killedMossFlyer", killsKey: "killsMossFlyer", wiki: getWiki("苔藓飞虫"), icon: "" },
+            { name: "沃姆", killedKey: "killedMossKnightFat", killsKey: "killsMossKnightFat", wiki: getWiki("沃姆"), icon: "" }, // Not sure about this key mapping
+            { name: "苔藓步行者", killedKey: "killedMossWalker", killsKey: "killsMossWalker", wiki: getWiki("苔藓步行者"), icon: "" }, // Maybe duplicate of Mosskin?
+            
+            // Fog Canyon / Wastes
+            { name: "残破容器", killedKey: "killedInfectedKnight", killsKey: "killsInfectedKnight", wiki: getWiki("残破容器"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/5/57/Broken_Vessel_Idle.png" },
+            { name: "布飞", killedKey: "killedLazyFlyer", killsKey: "killsLazyFlyer", wiki: getWiki("布飞"), icon: "" },
+            { name: "光蝇", killedKey: "killedZapBug", killsKey: "killsZapBug", wiki: getWiki("光蝇"), icon: "" },
+            { name: "乌玛", killedKey: "killedJellyfish", killsKey: "killsJellyfish", wiki: getWiki("乌玛"), icon: "" },
+            { name: "欧玛", killedKey: "killedJellyCrawler", killsKey: "killsJellyCrawler", wiki: getWiki("欧玛"), icon: "" }, // Assuming JellyCrawler is Ooma based on context or maybe Loodle? But Loodle is Loodle.
+            { name: "乌姆", killedKey: "killedMegaJellyfish", killsKey: "killsMegaJellyfish", wiki: getWiki("乌姆"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/4/49/B_Uumuu.png" },
+            { name: "真菌幼体", killedKey: "killedFungoonBaby", killsKey: "killsFungoonBaby", wiki: getWiki("真菌幼体"), icon: "" },
+            { name: "蘑菇食人魔", killedKey: "killedMushroomTurret", killsKey: "killsMushroomTurret", wiki: getWiki("蘑菇食人魔"), icon: "" },
+            { name: "螳螂战士", killedKey: "killedMantis", killsKey: "killsMantis", wiki: getWiki("螳螂战士"), icon: "" },
+            { name: "蘑菇躯壳", killedKey: "killedMushroomRoller", killsKey: "killsMushroomRoller", wiki: getWiki("蘑菇躯壳"), icon: "" },
+            { name: "蘑菇战士", killedKey: "killedMushroomBrawler", killsKey: "killsMushroomBrawler", wiki: getWiki("蘑菇战士"), icon: "" },
+            { name: "蘑菇球", killedKey: "killedMushroomBaby", killsKey: "killsMushroomBaby", wiki: getWiki("蘑菇球"), icon: "" },
+            { name: "螳螂青年", killedKey: "killedMantisFlyerChild", killsKey: "killsMantisFlyerChild", wiki: getWiki("螳螂青年"), icon: "" },
+            { name: "安布卢姆", killedKey: "killedFungusFlyer", killsKey: "killsFungusFlyer", wiki: getWiki("安布卢姆"), icon: "" },
+            { name: "真菌爬虫", killedKey: "killedFungCrawler", killsKey: "killsFungCrawler", wiki: getWiki("真菌爬虫"), icon: "" },
+            { name: "螳螂领主", killedKey: "killedMantisLord", killsKey: "killsMantisLord", wiki: getWiki("螳螂领主"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/5/52/B_Mantis_Lords_2.png" },
+            
+            // City of Tears
+            { name: "守望者骑士", killedKey: "killedBlackKnight", killsKey: "killsBlackKnight", wiki: getWiki("守望者骑士"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/9/99/B_Watcher_Knight_2.png" },
+            { name: "电击扭曲者", killedKey: "killedElectricMage", killsKey: "killsElectricMage", wiki: getWiki("电击扭曲者"), icon: "" },
+            { name: "灵魂扭曲者", killedKey: "killedMage", killsKey: "killsMage", wiki: getWiki("灵魂扭曲者"), icon: "" },
+            { name: "灵魂战士", killedKey: "killedMageKnight", killsKey: "killsMageKnight", wiki: getWiki("灵魂战士"), icon: "" },
+            { name: "华丽躯壳", killedKey: "killedRoyalDandy", killsKey: "killsRoyalDandy", wiki: getWiki("华丽躯壳"), icon: "" },
+            { name: "懦弱躯壳", killedKey: "killedRoyalCoward", killsKey: "killsRoyalCoward", wiki: getWiki("懦弱躯壳"), icon: "" },
+            { name: "贪食躯壳", killedKey: "killedRoyalPlumper", killsKey: "killsRoyalPlumper", wiki: getWiki("贪食躯壳"), icon: "" },
+            { name: "有翼哨兵", killedKey: "killedFlyingSentrySword", killsKey: "killsFlyingSentrySword", wiki: getWiki("有翼哨兵"), icon: "" },
+            { name: "长矛哨兵", killedKey: "killedFlyingSentryJavelin", killsKey: "killsFlyingSentryJavelin", wiki: getWiki("长矛哨兵"), icon: "" },
+            { name: "哨兵", killedKey: "killedSentry", killsKey: "killsSentry", wiki: getWiki("哨兵"), icon: "" },
+            { name: "重型哨兵", killedKey: "killedSentryFat", killsKey: "killsSentryFat", wiki: getWiki("重型哨兵"), icon: "" },
+            { name: "错误", killedKey: "killedMageBlob", killsKey: "killsMageBlob", wiki: getWiki("错误"), icon: "" },
+            { name: "巨型躯壳哨兵", killedKey: "killedGreatShieldZombie", killsKey: "killsGreatShieldZombie", wiki: getWiki("巨型躯壳哨兵"), icon: "" },
+            { name: "收藏家", killedKey: "killedJarCollector", killsKey: "killsJarCollector", wiki: getWiki("收藏家"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/d/db/The_Collector_Idle.png" },
+            { name: "失误", killedKey: "killedMageBalloon", killsKey: "killsMageBalloon", wiki: getWiki("失误"), icon: "" },
+            { name: "灵魂大师", killedKey: "killedMageLord", killsKey: "killsMageLord", wiki: getWiki("灵魂大师"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/7/72/B_Soul_Master.png" },
+            { name: "华丽躯壳", killedKey: "killedGorgeousHusk", killsKey: "killsGorgeousHusk", wiki: getWiki("华丽躯壳"), icon: "" },
+            { name: "跳跃者", killedKey: "killedFlipHopper", killsKey: "killsFlipHopper", wiki: getWiki("跳跃者"), icon: "" },
+            { name: "吸虫", killedKey: "killedFlukeman", killsKey: "killsFlukeman", wiki: getWiki("吸虫"), icon: "" },
+            { name: "吸虫蒙加", killedKey: "killedInflater", killsKey: "killsInflater", wiki: getWiki("吸虫蒙加"), icon: "" },
+            { name: "吸虫飞", killedKey: "killedFlukefly", killsKey: "killsFlukefly", wiki: getWiki("吸虫飞"), icon: "" },
+            { name: "吸虫之母", killedKey: "killedFlukeMother", killsKey: "killsFlukeMother", wiki: getWiki("吸虫之母"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/e/eb/B_Flukemarm.png" },
+            { name: "粪虫防御者", killedKey: "killedDungDefender", killsKey: "killsDungDefender", wiki: getWiki("粪虫防御者"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/26/Dung_Defender_2.png" },
+            { name: "晶刺虫", killedKey: "killedCrystalCrawler", killsKey: "killsCrystalCrawler", wiki: getWiki("晶刺虫"), icon: "" },
+            { name: "水晶猎人", killedKey: "killedCrystalFlyer", killsKey: "killsCrystalFlyer", wiki: getWiki("水晶猎人"), icon: "" },
+            { name: "水晶爬虫", killedKey: "killedLaserBug", killsKey: "killsLaserBug", wiki: getWiki("水晶爬虫"), icon: "" },
+            { name: "水晶躯壳", killedKey: "killedBeamMiner", killsKey: "killsBeamMiner", wiki: getWiki("水晶躯壳"), icon: "" },
+            { name: "躯壳矿工", killedKey: "killedZombieMiner", killsKey: "killsZombieMiner", wiki: getWiki("躯壳矿工"), icon: "" },
+            { name: "暴怒守卫", killedKey: "killedMegaBeamMiner", killsKey: "killsMegaBeamMiner", wiki: getWiki("暴怒守卫"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/1/1a/Enraged_Guardian.png" },
+            { name: "碎片虫", killedKey: "killedMinesCrawler", killsKey: "killsMinesCrawler", wiki: getWiki("碎片虫"), icon: "" },
+            { name: "暴怒复仇蝇", killedKey: "killedAngryBuzzer", killsKey: "killsAngryBuzzer", wiki: getWiki("暴怒复仇蝇"), icon: "" },
+            { name: "狂暴躯壳", killedKey: "killedBurstingBouncer", killsKey: "killsBurstingBouncer", wiki: getWiki("狂暴躯壳"), icon: "" },
+            { name: "爆肚躯壳", killedKey: "killedBurstingZombie", killsKey: "killsBurstingZombie", wiki: getWiki("爆肚躯壳"), icon: "" },
+            { name: "喷吐躯壳", killedKey: "killedSpittingZombie", killsKey: "killsSpittingZombie", wiki: getWiki("喷吐躯壳"), icon: "" },
+            { name: "掘土者", killedKey: "killedBabyCentipede", killsKey: "killsBabyCentipede", wiki: getWiki("掘土者"), icon: "" },
+            { name: "伽帕德", killedKey: "killedBigCentipede", killsKey: "killsBigCentipede", wiki: getWiki("伽帕德"), icon: "" },
+            { name: "掘土者孵化器", killedKey: "killedCentipedeHatcher", killsKey: "killsCentipedeHatcher", wiki: getWiki("掘土者孵化器"), icon: "" },
+            { name: "小毛里克", killedKey: "killedLesserMawlek", killsKey: "killsLesserMawlek", wiki: getWiki("小毛里克"), icon: "" },
+            { name: "深渊猎人", killedKey: "killedSlashSpider", killsKey: "killsSlashSpider", wiki: getWiki("深渊猎人"), icon: "" },
+            { name: "尸体爬虫", killedKey: "killedSpiderCorpse", killsKey: "killsSpiderCorpse", wiki: getWiki("尸体爬虫"), icon: "" },
+            { name: "编织者", killedKey: "killedShootSpider", killsKey: "killsShootSpider", wiki: getWiki("编织者"), icon: "" },
+            { name: "深渊爬虫", killedKey: "killedMiniSpider", killsKey: "killsMiniSpider", wiki: getWiki("深渊爬虫"), icon: "" },
+            { name: "织巢者", killedKey: "killedSpiderFlyer", killsKey: "killsSpiderFlyer", wiki: getWiki("织巢者"), icon: "" },
+            { name: "诺斯克", killedKey: "killedMimicSpider", killsKey: "killsMimicSpider", wiki: getWiki("诺斯克"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/e/e6/Nosk_Idle.png" },
+            { name: "蜂巢幼体", killedKey: "killedBeeHatchling", killsKey: "killsBeeHatchling", wiki: getWiki("蜂巢幼体"), icon: "" },
+            { name: "蜂巢士兵", killedKey: "killedBeeStinger", killsKey: "killsBeeStinger", wiki: getWiki("蜂巢士兵"), icon: "" },
+            { name: "蜂巢守卫", killedKey: "killedBigBee", killsKey: "killsBigBee", wiki: getWiki("蜂巢守卫"), icon: "" },
+            { name: "蜂巢骑士", killedKey: "killedHiveKnight", killsKey: "killsHiveKnight", wiki: getWiki("蜂巢骑士"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/c/c2/Hive_Knight_Idle.png" },
+            { name: "奥波路波", killedKey: "killedBlowFly", killsKey: "killsBlowFly", wiki: getWiki("奥波路波"), icon: "" },
+            { name: "落尾", killedKey: "killedCeilingDropper", killsKey: "killsCeilingDropper", wiki: getWiki("落尾"), icon: "" },
+            { name: "大跳蚤", killedKey: "killedGiantHopper", killsKey: "killsGiantHopper", wiki: getWiki("大跳蚤"), icon: "" },
+            { name: "幼虫模仿者", killedKey: "killedGrubMimic", killsKey: "killsGrubMimic", wiki: getWiki("幼虫模仿者"), icon: "" },
+            { name: "毛鲁克", killedKey: "killedMawlekTurret", killsKey: "killsMawlekTurret", wiki: getWiki("毛鲁克"), icon: "" },
+            { name: "光籽", killedKey: "killedOrangeScuttler", killsKey: "killsOrangeScuttler", wiki: getWiki("光籽"), icon: "" },
+            { name: "生命籽", killedKey: "killedHealthScuttler", killsKey: "killsHealthScuttler", wiki: getWiki("生命籽"), icon: "" },
+            { name: "古尔卡", killedKey: "killedPigeon", killsKey: "killsPigeon", wiki: getWiki("古尔卡"), icon: "" },
+            { name: "蜂巢躯壳", killedKey: "killedZombieHive", killsKey: "killsZombieHive", wiki: getWiki("蜂巢躯壳"), icon: "" },
+            { name: "守梦者", killedKey: "killedDreamGuard", killsKey: "killsDreamGuard", wiki: getWiki("守梦者"), icon: "" },
+            { name: "大黄蜂", killedKey: "killedHornet", killsKey: "killsHornet", wiki: getWiki("大黄蜂"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/4/4f/B_Hornet_2.png" },
+            { name: "暗影爬虫", killedKey: "killedAbyssCrawler", killsKey: "killsAbyssCrawler", wiki: getWiki("暗影爬虫"), icon: "" },
+            { name: "原始阿斯皮德", killedKey: "killedSuperSpitter", killsKey: "killsSuperSpitter", wiki: getWiki("原始阿斯皮德"), icon: "" },
+            { name: "同胞", killedKey: "killedSibling", killsKey: "killsSibling", wiki: getWiki("同胞"), icon: "" },
+            { name: "翼模", killedKey: "killedPalaceFly", killsKey: "killsPalaceFly", wiki: getWiki("翼模"), icon: "" },
+            { name: "蓝囊", killedKey: "killedEggSac", killsKey: "killsEggSac", wiki: getWiki("蓝囊"), icon: "" },
+            { name: "皇室家臣", killedKey: "killedMummy", killsKey: "killsMummy", wiki: getWiki("皇室家臣"), icon: "" },
+            { name: "感染气球", killedKey: "killedOrangeBalloon", killsKey: "killsOrangeBalloon", wiki: getWiki("感染气球"), icon: "" },
+            { name: "虚空卷须", killedKey: "killedAbyssTendril", killsKey: "killsAbyssTendril", wiki: getWiki("虚空卷须"), icon: "" },
+            { name: "叛徒螳螂", killedKey: "killedHeavyMantis", killsKey: "killsHeavyMantis", wiki: getWiki("叛徒螳螂"), icon: "" },
+            { name: "叛徒领主", killedKey: "killedTraitorLord", killsKey: "killsTraitorLord", wiki: getWiki("叛徒领主"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/B_Traitor_Lord.png" },
+            { name: "佩特拉螳螂", killedKey: "killedMantisHeavyFlyer", killsKey: "killsMantisHeavyFlyer", wiki: getWiki("佩特拉螳螂"), icon: "" },
+            { name: "苔藓流浪者", killedKey: "killedGardenZombie", killsKey: "killsGardenZombie", wiki: getWiki("苔藓流浪者"), icon: "" },
+            { name: "国王傀儡", killedKey: "killedRoyalGuard", killsKey: "killsRoyalGuard", wiki: getWiki("国王傀儡"), icon: "" },
+            { name: "苍白潜伏者", killedKey: "killedWhiteRoyal", killsKey: "killsWhiteRoyal", wiki: getWiki("苍白潜伏者"), icon: "" },
+            { name: "奥波路波", killedKey: "killedOblobble", killsKey: "killsOblobble", wiki: getWiki("奥波路波"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/4/46/Oblobble.png" },
+            { name: "左特", killedKey: "killedZote", killsKey: "killsZote", wiki: getWiki("左特"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/4/4a/Zote_The_Mighty.png" },
+            { name: "奥波", killedKey: "killedBlobble", killsKey: "killsBlobble", wiki: getWiki("奥波"), icon: "" },
+            { name: "死亡鲁特", killedKey: "killedColMosquito", killsKey: "killsColMosquito", wiki: getWiki("死亡鲁特"), icon: "" },
+            { name: "夏普巴德尔", killedKey: "killedColRoller", killsKey: "killsColRoller", wiki: getWiki("夏普巴德尔"), icon: "" },
+            { name: "有翼愚人", killedKey: "killedColFlyingSentry", killsKey: "killsColFlyingSentry", wiki: getWiki("有翼愚人"), icon: "" },
+            { name: "重型愚人", killedKey: "killedColMiner", killsKey: "killsColMiner", wiki: getWiki("重型愚人"), icon: "" },
+            { name: "坚固愚人", killedKey: "killedColShield", killsKey: "killsColShield", wiki: getWiki("坚固愚人"), icon: "" },
+            { name: "戈姆", killedKey: "killedColWorm", killsKey: "killsColWorm", wiki: getWiki("戈姆"), icon: "" },
+            { name: "装甲斯奎特", killedKey: "killedColHopper", killsKey: "killsColHopper", wiki: getWiki("装甲斯奎特"), icon: "" },
+            { name: "驯神者", killedKey: "killedLobsterLancer", killsKey: "killsLobsterLancer", wiki: getWiki("驯神者"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/e/ed/God_Tamer.png" },
+            { name: "戈布", killedKey: "killedGhostAladar", killsKey: "killsGhostAladar", wiki: getWiki("戈布"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/b/be/Gorb_without_Essence.png" },
+            { name: "泽若", killedKey: "killedGhostXero", killsKey: "killsGhostXero", wiki: getWiki("泽若"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/a/a8/Xero_without_Essence.png" },
+            { name: "胡长老", killedKey: "killedGhostHu", killsKey: "killsGhostHu", wiki: getWiki("胡长老"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/8/8f/Elder_Hu_Idle.png" },
+            { name: "马尔穆", killedKey: "killedGhostMarmu", killsKey: "killsGhostMarmu", wiki: getWiki("马尔穆"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/8/84/Marmu_without_Essence.png" },
+            { name: "无眼", killedKey: "killedGhostNoEyes", killsKey: "killsGhostNoEyes", wiki: getWiki("无眼"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/3/37/No_Eyes_Idle.png" },
+            { name: "马科斯", killedKey: "killedGhostMarkoth", killsKey: "killsGhostMarkoth", wiki: getWiki("马科斯"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/1/10/Markoth_without_Essence.png" },
+            { name: "加利安", killedKey: "killedGhostGalien", killsKey: "killsGhostGalien", wiki: getWiki("加利安"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/8/89/Galien_without_Essence.png" },
+            { name: "白色防御者", killedKey: "killedWhiteDefender", killsKey: "killsWhiteDefender", wiki: getWiki("白色防御者"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/3/3d/White_Defender.png" },
+            { name: "灰色王子左特", killedKey: "killedGreyPrince", killsKey: "killsGreyPrince", wiki: getWiki("灰色王子左特"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/4/4e/Grey_Prince_Zote.png" },
+            { name: "爆裂左特", killedKey: "killedZotelingBalloon", killsKey: "killsZotelingBalloon", wiki: getWiki("爆裂左特"), icon: "" },
+            { name: "跳跃左特", killedKey: "killedZotelingHopper", killsKey: "killsZotelingHopper", wiki: getWiki("跳跃左特"), icon: "" },
+            { name: "有翼左特", killedKey: "killedZotelingBuzzer", killsKey: "killsZotelingBuzzer", wiki: getWiki("有翼左特"), icon: "" },
+            { name: "空洞骑士", killedKey: "killedHollowKnight", killsKey: "killsHollowKnight", wiki: getWiki("空洞骑士"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/b/ba/The_Hollow_Knight.png" },
+            { name: "无上辐光", killedKey: "killedFinalBoss", killsKey: "killsFinalBoss", wiki: getWiki("无上辐光"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/3/36/Absolute_Radiance.png" },
+            { name: "猎人印记", killedKey: "killedHunterMark", killsKey: "killsHunterMark", wiki: getWiki("猎人印记"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/e/e0/Hunters_Mark.png" },
+            { name: "格林亲族新手", killedKey: "killedFlameBearerSmall", killsKey: "killsFlameBearerSmall", wiki: getWiki("格林亲族新手"), icon: "" },
+            { name: "格林亲族大师", killedKey: "killedFlameBearerMed", killsKey: "killsFlameBearerMed", wiki: getWiki("格林亲族大师"), icon: "" },
+            { name: "格林亲族梦魇", killedKey: "killedFlameBearerLarge", killsKey: "killsFlameBearerLarge", wiki: getWiki("格林亲族梦魇"), icon: "" },
+            { name: "剧团团长格林", killedKey: "killedGrimm", killsKey: "killsGrimm", wiki: getWiki("剧团团长格林"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/a/a2/Troupe_Master_Grimm.png" },
+            { name: "梦魇之王", killedKey: "killedNightmareGrimm", killsKey: "killsNightmareGrimm", wiki: getWiki("梦魇之王"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/a/a1/Nightmare_King.png" },
+            { name: "封印", killedKey: "killedBindingSeal", killsKey: "killsBindingSeal", wiki: getWiki("封印"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/a/a2/Binding_Seal.png" },
+            { name: "吸虫之母（胖）", killedKey: "killedFatFluke", killsKey: "killsFatFluke", wiki: getWiki("吸虫之母"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/e/eb/B_Flukemarm.png" },
+            { name: "苍白潜伏者", killedKey: "killedPaleLurker", killsKey: "killsPaleLurker", wiki: getWiki("苍白潜伏者"), icon: "" },
+            { name: "骨钉兄弟奥罗&马托", killedKey: "killedNailBros", killsKey: "killsNailBros", wiki: getWiki("骨钉兄弟奥罗&马托"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/d/d8/Brothers_Oro_%26_Mato.png" },
+            { name: "大画师希奥", killedKey: "killedPaintmaster", killsKey: "killsPaintmaster", wiki: getWiki("大画师希奥"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/07/Paintmaster_Sheo.png" },
+            { name: "伟大的骨钉贤者斯莱", killedKey: "killedNailsage", killsKey: "killsNailsage", wiki: getWiki("伟大的骨钉贤者斯莱"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/c/c2/Great_Nailsage_Sly.png" },
+            { name: "纯粹容器", killedKey: "killedHollowKnightPrime", killsKey: "killsHollowKnightPrime", wiki: getWiki("纯粹容器"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/9/9d/Pure_Vessel.png" },
+            { name: "寻神者面具", killedKey: "killedGodseekerMask", killsKey: "killsGodseekerMask", wiki: getWiki("寻神者"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/05/Godseeker.png" },
+            { name: "虚空神像", killedKey: "killedVoidIdol_1", killsKey: "killsVoidIdol_1", wiki: getWiki("虚空神像"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/8/87/Void_Idol.png" },
+            { name: "虚空神像", killedKey: "killedVoidIdol_2", killsKey: "killsVoidIdol_2", wiki: getWiki("虚空神像"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/8/87/Void_Idol.png" },
+            { name: "虚空神像", killedKey: "killedVoidIdol_3", killsKey: "killsVoidIdol_3", wiki: getWiki("虚空神像"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/8/87/Void_Idol.png" }
+        ]
+    };
+})(window);
