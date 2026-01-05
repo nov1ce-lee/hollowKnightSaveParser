@@ -214,14 +214,44 @@
                 map.forEach(entry => {
                     const killedKey = entry.killedKey;
                     const killsKey = entry.killsKey;
-                    const requiredKills = entry.requiredKills || 1;
-                    const killedVal = killedKey ? !!save[killedKey] : false;
-                    const killsVal = killsKey ? (parseInt(save[killsKey] || 0) >= requiredKills) : false;
-                    const done = killedVal || killsVal;
-                    if (done) unlocked++;
+                    
+                    const isUnlocked = killedKey ? !!save[killedKey] : false;
+                    const currentKills = killsKey ? parseInt(save[killsKey] || 0) : 0;
+                    
+                    let status = "missing";
+                    let badgeText = "";
+
+                    if (isUnlocked) {
+                        if (killsKey) {
+                            if (currentKills <= 0) {
+                                status = "done";
+                                badgeText = "已完成";
+                            } else {
+                                status = "partial";
+                                badgeText = "未完成";
+                            }
+                        } else {
+                            status = "done";
+                            badgeText = "已完成";
+                        }
+                    } else {
+                        // Locked state
+                        status = "missing";
+                        // badgeText = "未解锁"; // Optional: Uncomment to show badge on locked items
+                    }
+                    
+                    if (status !== "missing") unlocked++;
                     
                     const el = document.createElement(entry.wiki ? "a" : "div");
-                    el.className = `item ${done ? "done" : "missing"}`;
+                    el.className = `item ${status}`;
+                    
+                    // Add Status Badge
+                    if (badgeText) {
+                        const badge = document.createElement("div");
+                        badge.className = "status-badge";
+                        badge.textContent = badgeText;
+                        el.appendChild(badge);
+                    }
                     
                     if (entry.wiki) {
                         el.href = entry.wiki;

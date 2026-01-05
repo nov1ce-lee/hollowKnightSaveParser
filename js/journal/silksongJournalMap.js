@@ -5,7 +5,7 @@ window.JOURNAL_MAPS.silksong = {
             name: "",
             killedKey: "",
             killsKey: "",
-            requiredKills: 1,
+            icon: "",
             wiki: ""
         }
     ]

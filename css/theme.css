@@ -411,6 +411,36 @@ a.item {
     filter: grayscale(0.6); /* Slightly gray out missing items */
 }
 
+.item.partial {
+    background: var(--status-partial-bg);
+    border-color: var(--status-partial-border);
+    color: var(--status-partial-text);
+}
+
+.status-badge {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    font-size: 0.7rem;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-weight: 600;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.item.partial .status-badge {
+    background: rgba(230, 126, 34, 0.3);
+    border: 1px solid var(--status-partial-border);
+    color: var(--status-partial-text);
+}
+
+.item.done .status-badge {
+    background: rgba(74, 144, 226, 0.3);
+    border: 1px solid var(--status-done-border);
+    color: var(--status-done-text);
+}
+
 .item:hover {
     transform: translateY(-3px);
     z-index: 10;
