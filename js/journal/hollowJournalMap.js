@@ -99,7 +99,7 @@
             { name: "吸虫怪", killedKey: "killedFlukeman", killsKey: "killsFlukeman", wiki: getWiki("吸虫怪"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/f/f3/B_Flukemon.png" },
             { name: "吸虫幼雏", killedKey: "killedFlukefly", killsKey: "killsFlukefly", wiki: getWiki("吸虫幼雏"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/9/92/B_Flukefey.png" },
             { name: "贪食吸虫", killedKey: "killedFatFluke", killsKey: "killsFatFluke", wiki: getWiki("贪食吸虫"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/61/B_Flukemunga.png" },
-            { name: "吸虫之母", killedKey: "killedFlukeMother", killsKey: "killsFlukeMother", wiki: getWiki("吸虫之母"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/e/eb/B_Flukemarm.png" },
+            { name: "吸虫之母", killedKey: "killedFlukeMother", killsKey: "killsFlukeMother", wiki: getWiki("吸虫之母"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/1/1b/B_Flukemarm.png" },
             { name: "粪虫防御者", killedKey: "killedDungDefender", killsKey: "killsDungDefender", wiki: getWiki("粪虫防御者"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/26/Dung_Defender_2.png" },
             
             { name: "晶刺螨", killedKey: "killedCrystalCrawler", killsKey: "killsCrystalCrawler", wiki: getWiki("晶刺螨"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/b/ba/B_Shardmite.png" },
@@ -108,7 +108,7 @@
             { name: "水晶爬虫", killedKey: "killedLaserBug", killsKey: "killsLaserBug", wiki: getWiki("水晶爬虫"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/6e/B_Crystal_Crawler.png" },
             { name: "结晶躯壳", killedKey: "killedBeamMiner", killsKey: "killsBeamMiner", wiki: getWiki("结晶躯壳"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/e/e0/Crystallised_Husk_Idle.png" },
             { name: "躯壳矿工", killedKey: "killedZombieMiner", killsKey: "killsZombieMiner", wiki: getWiki("躯壳矿工"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/e/ec/B_Husk_Miner.png" },
-            { name: "暴怒守卫", killedKey: "killedMegaBeamMiner", killsKey: "killsMegaBeamMiner", wiki: getWiki("暴怒守卫"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/1/1a/Enraged_Guardian.png" },
+            { name: "暴怒守卫", killedKey: "killedMegaBeamMiner", killsKey: "killsMegaBeamMiner", wiki: getWiki("暴怒守卫"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/02/B_Crystal_Guardian.png" },
             
             { name: "暴怒复仇蝇", killedKey: "killedAngryBuzzer", killsKey: "killsAngryBuzzer", wiki: getWiki("暴怒复仇蝇"), icon: "" },
             { name: "狂暴躯壳", killedKey: "killedBurstingBouncer", killsKey: "killsBurstingBouncer", wiki: getWiki("狂暴躯壳"), icon: "" },
