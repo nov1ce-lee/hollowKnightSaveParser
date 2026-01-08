@@ -135,7 +135,7 @@
             { name: "蜂巢躯壳", killedKey: "killedZombieHive", killsKey: "killsZombieHive", wiki: getWiki("蜂巢躯壳"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/e/e5/Husk_Hive_Idle.png" },
             { name: "蜂巢骑士", killedKey: "killedHiveKnight", killsKey: "killsHiveKnight", wiki: getWiki("蜂巢骑士"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/3/3b/B_Hive_Knight.png" },
 
-            { name: "奥波路波", killedKey: "killedBlowFly", killsKey: "killsBlowFly", wiki: getWiki("奥波路波"), icon: "" },
+            // { name: "", killedKey: "killedBlowFly", killsKey: "killsBlowFly", wiki: getWiki(""), icon: "" },
             // { name: "落尾", killedKey: "killedCeilingDropper", killsKey: "killsCeilingDropper", wiki: getWiki("落尾"), icon: "" },
             { name: "跳虫", killedKey: "killedHopper", killsKey: "killsHopper", wiki: getWiki("跳虫"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/1/12/Hopper_in_Game.png" },
             { name: "大跳虫", killedKey: "killedGiantHopper", killsKey: "killsGiantHopper", wiki: getWiki("大跳虫"), icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/66/B_Great_Hopper.png" },

@@ -133,8 +133,16 @@ function switchGame(gameId) {
     document.getElementById("hkBtn").classList.toggle("active", gameId === 'hollow');
     document.getElementById("ssBtn").classList.toggle("active", gameId === 'silksong');
 
-    document.getElementById("result").innerHTML = "";
-    document.getElementById("missingList").innerHTML = "";
+    // Reset File Input
+    document.getElementById("fileInput").value = "";
+
+    // Reset Result Areas
+    const resultDiv = document.getElementById("result");
+    const missingListDiv = document.getElementById("missingList");
+    resultDiv.innerHTML = "";
+    missingListDiv.innerHTML = "";
+    resultDiv.style.display = "block";
+    missingListDiv.style.display = "block";
     
     // Clear Modifier UI
     document.getElementById("modifierUI").style.display = "none";
@@ -158,6 +166,8 @@ function switchGame(gameId) {
     currentSave = null;
     currentFullJson = null;
     currentMeta = null;
+    
+    updateModifierVisibility();
 }
 
 // Copy path logic
