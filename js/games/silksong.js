@@ -273,7 +273,7 @@ window.GAMES.silksong = {
                 },
                 { 
                     name: "长针", 
-                    checkTools: (toolsMap) => toolsMap["Longneedle"]?.IsUnlocked, 
+                    checkTools: (toolsMap) => toolsMap["Harpoon"]?.IsUnlocked, 
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/c/cb/Longpin.png",
                     wiki: "https://hkss.huijiwiki.com/wiki/长针" 
                 },
@@ -515,7 +515,7 @@ window.GAMES.silksong = {
                 },
                 { 
                     name: "长爪", 
-                    checkTools: (toolsMap) => toolsMap["Harpoon"]?.IsUnlocked, 
+                    checkTools: (toolsMap) => toolsMap["Longneedle"]?.IsUnlocked, 
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/7/73/Longclaw.png",
                     wiki: "https://hkss.huijiwiki.com/wiki/长爪" 
                 },
