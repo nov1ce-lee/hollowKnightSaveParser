@@ -211,19 +211,34 @@
                 total = map.length;
                 const list = document.createElement("div");
                 list.className = "section-items";
+                
+                // Pre-fetch Silksong journal list if needed
+                let ssJournalList = [];
+                if (gameId === 'silksong') {
+                    // Support both locations (root or nested in playerData)
+                    ssJournalList = save?.playerData?.EnemyJournalKillData?.list || save?.EnemyJournalKillData?.list || [];
+                }
+
                 map.forEach(entry => {
-                    const killedKey = entry.killedKey;
-                    const killsKey = entry.killsKey;
-                    
-                    const isUnlocked = killedKey ? !!save[killedKey] : false;
-                    const currentKills = killsKey ? parseInt(save[killsKey] || 0) : 0;
-                    
                     let status = "missing";
                     let badgeText = "";
+                    let entryName = entry.name;
 
-                    if (isUnlocked) {
-                        if (killsKey) {
-                            if (currentKills <= 0) {
+                    if (gameId === 'silksong') {
+                        // === Silksong Logic ===
+                        const key = entry.key;
+                        const matchedItem = ssJournalList.find(item => item.Name === key);
+                        
+                        let hasBeenSeen = false;
+                        let currentKills = 0;
+                        
+                        if (matchedItem && matchedItem.Record) {
+                            hasBeenSeen = matchedItem.Record.HasBeenSeen;
+                            currentKills = matchedItem.Record.Kills || 0;
+                        }
+
+                        if (hasBeenSeen) {
+                            if (currentKills >= entry.killsRequired) {
                                 status = "done";
                                 badgeText = "已完成";
                             } else {
@@ -231,13 +246,37 @@
                                 badgeText = "未完成";
                             }
                         } else {
-                            status = "done";
-                            badgeText = "已完成";
+                            status = "missing";
+                            // badgeText = "未遇见";
                         }
                     } else {
-                        // Locked state
-                        status = "missing";
-                        // badgeText = "未解锁"; // Optional: Uncomment to show badge on locked items
+                        // === Hollow Knight Logic ===
+                        const killedKey = entry.killedKey;
+                        const killsKey = entry.killsKey;
+                        
+                        entryName = entry.name || (killsKey || killedKey || "Unknown");
+                        
+                        const isUnlocked = killedKey ? !!save[killedKey] : false;
+                        const currentKills = killsKey ? parseInt(save[killsKey] || 0) : 0;
+    
+                        if (isUnlocked) {
+                            if (killsKey) {
+                                if (currentKills <= 0) {
+                                    status = "done";
+                                    badgeText = "已完成";
+                                } else {
+                                    status = "partial";
+                                    badgeText = "未完成";
+                                }
+                            } else {
+                                status = "done";
+                                badgeText = "已完成";
+                            }
+                        } else {
+                            // Locked state
+                            status = "missing";
+                            // badgeText = "未解锁"; // Optional: Uncomment to show badge on locked items
+                        }
                     }
                     
                     if (status !== "missing") unlocked++;
@@ -273,7 +312,7 @@
                     }
 
                     const span = document.createElement("span");
-                    span.textContent = entry.name || (killsKey || killedKey || "Unknown");
+                    span.textContent = entryName;
                     el.appendChild(span);
                     list.appendChild(el);
                 });
