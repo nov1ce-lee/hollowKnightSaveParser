@@ -305,7 +305,7 @@
                         const img = document.createElement("img");
                         img.src = entry.icon;
                         img.className = "item-icon";
-                        img.referrerPolicy = "no-referrer";
+                        // img.referrerPolicy = "no-referrer";
                         img.onerror = () => { iconWrapper.style.display = 'none'; };
                         iconWrapper.appendChild(img);
                         el.appendChild(iconWrapper);
@@ -368,7 +368,7 @@
                 const img = document.createElement('img');
                 img.className = 'lightbox-content';
                 img.id = 'lightbox-img';
-                img.referrerPolicy = "no-referrer"; // Avoid hotlink protection
+                // img.referrerPolicy = "no-referrer"; // Avoid hotlink protection
                 img.onerror = () => {
                     console.error('Lightbox image failed to load');
                     // Optional: show placeholder or error message
