@@ -20,6 +20,102 @@ window.GAMES.silksong = {
             setValue: (save, val) => save.ShellShards = parseInt(val)
         },
         {
+            name: "沙克拉",
+            type: "boolean",
+            trueText: "日志已记录",
+            falseText: "日志未记录",
+            desc: "在第三幕前未挑战沙克拉会无法解锁日志，可以手动添加",
+            getValue: (save) => save.EnemyJournalKillData?.list?.find(t => t.Name === "Shakra")?.Record?.HasBeenSeen,
+            setValue: (save, val) => {
+                const name = "Shakra";
+                if (!save.EnemyJournalKillData?.list) return;
+                
+                let item = save.EnemyJournalKillData.list.find(t => t.Name === name);
+                if (val) {
+                    if (!item) {
+                        save.EnemyJournalKillData.list.push({
+                            "Name": name,
+                            "Record": {
+                                "Kills": 1,
+                                "HasBeenSeen": true
+                            }
+                        });
+                    } else {
+                        if (!item.Record) item.Record = {
+                            "Kills": 1,
+                            "HasBeenSeen": true
+                        };
+                    }
+                } else {
+                    if (item && item.Record) item.Record.HasBeenSeen = false;
+                }
+            }
+        },
+        {
+            name: "加蒙德&扎扎",
+            type: "boolean",
+            trueText: "日志已记录",
+            falseText: "日志未记录",
+            desc: "在第三幕前未挑战加蒙德&扎扎会无法解锁日志，可以手动添加",
+            getValue: (save) => save.EnemyJournalKillData?.list?.find(t => t.Name === "Garmond_Zaza")?.Record?.HasBeenSeen,
+            setValue: (save, val) => {
+                const name = "Garmond_Zaza";
+                if (!save.EnemyJournalKillData?.list) return;
+                
+                let item = save.EnemyJournalKillData.list.find(t => t.Name === name);
+                if (val) {
+                    if (!item) {
+                        save.EnemyJournalKillData.list.push({
+                            "Name": name,
+                            "Record": {
+                                "Kills": 1,
+                                "HasBeenSeen": true
+                            }
+                        });
+                    } else {
+                        if (!item.Record) item.Record = {
+                            "Kills": 1,
+                            "HasBeenSeen": true
+                        };
+                    }
+                } else {
+                    if (item && item.Record) item.Record.HasBeenSeen = false;
+                }
+            }
+        },
+        {
+            name: "苍白苜鹿",
+            type: "boolean",
+            trueText: "日志已记录",
+            falseText: "日志未记录",
+            desc: "在翠庭未击败苍白苜鹿会无法解锁日志，可以手动添加",
+            getValue: (save) => save.EnemyJournalKillData?.list?.find(t => t.Name === "Cloverstag White")?.Record?.HasBeenSeen,
+            setValue: (save, val) => {
+                const name = "Cloverstag White";
+                if (!save.EnemyJournalKillData?.list) return;
+                
+                let item = save.EnemyJournalKillData.list.find(t => t.Name === name);
+                if (val) {
+                    if (!item) {
+                        save.EnemyJournalKillData.list.push({
+                            "Name": name,
+                            "Record": {
+                                "Kills": 1,
+                                "HasBeenSeen": true
+                            }
+                        });
+                    } else {
+                        if (!item.Record) item.Record = {
+                            "Kills": 1,
+                            "HasBeenSeen": true
+                        };
+                    }
+                } else {
+                    if (item && item.Record) item.Record.HasBeenSeen = false;
+                }
+            }
+        },
+        {
             name: "壳囊",
             type: "boolean",
             trueText: "已获取",
