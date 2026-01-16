@@ -25,6 +25,12 @@ document.getElementById("parseBtn").onclick = async () => {
 
         window.SaveRenderer.renderResult(currentSave, currentGame, currentFullJson);
         
+        // Ensure rescue button text is correct for the current game
+        const rescueBtn = document.getElementById("rescueBtn");
+        if (rescueBtn) {
+            rescueBtn.textContent = getRescueButtonText(false);
+        }
+
         // Render Modifier UI (Always render, visibility controlled by toggle)
         if (window.SaveRenderer.renderModifier) {
             window.SaveRenderer.renderModifier(currentSave, currentGame);
@@ -64,6 +70,16 @@ document.getElementById("exportBtn").onclick = () => {
 };
 
 let isJournalView = false;
+let isRescueView = false;
+
+function getRescueButtonText(isOpen) {
+    const gameId = currentGame && currentGame.id === "silksong" ? "silksong" : "hollow";
+    if (gameId === "hollow") {
+        return isOpen ? "关闭幼虫收集情况" : "浏览幼虫收集情况";
+    }
+    return isOpen ? "关闭跳蚤收集情况" : "浏览跳蚤收集情况";
+}
+
 document.getElementById("journalBtn").onclick = () => {
     if (!window.SaveRenderer) return;
     if (!currentSave) return;
@@ -73,16 +89,56 @@ document.getElementById("journalBtn").onclick = () => {
     const missingList = document.getElementById("missingList");
     const result = document.getElementById("result");
     const modifierUI = document.getElementById("modifierUI");
+    const rescuePanel = document.getElementById("rescuePanel");
+    const rescueBtn = document.getElementById("rescueBtn");
     if (isJournalView) {
         journalBtn.textContent = "关闭猎人日志";
         missingList.style.display = "none";
         result.style.display = "none";
         modifierUI.style.display = "none";
         journalPanel.style.display = "block";
+        isRescueView = false;
+        if (rescuePanel) {
+            rescuePanel.style.display = "none";
+        }
+        if (rescueBtn) {
+            rescueBtn.textContent = getRescueButtonText(false);
+        }
         window.SaveRenderer.renderJournal(currentSave, currentGame);
     } else {
         journalBtn.textContent = "浏览猎人日志完成情况";
         journalPanel.style.display = "none";
+        missingList.style.display = "block";
+        result.style.display = "block";
+        updateModifierVisibility();
+        window.SaveRenderer.renderResult(currentSave, currentGame, currentFullJson);
+    }
+};
+
+document.getElementById("rescueBtn").onclick = () => {
+    if (!window.SaveRenderer) return;
+    if (!currentSave) return;
+    isRescueView = !isRescueView;
+    const rescuePanel = document.getElementById("rescuePanel");
+    const rescueBtn = document.getElementById("rescueBtn");
+    const journalPanel = document.getElementById("journalPanel");
+    const journalBtn = document.getElementById("journalBtn");
+    const missingList = document.getElementById("missingList");
+    const result = document.getElementById("result");
+    const modifierUI = document.getElementById("modifierUI");
+    if (isRescueView) {
+        rescueBtn.textContent = getRescueButtonText(true);
+        missingList.style.display = "none";
+        result.style.display = "none";
+        modifierUI.style.display = "none";
+        rescuePanel.style.display = "block";
+        isJournalView = false;
+        journalPanel.style.display = "none";
+        journalBtn.textContent = "浏览猎人日志完成情况";
+        window.SaveRenderer.renderRescue(currentSave, currentGame, currentFullJson);
+    } else {
+        rescueBtn.textContent = getRescueButtonText(false);
+        rescuePanel.style.display = "none";
         missingList.style.display = "block";
         result.style.display = "block";
         updateModifierVisibility();
@@ -96,6 +152,7 @@ function updateModifierVisibility() {
     const exportBtn = document.getElementById("exportBtn");
     const modifierControls = document.getElementById("modifierControls");
     const journalBtn = document.getElementById("journalBtn");
+    const rescueBtn = document.getElementById("rescueBtn");
     
     const hasData = currentSave !== null;
     const isEnabled = toggle.checked;
@@ -111,6 +168,9 @@ function updateModifierVisibility() {
 
     // Journal button appears after parse
     journalBtn.style.display = hasData ? "inline-block" : "none";
+    if (rescueBtn) {
+        rescueBtn.style.display = hasData ? "inline-block" : "none";
+    }
 
     // Control the UI and Export visibility based on Toggle
     if (hasData && hasModifiableItems && isEnabled) {
@@ -152,6 +212,19 @@ function switchGame(gameId) {
     document.getElementById("journalContent").innerHTML = "";
     document.getElementById("journalBtn").textContent = "浏览猎人日志完成情况";
     isJournalView = false;
+    const rescuePanel = document.getElementById("rescuePanel");
+    const rescueContent = document.getElementById("rescueContent");
+    const rescueBtn = document.getElementById("rescueBtn");
+    if (rescuePanel) {
+        rescuePanel.style.display = "none";
+    }
+    if (rescueContent) {
+        rescueContent.innerHTML = "";
+    }
+    if (rescueBtn) {
+        rescueBtn.textContent = getRescueButtonText(false);
+    }
+    isRescueView = false;
     
     // Update path hint
     const paths = {
@@ -190,3 +263,8 @@ document.getElementById("copyPathBtn").onclick = () => {
         alert("复制失败，请手动复制");
     });
 };
+
+// Initialize UI state on load
+if (document.getElementById("rescueBtn")) {
+    document.getElementById("rescueBtn").textContent = getRescueButtonText(false);
+}

@@ -333,6 +333,147 @@
                 content.appendChild(summary);
             }
         },
+        renderRescue: function(save, gameConfig, fullJson) {
+            const content = document.getElementById("rescueContent");
+            content.innerHTML = "";
+            const gameId = gameConfig.id === "silksong" ? "silksong" : "hollow";
+            const map = (window.RESCUE_MAPS && window.RESCUE_MAPS[gameId] && Array.isArray(window.RESCUE_MAPS[gameId].entries)) ? window.RESCUE_MAPS[gameId].entries : [];
+            if (map.length === 0) {
+                const stat = document.createElement("h2");
+                stat.className = "completion-stat";
+                stat.textContent = gameId === "hollow" ? "幼虫收集" : "跳蚤收集";
+                const summary = document.createElement("div");
+                summary.className = "missing-content";
+                summary.textContent = gameId === "hollow"
+                    ? "暂无幼虫映射数据，请在 js/rescue/hollowRescueMap.js 中添加条目。"
+                    : "暂无跳蚤映射数据，请在 js/rescue/silksongRescueMap.js 中添加条目。";
+                content.appendChild(stat);
+                content.appendChild(summary);
+                return;
+            }
+            const list = document.createElement("div");
+            list.className = "section-items";
+            let total = map.length;
+            let rescued = 0;
+            if (gameId === "hollow") {
+                const rescuedScenes = Array.isArray(save.scenesGrubRescued) ? save.scenesGrubRescued : [];
+                map.forEach(entry => {
+                    const scene = entry.scene;
+                    const isRescued = scene ? rescuedScenes.indexOf(scene) >= 0 : false;
+                    if (isRescued) {
+                        rescued++;
+                    }
+                    const el = document.createElement("div");
+                    el.className = "item " + (isRescued ? "done" : "missing");
+
+                    if (entry.desc) {
+                        const tooltip = document.createElement("div");
+                        tooltip.className = "tooltip-text";
+                        tooltip.innerHTML = entry.desc;
+                        el.appendChild(tooltip);
+                    }
+
+                    if (entry.locationImage) {
+                        el.style.cursor = "pointer";
+                        const currentTitle = el.title || "";
+                        el.title = currentTitle ? currentTitle + " (点击打开地图位置图片)" : "点击打开地图位置图片";
+                        el.addEventListener("click", function(e) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            window.SaveRenderer.openLightbox(entry.locationImage, entry.name || scene || "");
+                        });
+                    }
+
+                    if (entry.icon) {
+                        const iconWrapper = document.createElement("div");
+                        iconWrapper.className = "icon-wrapper";
+                        const img = document.createElement("img");
+                        img.src = entry.icon;
+                        img.className = "item-icon";
+                        img.referrerPolicy = "no-referrer";
+                        img.onerror = function() {
+                            iconWrapper.style.display = "none";
+                        };
+                        iconWrapper.appendChild(img);
+                        el.appendChild(iconWrapper);
+                    }
+
+                    const span = document.createElement("span");
+                    span.textContent = entry.name || scene || "";
+                    el.appendChild(span);
+                    list.appendChild(el);
+                });
+            } else {
+                const seenKeys = {};
+                map.forEach(entry => {
+                    const key = entry.key;
+                    if (key) {
+                        seenKeys[key] = true;
+                    }
+                    const isRescued = key ? !!save[key] : false;
+                    if (isRescued) {
+                        rescued++;
+                    }
+                    const el = document.createElement("div");
+                    el.className = "item " + (isRescued ? "done" : "missing");
+
+                    if (entry.desc) {
+                        const tooltip = document.createElement("div");
+                        tooltip.className = "tooltip-text";
+                        tooltip.innerHTML = entry.desc;
+                        el.appendChild(tooltip);
+                    }
+
+                    if (entry.locationImage) {
+                        el.style.cursor = "pointer";
+                        const currentTitle = el.title || "";
+                        el.title = currentTitle ? currentTitle + " (点击打开地图位置图片)" : "点击打开地图位置图片";
+                        el.addEventListener("click", function(e) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            window.SaveRenderer.openLightbox(entry.locationImage, entry.name || key || "");
+                        });
+                    }
+
+                    if (entry.icon) {
+                        const iconWrapper = document.createElement("div");
+                        iconWrapper.className = "icon-wrapper";
+                        const img = document.createElement("img");
+                        img.src = entry.icon;
+                        img.className = "item-icon";
+                        img.referrerPolicy = "no-referrer";
+                        img.onerror = function() {
+                            iconWrapper.style.display = "none";
+                        };
+                        iconWrapper.appendChild(img);
+                        el.appendChild(iconWrapper);
+                    }
+
+                    const span = document.createElement("span");
+                    span.textContent = entry.name || key || "";
+                    el.appendChild(span);
+                    list.appendChild(el);
+                });
+                Object.keys(save || {}).forEach(function(k) {
+                    if (k.indexOf("SavedFlea_") === 0 && save[k] && !seenKeys[k]) {
+                        seenKeys[k] = true;
+                        rescued++;
+                        total++;
+                        const el = document.createElement("div");
+                        el.className = "item done";
+                        const span = document.createElement("span");
+                        span.textContent = k;
+                        el.appendChild(span);
+                        list.appendChild(el);
+                    }
+                });
+            }
+            const stat = document.createElement("h2");
+            stat.className = "completion-stat";
+            stat.textContent = (gameId === "hollow" ? "幼虫收集 " : "跳蚤收集 ") + rescued + "/" + total;
+            content.appendChild(stat);
+            content.appendChild(list);
+        },
 
         // === Lightbox Functionality ===
         _lightboxState: {
