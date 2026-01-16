@@ -65,29 +65,106 @@ window.RESCUE_MAPS.hollow = {
             locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/d/d2/Grub_Greenpath_Location_5.png"
         },
         {
+            scene: "Fungus2_18",
+            name: "真菌荒地",
+            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
+            desc: "需要蛾翼披风",
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/1/10/Grub_Fungal_Wastes_Location_1.png"
+        },
+        {
+            scene: "Fungus2_20",
+            name: "真菌荒地",
+            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
+            desc: "需要螳螂爪",
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/f/f6/Grub_Fungal_Wastes_Location_2.png"
+        },
+        {
             scene: "Ruins1_05",
-            name: "Ruins1_05",
+            name: "泪水之城",
             icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
             desc: "",
-            locationImage: ""
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/2/2d/Grub_City_of_Tears_Location_1.png"
+        },
+        {
+            scene: "Ruins_House_01",
+            name: "泪水之城",
+            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
+            desc: "",
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/1/1c/Grub_City_of_Tears_Location_2.png"
         },
         {
             scene: "Ruins1_32",
-            name: "Ruins1_32",
+            name: "泪水之城",
             icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
             desc: "",
-            locationImage: ""
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/b/b4/Grub_City_of_Tears_Location_3.png"
+        },
+        {
+            scene: "Ruins2_07",
+            name: "泪水之城",
+            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
+            desc: "",
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/4/40/Grub_City_of_Tears_Location_4.png"
+        },
+        {
+            scene: "Ruins2_03",
+            name: "泪水之城",
+            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
+            desc: "",
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/4/48/Grub_City_of_Tears_Location_5.png"
+        },
+        {
+            scene: "Mines_16",
+            name: "水晶山峰",
+            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
+            desc: "需要蛾翼披风和螳螂爪",
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/6/67/Grub_Crystal_Peak_Location_1.png"
+        },
+        {
+            scene: "Mines_19",
+            name: "水晶山峰",
+            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
+            desc: "需要水晶之心",
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/b/b2/Grub_Crystal_Peak_Location_2.png"
+        },
+        {
+            scene: "Mines_31",
+            name: "水晶山峰",
+            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
+            desc: "需要帝王之翼",
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/4/40/Grub_Crystal_Peak_Location_3.png"
+        },
+        {
+            scene: "Mines_24",
+            name: "水晶山峰",
+            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
+            desc: "需要水晶之心",
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/0/01/Grub_Crystal_Peak_Location_4.png"
+        },
+        {
+            scene: "Mines_03",
+            name: "水晶山峰",
+            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
+            desc: "需要蛾翼披风",
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/8/89/Grub_Crystal_Peak_Location_5.png"
+        },
+        {
+            scene: "Mines_04",
+            name: "水晶山峰",
+            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
+            desc: "",
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/3/3e/Grub_Crystal_Peak_Location_6.png"
+        },
+        {
+            scene: "Mines_35",
+            name: "水晶山峰",
+            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
+            desc: "平台跳跃/跳跳乐",
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/4/45/Grub_Crystal_Peak_Location_7.png"
         },
         {
             scene: "Waterways_04",
             name: "Waterways_04",
-            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
-            desc: "",
-            locationImage: ""
-        },
-        {
-            scene: "Fungus2_20",
-            name: "Fungus2_20",
             icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
             desc: "",
             locationImage: ""
@@ -100,47 +177,13 @@ window.RESCUE_MAPS.hollow = {
             locationImage: ""
         },
         {
-            scene: "Mines_03",
-            name: "Mines_03",
-            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
-            desc: "",
-            locationImage: ""
-        },
-        {
-            scene: "Mines_31",
-            name: "Mines_31",
-            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
-            desc: "",
-            locationImage: ""
-        },
-        {
-            scene: "Mines_16",
-            name: "Mines_16",
-            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
-            desc: "",
-            locationImage: ""
-        },
-        {
-            scene: "Mines_04",
-            name: "Mines_04",
-            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
-            desc: "",
-            locationImage: ""
-        },
-        {
             scene: "RestingGrounds_10",
             name: "RestingGrounds_10",
             icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
             desc: "",
             locationImage: ""
         },
-        {
-            scene: "Ruins_House_01",
-            name: "Ruins_House_01",
-            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
-            desc: "",
-            locationImage: ""
-        },
+        
         {
             scene: "Abyss_17",
             name: "Abyss_17",
@@ -149,22 +192,8 @@ window.RESCUE_MAPS.hollow = {
             locationImage: ""
         },
         {
-            scene: "Mines_35",
-            name: "Mines_35",
-            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
-            desc: "",
-            locationImage: ""
-        },
-        {
             scene: "Abyss_19",
             name: "Abyss_19",
-            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
-            desc: "",
-            locationImage: ""
-        },
-        {
-            scene: "Mines_24",
-            name: "Mines_24",
             icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
             desc: "",
             locationImage: ""
@@ -198,36 +227,16 @@ window.RESCUE_MAPS.hollow = {
             locationImage: ""
         },
         {
-            scene: "Fungus2_18",
-            name: "Fungus2_18",
-            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
-            desc: "",
-            locationImage: ""
-        },
-        {
             scene: "Waterways_13",
             name: "Waterways_13",
             icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
             desc: "",
             locationImage: ""
         },
-        {
-            scene: "Ruins2_03",
-            name: "Ruins2_03",
-            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
-            desc: "",
-            locationImage: ""
-        },
+        
         {
             scene: "Deepnest_East_11",
             name: "Deepnest_East_11",
-            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
-            desc: "",
-            locationImage: ""
-        },
-        {
-            scene: "Ruins2_07",
-            name: "Ruins2_07",
             icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
             desc: "",
             locationImage: ""
@@ -302,13 +311,5 @@ window.RESCUE_MAPS.hollow = {
             desc: "",
             locationImage: ""
         },
-        {
-            scene: "Mines_19",
-            name: "Mines_19",
-            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
-            desc: "",
-            locationImage: ""
-        },
-        
     ]
 };
