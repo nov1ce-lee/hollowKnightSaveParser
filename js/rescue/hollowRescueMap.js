@@ -212,102 +212,102 @@ window.RESCUE_MAPS.hollow = {
             locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/2/2f/Grub_Kingdom%27s_Edge_Location_2.png"
         },
         {
+            scene: "Fungus3_47",
+            name: "31-雾之峡谷",
+            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
+            desc: "需要水晶之心",
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/c/cc/Grub_Fog_Canyon_Location_1.png"
+        },
+        {
+            scene: "Fungus3_10",
+            name: "32-王后花园",
+            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
+            desc: "",
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/e/e4/Grub_Queen%27s_Gardens_Location_1.png"
+        },
+        {
+            scene: "Fungus3_22",
+            name: "33-王后花园",
+            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
+            desc: "需要所有能力",
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/5/59/Grub_Queen%27s_Gardens_Location_2.png"
+        },
+        {
+            scene: "Fungus3_48",
+            name: "34-王后花园",
+            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
+            desc: "需要螳螂爪",
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/7/7b/Grub_Queen%27s_Gardens_Location_3.png"
+        },
+        {
+            scene: "Deepnest_36",
+            name: "35-深邃巢穴",
+            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
+            desc: "需要打破隐藏的可以破坏的墙壁",
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/5/55/Grub_Deepnest_Location_1.png"
+        },
+        {
+            scene: "Deepnest_03",
+            name: "36-深邃巢穴",
+            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
+            desc: "需要打破隐藏的可以破坏的墙壁",
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/b/bc/Grub_Deepnest_Location_2.png"
+        },
+        {
+            scene: "Deepnest_31",
+            name: "37-深邃巢穴",
+            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
+            desc: "需要水晶之心",
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/9/94/Grub_Deepnest_Location_3.png"
+        },
+        {
+            scene: "Deepnest_39",
+            name: "38-深邃巢穴",
+            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
+            desc: "",
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/8/82/Grub_Deepnest_Location_4.png"
+        },
+        {
+            scene: "Deepnest_Spider_Town",
+            name: "39-深邃巢穴",
+            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
+            desc: "",
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/2/22/Grub_Deepnest_Location_5.png"
+        },
+        {
             scene: "Abyss_19",
-            name: "古老盆地",
+            name: "40-古老盆地",
             icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
             desc: "需要蛾翼披风和帝王之翼",
             locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/8/80/Grub_Ancient_Basin_Location_1.png"
         },
         {
             scene: "Abyss_17",
-            name: "古老盆地",
+            name: "41-古老盆地",
             icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
             desc: "需要荒芜俯冲",
             locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/7/70/Grub_Ancient_Basin_Location_2.png"
         },
         {
-            scene: "Deepnest_31",
-            name: "Deepnest_31",
-            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
-            desc: "",
-            locationImage: ""
-        },
-        {
-            scene: "Deepnest_39",
-            name: "Deepnest_39",
-            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
-            desc: "",
-            locationImage: ""
-        },
-        {
-            scene: "Deepnest_03",
-            name: "Deepnest_03",
-            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
-            desc: "",
-            locationImage: ""
-        },
-        {
-            scene: "Deepnest_Spider_Town",
-            name: "Deepnest_Spider_Town",
-            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
-            desc: "",
-            locationImage: ""
-        },
-        {
-            scene: "Fungus3_47",
-            name: "Fungus3_47",
-            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
-            desc: "",
-            locationImage: ""
-        },
-        {
-            scene: "Fungus3_48",
-            name: "Fungus3_48",
-            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
-            desc: "",
-            locationImage: ""
-        },
-        {
-            scene: "Fungus3_10",
-            name: "Fungus3_10",
-            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
-            desc: "",
-            locationImage: ""
-        },
-        {
-            scene: "Fungus3_22",
-            name: "Fungus3_22",
-            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
-            desc: "",
-            locationImage: ""
-        },
-        {
-            scene: "Ruins2_11",
-            name: "Ruins2_11",
-            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
-            desc: "",
-            locationImage: ""
-        },
-        {
             scene: "Hive_03",
-            name: "Hive_03",
+            name: "42-蜂巢",
             icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
-            desc: "",
-            locationImage: ""
+            desc: "需要荒芜俯冲和伊思玛的眼泪",
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/9/94/Grub_Hive_Location_1.png"
         },
         {
             scene: "Hive_04",
-            name: "Hive_04",
+            name: "43-蜂巢",
             icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
-            desc: "",
-            locationImage: ""
+            desc: "需要荒芜俯冲，伊思玛的眼泪和帝王之翼",
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/6/66/Grub_Hive_Location_2.png"
         },
         {
-            scene: "Deepnest_36",
-            name: "Deepnest_36",
+            scene: "Ruins2_11",
+            name: "44-46-爱之塔",
             icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
-            desc: "",
-            locationImage: ""
+            desc: "需要爱之钥并打败收藏家，可以一次性解救3只幼虫<br>需要注意，若解救任何1只后直接退出游戏的话会导致剩下幼虫消失的bug",
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/a/a6/Grub_Tower_of_Love_Location_2.png"
         },
     ]
 };
