@@ -159,15 +159,36 @@ window.RESCUE_MAPS.hollow = {
             scene: "Mines_35",
             name: "水晶山峰",
             icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
-            desc: "平台跳跃/跳跳乐",
+            desc: "需要进行平台跳跃/跳跳乐",
             locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/4/45/Grub_Crystal_Peak_Location_7.png"
         },
         {
+            scene: "RestingGrounds_10",
+            name: "安息之地",
+            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
+            desc: "需要荒芜俯冲",
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/6/63/Grub_Resting_Grounds_Location_1.png"
+        },
+        {
             scene: "Waterways_04",
-            name: "Waterways_04",
+            name: "皇家下水道",
             icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
             desc: "",
-            locationImage: ""
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/6/62/Grub_Royal_Waterways_Location_1.png"
+        },
+        {
+            scene: "Waterways_14",
+            name: "皇家下水道",
+            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
+            desc: "需要水晶之心或伊思玛的眼泪",
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/2/2a/Grub_Royal_Waterways_Location_2.png"
+        },
+        {
+            scene: "Waterways_13",
+            name: "伊思玛的森林",
+            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
+            desc: "需要伊思玛的眼泪",
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/4/4b/Grub_Royal_Waterways_Location_3.png"
         },
         {
             scene: "Fungus1_28",
@@ -176,14 +197,6 @@ window.RESCUE_MAPS.hollow = {
             desc: "",
             locationImage: ""
         },
-        {
-            scene: "RestingGrounds_10",
-            name: "RestingGrounds_10",
-            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
-            desc: "",
-            locationImage: ""
-        },
-        
         {
             scene: "Abyss_17",
             name: "Abyss_17",
@@ -227,23 +240,8 @@ window.RESCUE_MAPS.hollow = {
             locationImage: ""
         },
         {
-            scene: "Waterways_13",
-            name: "Waterways_13",
-            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
-            desc: "",
-            locationImage: ""
-        },
-        
-        {
             scene: "Deepnest_East_11",
             name: "Deepnest_East_11",
-            icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
-            desc: "",
-            locationImage: ""
-        },
-        {
-            scene: "Waterways_14",
-            name: "Waterways_14",
             icon: "https://huiji-public.huijistatic.com/hkss/uploads/0/0c/Grub.png",
             desc: "",
             locationImage: ""
