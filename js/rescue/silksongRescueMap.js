@@ -51,6 +51,13 @@ window.RESCUE_MAPS.silksong = {
             locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/9/93/Flea_Far_Fields_Location_2.png"
         },
         {
+            key: "SavedFlea_Crawl_06",
+            name: "8-沙噬虫道",
+            icon: "https://huiji-public.huijistatic.com/hkss/uploads/d/d2/Flea.png",
+            desc: "",
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/b/bb/Flea_Wormways_Location_1.png"
+        },
+        {
             key: "SavedFlea_Greymoor_15b",
             name: "9-灰沼",
             icon: "https://huiji-public.huijistatic.com/hkss/uploads/d/d2/Flea.png",
@@ -62,6 +69,13 @@ window.RESCUE_MAPS.silksong = {
             name: "10-灰沼",
             icon: "https://huiji-public.huijistatic.com/hkss/uploads/d/d2/Flea.png",
             desc: "",
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/4/4f/Flea_Greymoor_Location_2.png"
+        },
+        {
+            key: "CaravanLechSaved",
+            name: "11-灰沼",
+            icon: "https://huiji-public.huijistatic.com/hkss/uploads/5/52/Kratt.png",
+            desc: "需要蛛攀术，该跳蚤为克拉特",
             locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/4/4f/Flea_Greymoor_Location_2.png"
         },
         {
@@ -80,10 +94,10 @@ window.RESCUE_MAPS.silksong = {
         },
         {
             key: "SavedFlea_Coral_35",
-            name: "Coral_35",
+            name: "14-蚀阶",
             icon: "https://huiji-public.huijistatic.com/hkss/uploads/d/d2/Flea.png",
-            desc: "",
-            locationImage: ""
+            desc: "需要蛛攀术",
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/6/6d/Flea_Blasted_Steps_Location_1.png"
         },
         {
             key: "SavedFlea_Dust_12",
@@ -93,6 +107,13 @@ window.RESCUE_MAPS.silksong = {
             locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/4/4f/Flea_Sinner%27s_Road_Location_1.png"
         },
         {
+            key: "SavedFlea_Shadow_28",
+            name: "16-腐汁泽",
+            icon: "https://huiji-public.huijistatic.com/hkss/uploads/d/d2/Flea.png",
+            desc: "",
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/b/bd/Flea_Bilewater_Location_1.png"
+        },
+        {
             key: "SavedFlea_Dust_09",
             name: "17-腐汁泽",
             icon: "https://huiji-public.huijistatic.com/hkss/uploads/d/d2/Flea.png",
@@ -100,53 +121,39 @@ window.RESCUE_MAPS.silksong = {
             locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/1/12/Flea_Bilewater_Location_2.png"
         },
         {
-            key: "SavedFlea_Crawl_06",
-            name: "Crawl_06",
+            key: "SavedFlea_Shadow_10",
+            name: "18-腐汁泽",
             icon: "https://huiji-public.huijistatic.com/hkss/uploads/d/d2/Flea.png",
-            desc: "",
-            locationImage: ""
-        },
-        {
-            key: "SavedFlea_Slab_Cell",
-            name: "Slab_Cell",
-            icon: "https://huiji-public.huijistatic.com/hkss/uploads/d/d2/Flea.png",
-            desc: "",
-            locationImage: ""
-        },
-        {
-            key: "SavedFlea_Shadow_28",
-            name: "Shadow_28",
-            icon: "https://huiji-public.huijistatic.com/hkss/uploads/d/d2/Flea.png",
-            desc: "",
-            locationImage: ""
+            desc: "需要蛛攀术",
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/d/d9/Flea_Bilewater_Location_3.png"
         },
         {
             key: "SavedFlea_Under_23",
-            name: "Under_23",
+            name: "19-圣堡工厂",
             icon: "https://huiji-public.huijistatic.com/hkss/uploads/d/d2/Flea.png",
             desc: "",
-            locationImage: ""
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/0/09/Flea_Underworks_Location_1.png"
         },
         {
-            key: "SavedFlea_Shadow_10",
-            name: "Shadow_10",
+            key: "SavedFlea_Under_21",
+            name: "20-圣堡工厂",
             icon: "https://huiji-public.huijistatic.com/hkss/uploads/d/d2/Flea.png",
             desc: "",
-            locationImage: ""
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/f/fc/Flea_Underworks_Location_2.png"
         },
         {
             key: "SavedFlea_Song_14",
-            name: "Song_14",
+            name: "21-圣咏殿",
             icon: "https://huiji-public.huijistatic.com/hkss/uploads/d/d2/Flea.png",
             desc: "",
-            locationImage: ""
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/7/71/Flea_Choral_Chambers_Location_1.png"
         },
         {
-            key: "SavedFlea_Coral_24",
-            name: "Coral_24",
+            key: "SavedFlea_Song_11",
+            name: "22-圣咏殿",
             icon: "https://huiji-public.huijistatic.com/hkss/uploads/d/d2/Flea.png",
-            desc: "",
-            locationImage: ""
+            desc: "需要流浪者披风或对风扇下劈",
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/7/7d/Flea_Choral_Chambers_Location_2.png"
         },
         {
             key: "SavedFlea_Library_09",
@@ -156,25 +163,18 @@ window.RESCUE_MAPS.silksong = {
             locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/c/cd/Flea_Choral_Chambers_Location_3.png"
         },
         {
-            key: "SavedFlea_Peak_05c",
-            name: "27-费耶山",
-            icon: "https://huiji-public.huijistatic.com/hkss/uploads/d/d2/Flea.png",
-            desc: "",
-            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/8/83/Flea_Mount_Fay_Location_1.png"
+            key: "tamedGiantFlea",
+            name: "24-忆廊",
+            icon: "https://huiji-public.huijistatic.com/hkss/uploads/8/82/B_Huge_Flea.png",
+            desc: "需要幻羽披风，该跳蚤为巨蚤",
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/c/cd/Flea_Choral_Chambers_Location_3.png"
         },
         {
-            key: "SavedFlea_Song_11",
-            name: "Song_11",
+            key: "SavedFlea_Slab_Cell",
+            name: "25-罪石牢狱",
             icon: "https://huiji-public.huijistatic.com/hkss/uploads/d/d2/Flea.png",
             desc: "",
-            locationImage: ""
-        },
-        {
-            key: "SavedFlea_Under_21",
-            name: "Under_21",
-            icon: "https://huiji-public.huijistatic.com/hkss/uploads/d/d2/Flea.png",
-            desc: "",
-            locationImage: ""
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/c/c3/Flea_Slab_Location_1.png"
         },
         {
             key: "SavedFlea_Slab_06",
@@ -182,6 +182,27 @@ window.RESCUE_MAPS.silksong = {
             icon: "https://huiji-public.huijistatic.com/hkss/uploads/d/d2/Flea.png",
             desc: "",
             locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/3/30/Flea_Slab_Location_2.png"
+        },
+        {
+            key: "SavedFlea_Peak_05c",
+            name: "27-费耶山",
+            icon: "https://huiji-public.huijistatic.com/hkss/uploads/d/d2/Flea.png",
+            desc: "",
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/8/83/Flea_Mount_Fay_Location_1.png"
+        },
+        {
+            key: "SavedFlea_Coral_24",
+            name: "28-卡拉卡沙川",
+            icon: "https://huiji-public.huijistatic.com/hkss/uploads/d/d2/Flea.png",
+            desc: "",
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/6/67/Flea_Sands_of_Karak_Location_1.png"
+        },
+        {
+            key: "MetTroupeHunterWild",
+            name: "29-腐殖渠",
+            icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/20/Vog.png",
+            desc: "该跳蚤为沃葛",
+            locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/6/67/Flea_Sands_of_Karak_Location_1.png"
         },
         {
             key: "SavedFlea_Library_01",

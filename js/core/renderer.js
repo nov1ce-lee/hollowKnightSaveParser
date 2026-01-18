@@ -410,7 +410,14 @@
                     if (key) {
                         seenKeys[key] = true;
                     }
-                    const isRescued = key ? !!save[key] : false;
+                    let isRescued = false;
+                    if (key) {
+                        if ((key === "tamedGiantFlea" || key === "CaravanLechSaved" || key === "MetTroupeHunterWild") && fullJson && fullJson.playerData) {
+                            isRescued = !!fullJson.playerData[key];
+                        } else {
+                            isRescued = !!save[key];
+                        }
+                    }
                     if (isRescued) {
                         rescued++;
                     }
