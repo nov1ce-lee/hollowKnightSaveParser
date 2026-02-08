@@ -821,11 +821,11 @@ window.GAMES.silksong = {
             max: 5,
             key: "maxHealthBase",
             items: [
-                { name: "+1", icon: "https://pic-1326566629.cos.ap-shanghai.myqcloud.com/wiki%5Cmask_black", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片_(丝之歌)" },
-                { name: "+2", icon: "https://pic-1326566629.cos.ap-shanghai.myqcloud.com/wiki%5Cmask_black", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片_(丝之歌)" },
-                { name: "+3", icon: "https://pic-1326566629.cos.ap-shanghai.myqcloud.com/wiki%5Cmask_black", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片_(丝之歌)" },
-                { name: "+4", icon: "https://pic-1326566629.cos.ap-shanghai.myqcloud.com/wiki%5Cmask_black", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片_(丝之歌)" },
-                { name: "+5", icon: "https://pic-1326566629.cos.ap-shanghai.myqcloud.com/wiki%5Cmask_black", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片_(丝之歌)" }
+                { name: "+1", icon: "assets/wiki_mask_black.png", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片_(丝之歌)" },
+                { name: "+2", icon: "assets/wiki_mask_black.png", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片_(丝之歌)" },
+                { name: "+3", icon: "assets/wiki_mask_black.png", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片_(丝之歌)" },
+                { name: "+4", icon: "assets/wiki_mask_black.png", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片_(丝之歌)" },
+                { name: "+5", icon: "assets/wiki_mask_black.png", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片_(丝之歌)" }
             ],
             transform(value) {
                 return value - 5;
@@ -1006,15 +1006,15 @@ window.GAMES.silksong = {
             max: 9,
             key: "silkMax",
             items: [
-                { name: "+1", icon: "https://pic-1326566629.cos.ap-shanghai.myqcloud.com/wiki%5CSilk_Spool", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" },
-                { name: "+2", icon: "https://pic-1326566629.cos.ap-shanghai.myqcloud.com/wiki%5CSilk_Spool", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" },
-                { name: "+3", icon: "https://pic-1326566629.cos.ap-shanghai.myqcloud.com/wiki%5CSilk_Spool", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" },
-                { name: "+4", icon: "https://pic-1326566629.cos.ap-shanghai.myqcloud.com/wiki%5CSilk_Spool", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" },
-                { name: "+5", icon: "https://pic-1326566629.cos.ap-shanghai.myqcloud.com/wiki%5CSilk_Spool", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" },
-                { name: "+6", icon: "https://pic-1326566629.cos.ap-shanghai.myqcloud.com/wiki%5CSilk_Spool", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" },
-                { name: "+7", icon: "https://pic-1326566629.cos.ap-shanghai.myqcloud.com/wiki%5CSilk_Spool", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" },
-                { name: "+8", icon: "https://pic-1326566629.cos.ap-shanghai.myqcloud.com/wiki%5CSilk_Spool", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" },
-                { name: "+9", icon: "https://pic-1326566629.cos.ap-shanghai.myqcloud.com/wiki%5CSilk_Spool", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" }
+                { name: "+1", icon: "assets/wiki_Silk_Spool.png", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" },
+                { name: "+2", icon: "assets/wiki_Silk_Spool.png", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" },
+                { name: "+3", icon: "assets/wiki_Silk_Spool.png", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" },
+                { name: "+4", icon: "assets/wiki_Silk_Spool.png", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" },
+                { name: "+5", icon: "assets/wiki_Silk_Spool.png", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" },
+                { name: "+6", icon: "assets/wiki_Silk_Spool.png", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" },
+                { name: "+7", icon: "assets/wiki_Silk_Spool.png", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" },
+                { name: "+8", icon: "assets/wiki_Silk_Spool.png", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" },
+                { name: "+9", icon: "assets/wiki_Silk_Spool.png", wiki: "https://hkss.huijiwiki.com/wiki/灵丝轴碎片" }
             ],
             transform(value) {
                 return value - 9;
