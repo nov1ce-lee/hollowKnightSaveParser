@@ -1,0 +1,680 @@
+[
+    {
+        "SceneName": "Tut_01",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Bonetown",
+        "ID": "Collectable Item Pickup",
+        "Value": false,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Bone_10",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Bone_10",
+        "ID": "Collectable Item Pickup Locket",
+        "Value": false,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Mosstown_02",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Bone_07",
+        "ID": "Collectable Item Pickup - Tool Metal",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Aspid_01",
+        "ID": "Collectable Item Pickup (2)",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Bone_18",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Crawl_02",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Bone_East_01",
+        "ID": "Collectable Item Pickup",
+        "Value": false,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Room_Forge",
+        "ID": "Collectable Item Pickup (1)",
+        "Value": false,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Room_Forge",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Bone_East_04b",
+        "ID": "Collectable Item Pickup",
+        "Value": false,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Bone_East_08",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Bone_East_14",
+        "ID": "Collectable Item Pickup (1)",
+        "Value": false,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Bone_East_14",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "DontDestroyOnLoad",
+        "ID": "Collectable Item Pickup Instant(Clone)",
+        "Value": false,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Ant_04_left",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Halfway_01",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Greymoor_15",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Greymoor_15b",
+        "ID": "Collectable Item Pickup",
+        "Value": false,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Greymoor_05",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Greymoor_05",
+        "ID": "Collectable Item Pickup Instant",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Greymoor_21",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Belltown",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Shellwood_01",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Shellwood_01b",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Shellwood_13",
+        "ID": "Collectable Item Pickup",
+        "Value": false,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Crawl_04",
+        "ID": "Collectable Item Pickup Instant",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Dock_03",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Greymoor_12",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Wisp_03",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Dust_01",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Greymoor_16",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Slab_02",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Slab_16",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Slab_16",
+        "ID": "Collectable Item Pickup Return",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Slab_14",
+        "ID": "Collectable Item Pickup (1)",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Slab_22",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Slab_18",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Slab_04",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Coral_02",
+        "ID": "Collectable Item Pickup (1)",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Coral_03",
+        "ID": "Collectable Item Pickup",
+        "Value": false,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Coral_32",
+        "ID": "Collectable Item Pickup - Tool Metal",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Bone_15",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Bone_15",
+        "ID": "Collectable Item Pickup Instant",
+        "Value": false,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Ant_20",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Bone_East_Weavehome",
+        "ID": "Collectable Item Pickup",
+        "Value": false,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Under_16",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Under_03",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Under_12",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Under_08",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Under_08",
+        "ID": "Collectable Item Pickup (1)",
+        "Value": false,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Under_07c",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Song_07",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Song_04",
+        "ID": "Collectable Item Pickup",
+        "Value": false,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Bellway_City",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Library_03",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Song_Enclave",
+        "ID": "Collectable Item Pickup",
+        "Value": false,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Song_09",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Library_08",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Ant_08",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Crawl_09",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Under_17",
+        "ID": "Collectable Item Pickup",
+        "Value": false,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Under_18",
+        "ID": "Collectable Item Pickup (1)",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Dock_02",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Under_19b",
+        "ID": "Collectable Item Pickup - Tool Metal",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Song_26",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Arborium_10",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Arborium_05",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Arborium_07",
+        "ID": "Collectable Item Pickup Materium",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Aqueduct_01",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Arborium_11",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Dust_06",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Cog_10",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Library_13b",
+        "ID": "Collectable Item Pickup - Quill Red",
+        "Value": false,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Library_13b",
+        "ID": "Collectable Item Pickup - Quill Purple",
+        "Value": false,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Coral_23",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Bellshrine_Coral",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Coral_41",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Coral_Tower_01",
+        "ID": "Collectable Item Pickup Heart",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Wisp_02",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Wisp_05",
+        "ID": "Collectable Item Pickup - Tool Metal",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Hang_16",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Library_16",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Shadow_20",
+        "ID": "Collectable Item Pickup (1)",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Shadow_20",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Library_09",
+        "ID": "Collectable Item Pickup (1)",
+        "Value": false,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Library_12",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Aueduct_04",
+        "ID": "Collectable Item Pickup Slab Key",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Slab_Cell_Quiet",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Aqueduct_05",
+        "ID": "Collectable Item Pickup - Tool Metal",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Aqueduct_05",
+        "ID": "Collectable Item Pickup Reward 3",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Shadow_02",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Shadow_Bilehaven_Room",
+        "ID": "Collectable Item Pickup (1)",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Shadow_Weavehome",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Hang_06_bank",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Dock_11",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Dock_13",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Shellwood_25",
+        "ID": "Collectable Item Pickup (1)",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Abyss_08",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Bone_East_24",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Bone_East_18b",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Bone_East_25",
+        "ID": "Collectable Item Pickup",
+        "Value": false,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Ant_Queen",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Shellwood_11b",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Clover_01",
+        "ID": "Collectable Item Pickup",
+        "Value": false,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Clover_20",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Room_CrowCourt_02",
+        "ID": "Collectable Item Pickup Crawbell",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Ward_07",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Abandoned_town",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Coral_36",
+        "ID": "Shell Shard Collectable Item Pickup Instant",
+        "Value": true,
+        "Mutator": 0
+    },
+    {
+        "SceneName": "Coral_39",
+        "ID": "Collectable Item Pickup",
+        "Value": true,
+        "Mutator": 0
+    }
+]
