@@ -41,8 +41,8 @@
     },
     {
         "pos": "腐汁泽",
-        "scene": "",
-        "type": ""
+        "scene": "Shadow_20",
+        "type": "Collectable Item Pickup"
     },
     {
         "pos": "圣堡钟道",
@@ -76,8 +76,8 @@
     },
     {
         "pos": "忆廊",
-        "scene": "",
-        "type": ""
+        "scene": "Arborium_05",
+        "type": "Collectable Item Pickup"
     },
     {
         "pos": "罪石牢狱",
