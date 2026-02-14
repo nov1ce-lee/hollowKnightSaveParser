@@ -106,7 +106,7 @@ document.getElementById("journalBtn").onclick = () => {
         }
         window.SaveRenderer.renderJournal(currentSave, currentGame);
     } else {
-        journalBtn.textContent = "浏览猎人日志完成情况";
+        journalBtn.textContent = "浏览猎人日志";
         journalPanel.style.display = "none";
         missingList.style.display = "block";
         result.style.display = "block";
@@ -134,7 +134,7 @@ document.getElementById("rescueBtn").onclick = () => {
         rescuePanel.style.display = "block";
         isJournalView = false;
         journalPanel.style.display = "none";
-        journalBtn.textContent = "浏览猎人日志完成情况";
+        journalBtn.textContent = "浏览猎人日志";
         window.SaveRenderer.renderRescue(currentSave, currentGame, currentFullJson);
     } else {
         rescueBtn.textContent = getRescueButtonText(false);
@@ -210,7 +210,7 @@ function switchGame(gameId) {
     document.getElementById("exportBtn").style.display = "none";
     document.getElementById("journalPanel").style.display = "none";
     document.getElementById("journalContent").innerHTML = "";
-    document.getElementById("journalBtn").textContent = "浏览猎人日志完成情况";
+    document.getElementById("journalBtn").textContent = "浏览猎人日志";
     isJournalView = false;
     const rescuePanel = document.getElementById("rescuePanel");
     const rescueContent = document.getElementById("rescueContent");

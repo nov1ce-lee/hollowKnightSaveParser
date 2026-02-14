@@ -1,102 +1,102 @@
 [
     {
         "pos": "髓骨洞窟",
-        "scene": "Bone_18",
-        "type": ""
+        "key": "Bone_18",
+        "type": "Pickup"
     },
     {
         "pos": "猎者小径",
-        "scene": "Ant_20",
-        "type": ""
+        "key": "Ant_20",
+        "type": "Pickup"
     },
     {
         "pos": "远野 / 蚀阶(第三幕)",
-        "scene": "",
-        "type": ""
+        "key": "PurchasedPilgrimsRestMemoryLocket/purchasedGrindleMemoryLocket",
+        "type": "Shop"
     },
     {
         "pos": "灰沼",
-        "scene": "Greymoor_16",
-        "type": ""
+        "key": "Greymoor_16",
+        "type": "Pickup"
     },
     {
         "pos": "骸底镇",
-        "scene": "",
-        "type": ""
+        "key": "Rock Rollers",
+        "type": "Quest"
     },
     {
         "pos": "钟心镇",
-        "scene": "",
-        "type": ""
+        "key": "PurchasedBelltownMemoryLocket",
+        "type": "Shop"
     },
     {
         "pos": "蚀阶",
-        "scene": "Coral_02",
-        "type": ""
+        "key": "Coral_02",
+        "type": "Pickup"
     },
     {
         "pos": "沙噬虫道",
-        "scene": "Crawl_09",
-        "type": ""
+        "key": "Crawl_09",
+        "type": "Pickup"
     },
     {
         "pos": "腐汁泽",
-        "scene": "Shadow_20",
-        "type": "Collectable Item Pickup"
+        "key": "Shadow_20",
+        "type": "Pickup"
     },
     {
         "pos": "圣堡钟道",
-        "scene": "",
-        "type": ""
+        "key": "",
+        "type": "Pickup"
     },
     {
         "pos": "圣堡工厂",
-        "scene": "",
-        "type": ""
+        "key": "Under_08",
+        "type": "Pickup"
     },
     {
         "pos": "深坞",
-        "scene": "",
-        "type": ""
+        "key": "Dock_13",
+        "type": "Pickup"
     },
     {
         "pos": "低语书库",
-        "scene": "",
-        "type": ""
+        "key": "Library_08",
+        "type": "Pickup"
     },
     {
         "pos": "卡拉卡沙川",
-        "scene": "",
-        "type": ""
+        "key": "Coral_23",
+        "type": "Pickup"
     },
     {
         "pos": "中途酒馆",
-        "scene": "",
-        "type": ""
+        "key": "",
+        "type": "Pickup"
     },
     {
         "pos": "忆廊",
-        "scene": "Arborium_05",
-        "type": "Collectable Item Pickup"
+        "key": "Arborium_05",
+        "type": "Pickup"
     },
     {
         "pos": "罪石牢狱",
-        "scene": "",
-        "type": ""
+        "key": "",
+        "type": "Pickup"
     },
     {
         "pos": "腐汁泽",
-        "scene": "",
-        "type": ""
+        "key": "",
+        "type": "Pickup"
     },
     {
         "pos": "钟心镇",
-        "scene": "",
-        "type": ""
+        "key": "Belltown",
+        "type": "Pickup"
     },
     {
         "pos": "远野",
-        "scene": "",
-        "type": ""
+        "key": "Bone_East_25",
+        "type": "Pickup"
     }
 ]
