@@ -482,6 +482,99 @@
             content.appendChild(list);
         },
 
+        renderMemoryLockets: function(save, gameConfig, fullJson) {
+            const content = document.getElementById("memoryLocketContent");
+            content.innerHTML = "";
+            const map = (window.MEMORY_LOCKET_MAPS && window.MEMORY_LOCKET_MAPS.silksong && Array.isArray(window.MEMORY_LOCKET_MAPS.silksong.entries)) ? window.MEMORY_LOCKET_MAPS.silksong.entries : [];
+            
+            if (map.length === 0) {
+                const stat = document.createElement("h2");
+                stat.className = "completion-stat";
+                stat.textContent = "忆境纪念盒";
+                const summary = document.createElement("div");
+                summary.className = "missing-content";
+                summary.textContent = "暂无忆境纪念盒映射数据。";
+                content.appendChild(stat);
+                content.appendChild(summary);
+                return;
+            }
+
+            const list = document.createElement("div");
+            list.className = "section-items";
+            let total = map.length;
+            let collected = 0;
+
+            const checkSceneData = (checkConfig) => {
+                if (!fullJson || !fullJson.sceneData || !checkConfig) return false;
+                const persistentBools = fullJson.sceneData.persistentBools || fullJson.sceneData.persistentBoolItems;
+                const boolList = (persistentBools && persistentBools.serializedList) ? persistentBools.serializedList : persistentBools;
+                if (!Array.isArray(boolList)) return false;
+                
+                const item = boolList.find(i => (i.sceneName || i.SceneName) === checkConfig.scene && (i.id || i.ID) === checkConfig.id);
+                if (!item) return false;
+                return item.activated !== undefined ? item.activated : (item.value !== undefined ? item.value : item.Value);
+            };
+
+            map.forEach(entry => {
+                let isCollected = false;
+                if (entry.type === 'Pickup') {
+                    isCollected = !!checkSceneData({ scene: entry.key, id: "Collectable Item Pickup" });
+                } else if (entry.type === 'Shop') {
+                    const keys = entry.key.split('/');
+                    isCollected = keys.some(k => !!save[k]);
+                } else if (entry.type === 'Quest') {
+                    if (save.QuestCompletionData && save.QuestCompletionData.savedData) {
+                        const quest = save.QuestCompletionData.savedData.find(q => q.Name === entry.key);
+                        isCollected = quest && quest.Data && quest.Data.IsCompleted;
+                    }
+                }
+
+                if (isCollected) collected++;
+
+                const el = document.createElement("div");
+                el.className = "item " + (isCollected ? "done" : "missing");
+
+                const desc = entry.desc || (entry.type === 'Pickup' ? `在地图 ${entry.key} 捡到` : (entry.type === 'Shop' ? '从商店购买' : '完成任务获得'));
+                const tooltip = document.createElement("div");
+                tooltip.className = "tooltip-text";
+                tooltip.innerHTML = desc;
+                el.appendChild(tooltip);
+
+                if (entry.locationImage) {
+                    el.style.cursor = "pointer";
+                    el.title = "点击打开地图位置图片";
+                    el.addEventListener("click", function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        window.SaveRenderer.openLightbox(entry.locationImage, entry.pos || "");
+                    });
+                }
+
+                if (entry.icon) {
+                    const iconWrapper = document.createElement("div");
+                    iconWrapper.className = "icon-wrapper";
+                    const img = document.createElement("img");
+                    img.src = entry.icon;
+                    img.className = "item-icon";
+                    img.referrerPolicy = "no-referrer";
+                    img.onerror = function() { iconWrapper.style.display = "none"; };
+                    iconWrapper.appendChild(img);
+                    el.appendChild(iconWrapper);
+                }
+
+                const span = document.createElement("span");
+                span.textContent = entry.pos || "";
+                el.appendChild(span);
+                list.appendChild(el);
+            });
+
+            const stat = document.createElement("h2");
+            stat.className = "completion-stat";
+            stat.textContent = `忆境纪念盒 ${collected}/${total}`;
+            content.appendChild(stat);
+            content.appendChild(list);
+        },
+
         // === Lightbox Functionality ===
         _lightboxState: {
             isDragging: false,

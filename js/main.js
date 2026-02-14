@@ -71,6 +71,7 @@ document.getElementById("exportBtn").onclick = () => {
 
 let isJournalView = false;
 let isRescueView = false;
+let isMemoryLocketView = false;
 
 function getRescueButtonText(isOpen) {
     const gameId = currentGame && currentGame.id === "silksong" ? "silksong" : "hollow";
@@ -79,6 +80,44 @@ function getRescueButtonText(isOpen) {
     }
     return isOpen ? "关闭跳蚤收集情况" : "浏览跳蚤收集情况";
 }
+
+document.getElementById("memoryLocketBtn").onclick = () => {
+    if (!window.SaveRenderer || !currentSave) return;
+    isMemoryLocketView = !isMemoryLocketView;
+    
+    const panel = document.getElementById("memoryLocketPanel");
+    const btn = document.getElementById("memoryLocketBtn");
+    const missingList = document.getElementById("missingList");
+    const result = document.getElementById("result");
+    const modifierUI = document.getElementById("modifierUI");
+    const journalPanel = document.getElementById("journalPanel");
+    const rescuePanel = document.getElementById("rescuePanel");
+
+    if (isMemoryLocketView) {
+        btn.textContent = "关闭忆境纪念盒收集情况";
+        missingList.style.display = "none";
+        result.style.display = "none";
+        modifierUI.style.display = "none";
+        panel.style.display = "block";
+        
+        // Close others
+        isJournalView = false;
+        isRescueView = false;
+        journalPanel.style.display = "none";
+        rescuePanel.style.display = "none";
+        document.getElementById("journalBtn").textContent = "浏览猎人日志";
+        document.getElementById("rescueBtn").textContent = getRescueButtonText(false);
+        
+        window.SaveRenderer.renderMemoryLockets(currentSave, currentGame, currentFullJson);
+    } else {
+        btn.textContent = "浏览忆境纪念盒收集情况";
+        panel.style.display = "none";
+        missingList.style.display = "block";
+        result.style.display = "block";
+        updateModifierVisibility();
+        window.SaveRenderer.renderResult(currentSave, currentGame, currentFullJson);
+    }
+};
 
 document.getElementById("journalBtn").onclick = () => {
     if (!window.SaveRenderer) return;
@@ -91,6 +130,9 @@ document.getElementById("journalBtn").onclick = () => {
     const modifierUI = document.getElementById("modifierUI");
     const rescuePanel = document.getElementById("rescuePanel");
     const rescueBtn = document.getElementById("rescueBtn");
+    const memoryLocketPanel = document.getElementById("memoryLocketPanel");
+    const memoryLocketBtn = document.getElementById("memoryLocketBtn");
+
     if (isJournalView) {
         journalBtn.textContent = "关闭猎人日志";
         missingList.style.display = "none";
@@ -98,11 +140,18 @@ document.getElementById("journalBtn").onclick = () => {
         modifierUI.style.display = "none";
         journalPanel.style.display = "block";
         isRescueView = false;
+        isMemoryLocketView = false;
         if (rescuePanel) {
             rescuePanel.style.display = "none";
         }
         if (rescueBtn) {
             rescueBtn.textContent = getRescueButtonText(false);
+        }
+        if (memoryLocketPanel) {
+            memoryLocketPanel.style.display = "none";
+        }
+        if (memoryLocketBtn) {
+            memoryLocketBtn.textContent = "浏览忆境纪念盒收集情况";
         }
         window.SaveRenderer.renderJournal(currentSave, currentGame);
     } else {
@@ -126,6 +175,9 @@ document.getElementById("rescueBtn").onclick = () => {
     const missingList = document.getElementById("missingList");
     const result = document.getElementById("result");
     const modifierUI = document.getElementById("modifierUI");
+    const memoryLocketPanel = document.getElementById("memoryLocketPanel");
+    const memoryLocketBtn = document.getElementById("memoryLocketBtn");
+
     if (isRescueView) {
         rescueBtn.textContent = getRescueButtonText(true);
         missingList.style.display = "none";
@@ -133,8 +185,15 @@ document.getElementById("rescueBtn").onclick = () => {
         modifierUI.style.display = "none";
         rescuePanel.style.display = "block";
         isJournalView = false;
+        isMemoryLocketView = false;
         journalPanel.style.display = "none";
         journalBtn.textContent = "浏览猎人日志";
+        if (memoryLocketPanel) {
+            memoryLocketPanel.style.display = "none";
+        }
+        if (memoryLocketBtn) {
+            memoryLocketBtn.textContent = "浏览忆境纪念盒收集情况";
+        }
         window.SaveRenderer.renderRescue(currentSave, currentGame, currentFullJson);
     } else {
         rescueBtn.textContent = getRescueButtonText(false);
@@ -170,6 +229,10 @@ function updateModifierVisibility() {
     journalBtn.style.display = hasData ? "inline-block" : "none";
     if (rescueBtn) {
         rescueBtn.style.display = hasData ? "inline-block" : "none";
+    }
+    const memoryLocketBtn = document.getElementById("memoryLocketBtn");
+    if (memoryLocketBtn) {
+        memoryLocketBtn.style.display = (hasData && currentGame.id === "silksong") ? "inline-block" : "none";
     }
 
     // Control the UI and Export visibility based on Toggle
@@ -225,6 +288,19 @@ function switchGame(gameId) {
         rescueBtn.textContent = getRescueButtonText(false);
     }
     isRescueView = false;
+    const memoryLocketPanel = document.getElementById("memoryLocketPanel");
+    const memoryLocketContent = document.getElementById("memoryLocketContent");
+    const memoryLocketBtn = document.getElementById("memoryLocketBtn");
+    if (memoryLocketPanel) {
+        memoryLocketPanel.style.display = "none";
+    }
+    if (memoryLocketContent) {
+        memoryLocketContent.innerHTML = "";
+    }
+    if (memoryLocketBtn) {
+        memoryLocketBtn.textContent = "浏览忆境纪念盒收集情况";
+    }
+    isMemoryLocketView = false;
     
     // Update path hint
     const paths = {
