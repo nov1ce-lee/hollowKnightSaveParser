@@ -518,7 +518,7 @@
             map.forEach(entry => {
                 let isCollected = false;
                 if (entry.type === 'Pickup') {
-                    isCollected = !!checkSceneData({ scene: entry.key, id: "Collectable Item Pickup" });
+                    isCollected = !!checkSceneData({ scene: entry.key, id: (entry.pickupId || "Collectable Item Pickup") });
                 } else if (entry.type === 'Shop') {
                     const keys = entry.key.split('/');
                     isCollected = keys.some(k => !!save[k]);
