@@ -821,11 +821,11 @@ window.GAMES.silksong = {
             max: 5,
             key: "maxHealthBase",
             items: [
-                { name: "+1", icon: "assets/wiki_mask_black.png", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片_(丝之歌)" },
-                { name: "+2", icon: "assets/wiki_mask_black.png", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片_(丝之歌)" },
-                { name: "+3", icon: "assets/wiki_mask_black.png", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片_(丝之歌)" },
-                { name: "+4", icon: "assets/wiki_mask_black.png", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片_(丝之歌)" },
-                { name: "+5", icon: "assets/wiki_mask_black.png", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片_(丝之歌)" }
+                { name: "+1", icon: "https://huiji-thumb.huijistatic.com/hkss/uploads/thumb/5/56/SS_Ancient_Mask.png", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片_(丝之歌)" },
+                { name: "+2", icon: "https://huiji-thumb.huijistatic.com/hkss/uploads/thumb/5/56/SS_Ancient_Mask.png", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片_(丝之歌)" },
+                { name: "+3", icon: "https://huiji-thumb.huijistatic.com/hkss/uploads/thumb/5/56/SS_Ancient_Mask.png", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片_(丝之歌)" },
+                { name: "+4", icon: "https://huiji-thumb.huijistatic.com/hkss/uploads/thumb/5/56/SS_Ancient_Mask.png", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片_(丝之歌)" },
+                { name: "+5", icon: "https://huiji-thumb.huijistatic.com/hkss/uploads/thumb/5/56/SS_Ancient_Mask.png", wiki: "https://hkss.huijiwiki.com/wiki/面具碎片_(丝之歌)" }
             ],
             transform(value) {
                 return value - 5;
@@ -935,8 +935,8 @@ window.GAMES.silksong = {
                     unit: 0
                 },
                 { 
-                    name: "费耶山", 
-                    desc: "费耶山左下角，需要雪灵披风",
+                    name: "雪灵山", 
+                    desc: "雪灵山左下角，需要雪灵披风",
                     locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/2/24/Mapshot_SS_Mask_Shard_12.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png",
                     sceneCheck: { scene: "Peak_04c", id: "Heart Piece", type: "bool" },
@@ -991,8 +991,8 @@ window.GAMES.silksong = {
                     unit: 0
                 },
                 { 
-                    name: "费耶山", 
-                    desc: "在费耶山冰晶脉窟顶端，需要灵丝升腾",
+                    name: "雪灵山", 
+                    desc: "在雪灵山冰晶脉窟顶端，需要灵丝升腾",
                     locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/5/5a/Mapshot_SS_Mask_Shard_17.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/2/2c/Mask_Shard_SS.png",
                     sceneCheck: { scene: "Peak_06", id: "Heart Piece", type: "bool" },

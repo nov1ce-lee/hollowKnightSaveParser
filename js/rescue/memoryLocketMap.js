@@ -23,7 +23,7 @@
                 "key": "PurchasedPilgrimsRestMemoryLocket/purchasedGrindleMemoryLocket",
                 "type": "Shop",
                 "icon": "https://huiji-public.huijistatic.com/hkss/uploads/a/ac/Memory_Locket.png",
-                "desc": "第一幕，由莫特以150念珠出售，若到第三幕中仍未购买则改为由格林德尔以250念珠出售",
+                "desc": "第一幕，由莫特以150念珠出售，若到第三幕中仍未购买则改为格林德尔以250念珠出售",
                 "locationImage": "https://huiji-public.huijistatic.com/hkss/uploads/2/21/Memory_Locket_03.png"
             },
             {
@@ -133,7 +133,7 @@
             },
             {
                 "pos": "罪石牢狱",
-                "key": "Deep_03",
+                "key": "Slab_Cell_Quiet",
                 "type": "Pickup",
                 "icon": "https://huiji-public.huijistatic.com/hkss/uploads/a/ac/Memory_Locket.png",
                 "desc": "第二幕，需要幻羽披风",
@@ -144,7 +144,7 @@
                 "key": "Shadow_27",
                 "type": "Pickup",
                 "icon": "https://huiji-public.huijistatic.com/hkss/uploads/a/ac/Memory_Locket.png",
-                "desc": "第二幕，需要幻羽披风；藏在一个悬挂的包裹中",
+                "desc": "第二幕，需要幻羽披风，藏在一个悬挂的包裹中",
                 "locationImage": "https://huiji-public.huijistatic.com/hkss/uploads/6/6c/Memory_Locket_18.png",
                 "pickupId": "Sack Corpse Pickup"
             },
