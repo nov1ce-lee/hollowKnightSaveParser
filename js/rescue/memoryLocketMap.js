@@ -72,12 +72,12 @@
                 "key": "Shadow_20",
                 "type": "Pickup",
                 "icon": "https://huiji-public.huijistatic.com/hkss/uploads/a/ac/Memory_Locket.png",
-                "desc": "第一幕，第一幕腐汁泽区域获取",
+                "desc": "第一幕，腐汁泽区域获取",
                 "locationImage": "https://huiji-public.huijistatic.com/hkss/uploads/1/12/Memory_Locket_09.png"
             },
             {
                 "pos": "圣堡钟道",
-                "key": "Under_01",
+                "key": "Bellway_City",
                 "type": "Pickup",
                 "icon": "https://huiji-public.huijistatic.com/hkss/uploads/a/ac/Memory_Locket.png",
                 "desc": "第二幕，击败幽影并从废鸣管风琴进入",
@@ -96,7 +96,7 @@
                 "key": "Dock_13",
                 "type": "Pickup",
                 "icon": "https://huiji-public.huijistatic.com/hkss/uploads/a/ac/Memory_Locket.png",
-                "desc": "第二幕，需要简易钥匙和飞针冲刺；击败监工兄弟西格尼斯 & 格隆",
+                "desc": "第二幕，需要简易钥匙和飞针冲刺；击败监工兄弟西格尼斯&格隆",
                 "locationImage": "https://huiji-public.huijistatic.com/hkss/uploads/4/42/Memory_Locket_12.png"
             },
             {
@@ -117,7 +117,7 @@
             },
             {
                 "pos": "中途酒馆",
-                "key": "Coral_31",
+                "key": "Halfway_01",
                 "type": "Pickup",
                 "icon": "https://huiji-public.huijistatic.com/hkss/uploads/a/ac/Memory_Locket.png",
                 "desc": "第二幕，需要幻羽披风",
@@ -141,11 +141,12 @@
             },
             {
                 "pos": "腐汁泽",
-                "key": "Shadow_11",
+                "key": "Shadow_27",
                 "type": "Pickup",
                 "icon": "https://huiji-public.huijistatic.com/hkss/uploads/a/ac/Memory_Locket.png",
                 "desc": "第二幕，需要幻羽披风；藏在一个悬挂的包裹中",
-                "locationImage": "https://huiji-public.huijistatic.com/hkss/uploads/6/6c/Memory_Locket_18.png"
+                "locationImage": "https://huiji-public.huijistatic.com/hkss/uploads/6/6c/Memory_Locket_18.png",
+                "pickupId": "Sack Corpse Pickup"
             },
             {
                 "pos": "钟心镇",

@@ -46,7 +46,7 @@
     },
     {
         "pos": "圣堡钟道",
-        "key": "",
+        "key": "Bellway_City",
         "type": "Pickup"
     },
     {
@@ -71,7 +71,7 @@
     },
     {
         "pos": "中途酒馆",
-        "key": "",
+        "key": "Halfway_01",
         "type": "Pickup"
     },
     {
@@ -86,7 +86,7 @@
     },
     {
         "pos": "腐汁泽",
-        "key": "",
+        "key": "Shadow_27",
         "type": "Pickup"
     },
     {
