@@ -251,6 +251,11 @@ function switchGame(gameId) {
     if (!window.GAMES || !window.GAMES[gameId]) return;
 
     currentGame = window.GAMES[gameId];
+    try {
+        if (window.localStorage) {
+            window.localStorage.setItem("hksp_lastGameId", gameId);
+        }
+    } catch (e) {}
     document.getElementById("pageTitle").textContent = currentGame.title;
 
     document.getElementById("hkBtn").classList.toggle("active", gameId === 'hollow');
@@ -344,3 +349,17 @@ document.getElementById("copyPathBtn").onclick = () => {
 if (document.getElementById("rescueBtn")) {
     document.getElementById("rescueBtn").textContent = getRescueButtonText(false);
 }
+
+// Initialize last used game from localStorage
+(function() {
+    let initialGameId = "hollow";
+    try {
+        if (window.localStorage) {
+            const saved = window.localStorage.getItem("hksp_lastGameId");
+            if (saved && window.GAMES && window.GAMES[saved]) {
+                initialGameId = saved;
+            }
+        }
+    } catch (e) {}
+    switchGame(initialGameId);
+})();
