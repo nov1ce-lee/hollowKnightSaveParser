@@ -413,7 +413,7 @@ window.GAMES.hollow = {
                     desc: "遗忘十字路左部，杀死躁郁的毛里克的奖励",
                     locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/b/bc/Mapshot_HK_Mask_Shard_01.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/69/Mask_Shard.png",
-                    sceneCheck: { scene: "Crossroads_13", id: "Heart Piece", type: "bool" },
+                    sceneCheck: { scene: "Crossroads_09", id: "Heart Piece", type: "bool" },
                     unit: 0
                 },
                 { 
@@ -429,7 +429,7 @@ window.GAMES.hollow = {
                     desc: "遗忘十字路，假骑士下方有很多戈姆处，推荐先获取螳螂爪，或使用下劈",
                     locationImage: "https://huiji-public.huijistatic.com/hkss/uploads/d/db/Mapshot_HK_Mask_Shard_03.png",
                     icon: "https://huiji-public.huijistatic.com/hkss/uploads/6/69/Mask_Shard.png",
-                    sceneCheck: { scene: "Crossroads_09", id: "Heart Piece", type: "bool" },
+                    sceneCheck: { scene: "Crossroads_13", id: "Heart Piece", type: "bool" },
                     unit: 0
                 },
                 { 
